@@ -51,4 +51,30 @@ export default function ContactForm() {
             <SelectValue placeholder="Selecciona un asunto" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="info">Información general\
+            <SelectItem value="info">Información general</SelectItem>
+            <SelectItem value="coliving">Consulta sobre coliving</SelectItem>
+            <SelectItem value="reservation">Reserva</SelectItem>
+            <SelectItem value="other">Otro</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+      
+      <div>
+        <Label htmlFor="message">Mensaje</Label>
+        <textarea
+          id="message"
+          rows={4}
+          className="w-full mt-1 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
+          required
+        />
+      </div>
+      
+      <button
+        type="submit"
+        className="w-full bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+      >
+        Enviar mensaje
+      </button>
+    </form>
+  );
+}
