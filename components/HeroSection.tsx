@@ -8,7 +8,7 @@ export default function HeroSection() {
   return (
     <section className="relative h-[90vh] w-full">
       <Image
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-05-14%20a%20las%2014.04.39_2cc26270.jpg-DJzxuBgfK0IzOMmp0tVmjIOzBPVcte.jpeg"
+        src="/images/Creativos1.jpg"
         alt="Plura Coliving Bogotá"
         fill
         className="object-cover"
