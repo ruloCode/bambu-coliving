@@ -12,7 +12,7 @@ export default function Habitaciones() {
 
   return (
     <div className="flex flex-col w-full">
-      <HeroSection />
+      {/* <HeroSection /> */}
       <HabitacionesHeader />
       <HabitacionesFilters
         date={date}

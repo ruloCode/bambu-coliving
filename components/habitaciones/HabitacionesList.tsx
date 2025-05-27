@@ -6,11 +6,11 @@ export default function HabitacionesList() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <RoomCard
-            title="Habitación cielo"
+            title="Bamboo Tipo 1"
             image="/images/creativos1.jpg"
             price="3.000.000"
             features={["Cama doble", "WiFi ilimitado", "Cocina privada", "Baño privado"]}
-            slug="habitacion_cielo"
+            slug="tipo-1"
           />
           <RoomCard
             title="Plura Tipo 2"
