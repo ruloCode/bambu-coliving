@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import HeroSection from "@/components/habitaciones/HeroSection"
+// import HeroSection from "@/components/habitaciones/HeroSection"
 import HabitacionesHeader from "@/components/habitaciones/HabitacionesHeader"
 import HabitacionesFilters from "@/components/habitaciones/HabitacionesFilters"
 import HabitacionesList from "@/components/habitaciones/HabitacionesList"

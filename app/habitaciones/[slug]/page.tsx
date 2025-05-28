@@ -1,7 +1,9 @@
 import { Wifi, Tv, Bath, UtensilsCrossed, PawPrint } from "lucide-react"
-import { cn } from "@/lib/utils"
-import RoomGallery from "@/components/room-gallery"
-import BookingForm from "@/components/booking-form"
+import RoomGallerySection from "@/components/habitaciones/slug/RoomGallerySection"
+import RoomFeaturesSection from "@/components/habitaciones/slug/RoomFeaturesSection"
+import RoomDetailsSection from "@/components/habitaciones/slug/RoomDetailsSection"
+import RoomPricesSection from "@/components/habitaciones/slug/RoomPricesSection"
+import RoomBookingSection from "@/components/habitaciones/slug/RoomBookingSection"
 
 // Simulación de datos de habitación
 const roomData = {
@@ -40,84 +42,20 @@ export default function RoomDetail({ params }: { params: { slug: string } }) {
 
   return (
     <div className="flex flex-col w-full">
-      {/* Room Gallery */}
-      <RoomGallery images={room.images} title={room.title} />
+      <RoomGallerySection images={room.images} title={room.title} />
 
-      {/* Room Details */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               <h1 className="text-3xl font-bold mb-4">{room.title}</h1>
               <p className="text-gray-600 mb-6">{room.description}</p>
-
-              <div className="mb-8">
-                <h2 className="text-xl font-bold mb-4">Características</h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {room.features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <div className={cn("rounded-full p-2", index % 2 === 0 ? "bg-teal-100" : "bg-rose-100")}>
-                        {feature.icon}
-                      </div>
-                      <span>{feature.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mb-8">
-                <h2 className="text-xl font-bold mb-4">Detalles</h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  <div>
-                    <h3 className="font-semibold">Tamaño</h3>
-                    <p>{room.size}</p>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">Capacidad</h3>
-                    <p>Hasta {room.maxGuests} personas</p>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">Disponibilidad</h3>
-                    <p>A partir del 1 de julio, 2025</p>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h2 className="text-xl font-bold mb-4">Precios</h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                  <div className="border rounded-lg p-4 text-center">
-                    <h3 className="font-semibold mb-2">1 Mes</h3>
-                    <p className="text-xl font-bold">$ {room.price}</p>
-                    <p className="text-xs text-gray-500">COP MENSUAL</p>
-                  </div>
-                  <div className="border rounded-lg p-4 text-center">
-                    <h3 className="font-semibold mb-2">3 Meses</h3>
-                    <p className="text-xl font-bold">$ {room.discounts["3"]}</p>
-                    <p className="text-xs text-gray-500">COP MENSUAL</p>
-                  </div>
-                  <div className="border rounded-lg p-4 text-center">
-                    <h3 className="font-semibold mb-2">6 Meses</h3>
-                    <p className="text-xl font-bold">$ {room.discounts["6"]}</p>
-                    <p className="text-xs text-gray-500">COP MENSUAL</p>
-                  </div>
-                  <div className="border rounded-lg p-4 text-center">
-                    <h3 className="font-semibold mb-2">12 Meses</h3>
-                    <p className="text-xl font-bold">$ {room.discounts["12"]}</p>
-                    <p className="text-xs text-gray-500">COP MENSUAL</p>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-600">
-                  * Los precios incluyen todos los servicios básicos (agua, luz, gas, internet).
-                </p>
-              </div>
+              <RoomFeaturesSection features={room.features} />
+              <RoomDetailsSection size={room.size} maxGuests={room.maxGuests} />
+              <RoomPricesSection price={room.price} discounts={room.discounts} />
             </div>
-
             <div>
-              <div className="bg-gray-50 rounded-xl p-6 sticky top-24">
-                <h2 className="text-xl font-bold mb-4">Reserva ahora</h2>
-                <BookingForm roomTitle={room.title} price={room.price} />
-              </div>
+              <RoomBookingSection roomTitle={room.title} price={room.price} />
             </div>
           </div>
         </div>
