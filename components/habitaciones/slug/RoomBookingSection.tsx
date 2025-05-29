@@ -1,4 +1,4 @@
-import BookingForm from "@/components/habitaciones/slug/booking-form";
+import BookingForm from "@/components/habitaciones/slug/Booking-form";
 
 
 export default function RoomBookingSection({ roomTitle, price }: { roomTitle: string; price: string }) {
