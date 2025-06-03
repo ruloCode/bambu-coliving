@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Plura Coliving | Bogotá, Colombia",
+  title: "Bambú Coliving | Bogotá, Colombia",
   description: "Espacio de coliving moderno en Bogotá para nómadas digitales, estudiantes y profesionales",
     generator: 'v0.dev'
 }

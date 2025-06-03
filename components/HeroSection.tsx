@@ -22,10 +22,10 @@ export default function HeroSection() {
                 <path fill="currentColor" d="M0,12 L20,0 L40,12 L60,0 L80,12 L100,0 L100,24 L0,24 Z" />
               </svg>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-2">PLURA</h1>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-2">LIVE,</h2>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-2">WORK</h2>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">& PLAY</h2>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-2">BAMBÚ</h1>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-2">TU ESPACIO,</h2>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-2">TU</h2>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">ESENCIA</h2>
             <Button asChild size="lg" className="rounded-full px-8 bg-teal-600 hover:bg-teal-700 text-white">
               <Link href="/habitaciones">Reserva Ahora</Link>
             </Button>
