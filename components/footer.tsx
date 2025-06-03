@@ -13,7 +13,7 @@ export default function Footer() {
                   <path fill="currentColor" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                 </svg>
               </div>
-              <span className="font-bold text-xl text-white">Plura</span>
+              <span className="font-bold text-xl text-white">Bambú</span>
             </Link>
             <p className="mb-4">
               Espacio de coliving moderno en Bogotá para nómadas digitales, estudiantes y profesionales.
@@ -105,15 +105,15 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-teal-500 mt-0.5" />
-                <span>Cra. 20A #74-55, San Felipe, Bogotá, Colombia</span>
+                <span>dirección, Bogotá, Colombia</span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-5 w-5 text-teal-500 mt-0.5" />
-                <span>+57 (601) 123-4567</span>
+                <span>+57 (601) telefono</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-teal-500 mt-0.5" />
-                <span>info@pluracoliving.co</span>
+                <span>info@bambucoliving.co</span>
               </li>
             </ul>
           </div>

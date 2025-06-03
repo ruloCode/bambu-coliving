@@ -9,7 +9,7 @@ export default function HeroSection() {
     <section className="relative h-[90vh] w-full">
       <Image
         src="/images/Creativos1.jpg"
-        alt="Plura Coliving Bogotá"
+        alt="Bambú Coliving Bogotá"
         fill
         className="object-cover"
         priority
