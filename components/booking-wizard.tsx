@@ -91,7 +91,7 @@ export default function BookingWizard() {
                   <div className="relative h-24 w-24 rounded-md overflow-hidden flex-shrink-0">
                     <Image
                       src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-05-14%20a%20las%2014.04.39_4b76c038.jpg-UuM2MMRM2jvoxKNMXUNECk8s0xIjZM.jpeg"
-                      alt="Bambú Tipo 1"
+                      alt="Bambu Tipo 1"
                       fill
                       className="object-cover"
                     />
@@ -117,7 +117,7 @@ export default function BookingWizard() {
                   <div className="relative h-24 w-24 rounded-md overflow-hidden flex-shrink-0">
                     <Image
                       src="/placeholder.svg?height=100&width=100"
-                      alt="Bambú Tipo 2"
+                      alt="Bambu Tipo 2"
                       fill
                       className="object-cover"
                     />

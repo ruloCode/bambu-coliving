@@ -9,13 +9,35 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Bambú Coliving | Bogotá, Colombia",
+  title: "Bambu Coliving | Bogotá, Colombia",
   description: "Espacio de coliving moderno en Bogotá para nómadas digitales, estudiantes y profesionales",
   generator: 'v0.dev',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
     apple: '/favicon.ico',
+  },
+  openGraph: {
+    title: "Bambu Coliving | Bogotá, Colombia",
+    description: "Espacio de coliving moderno en Bogotá para nómadas digitales, estudiantes y profesionales",
+    url: 'https://bambucoliving.com',
+    siteName: 'Bambu Coliving',
+    images: [
+      {
+        url: '/og_img.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Bambu Coliving - Espacio de coliving moderno en Bogotá',
+      },
+    ],
+    locale: 'es_CO',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Bambu Coliving | Bogotá, Colombia",
+    description: "Espacio de coliving moderno en Bogotá para nómadas digitales, estudiantes y profesionales",
+    images: ['/og_img.jpg'],
   },
 }
 

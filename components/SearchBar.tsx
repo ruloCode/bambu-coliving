@@ -9,6 +9,7 @@ import { CalendarIcon } from "lucide-react"
 import { format } from "date-fns"
 import { es } from "date-fns/locale"
 import { useState } from "react"
+import { motion } from "framer-motion"
 
 export default function SearchBar() {
   const [date, setDate] = useState<Date | undefined>(new Date())
@@ -17,9 +18,29 @@ export default function SearchBar() {
   return (
     <section className="py-8 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6">
-          <h2 className="text-2xl font-bold mb-4 text-center">Encuentra tu espacio ideal</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <motion.div 
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6"
+        >
+          <motion.h2 
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-2xl font-bold mb-4 text-center"
+          >
+            Encuentra tu espacio ideal
+          </motion.h2>
+          <motion.div 
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          >
             <div>
               <Label htmlFor="check-in">Fecha de llegada</Label>
               <Popover>
@@ -49,10 +70,15 @@ export default function SearchBar() {
               </Select>
             </div>
             <div className="flex items-end">
-              <Button className="w-full bg-teal-600 hover:bg-teal-700">Buscar disponibilidad</Button>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Button className="w-full bg-teal-600 hover:bg-teal-700 transition-all duration-300">Buscar disponibilidad</Button>
+              </motion.div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

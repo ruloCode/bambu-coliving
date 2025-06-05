@@ -11,7 +11,7 @@ export default function AboutUs() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Quiénes Somos</h1>
           <p className="max-w-2xl mx-auto">
-            Conoce más sobre Plura Coliving, nuestra misión y el equipo detrás de este proyecto.
+            Conoce más sobre Bambu Coliving, nuestra misión y el equipo detrás de este proyecto.
           </p>
         </div>
       </section>
@@ -23,7 +23,7 @@ export default function AboutUs() {
             <div>
               <h2 className="text-3xl font-bold mb-4">Nuestra Misión</h2>
               <p className="text-gray-600 mb-6">
-                En Plura Coliving, nuestra misión es crear espacios de vida que fomenten la comunidad, la productividad
+                En Bambu Coliving, nuestra misión es crear espacios de vida que fomenten la comunidad, la productividad
                 y el bienestar. Creemos en el poder de los entornos compartidos para impulsar la creatividad y las
                 conexiones significativas.
               </p>
@@ -40,8 +40,8 @@ export default function AboutUs() {
             </div>
             <div className="relative h-[400px] rounded-xl overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Equipo de Plura Coliving"
+                src="/images/Creativos1.jpg"
+                alt="Equipo de Bambu Coliving"
                 fill
                 className="object-cover"
               />
@@ -87,7 +87,7 @@ export default function AboutUs() {
             <div>
               <h2 className="text-3xl font-bold mb-4">Nuestra Ubicación</h2>
               <p className="text-gray-600 mb-6">
-                Plura Coliving está estratégicamente ubicado en el barrio San Felipe de Bogotá, un área vibrante
+                Bambu Coliving está estratégicamente ubicado en Comuneros, Bogotá, un área vibrante
                 conocida por su escena artística, restaurantes de moda y excelente conectividad.
               </p>
               <div className="space-y-4">
@@ -95,27 +95,27 @@ export default function AboutUs() {
                   <MapPin className="h-5 w-5 text-teal-600 mt-1" />
                   <div>
                     <h3 className="font-semibold">Dirección</h3>
-                    <p className="text-gray-600">Cra. 20A #74-55, San Felipe, Bogotá, Colombia</p>
+                    <p className="text-gray-600">Comuneros, Bogotá, Colombia</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Phone className="h-5 w-5 text-teal-600 mt-1" />
                   <div>
-                    <h3 className="font-semibold">Teléfono</h3>
-                    <p className="text-gray-600">+57 (601) 123-4567</p>
+                    <h3 className="font-semibold">WhatsApp</h3>
+                    <p className="text-gray-600">+57 300 7438588</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Mail className="h-5 w-5 text-teal-600 mt-1" />
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-gray-600">info@pluracoliving.co</p>
+                    <p className="text-gray-600">info@bambucoliving.com</p>
                   </div>
                 </div>
               </div>
               <div className="mt-6">
                 <Button asChild variant="outline" className="rounded-full">
-                  <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://maps.app.goo.gl/oHGrFpEmGqmdx6cq6" target="_blank" rel="noopener noreferrer">
                     Ver en Google Maps
                   </a>
                 </Button>
@@ -123,14 +123,14 @@ export default function AboutUs() {
             </div>
             <div className="h-[400px] rounded-xl overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.5742788531586!2d-74.0651!3d4.6686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a3b3b3b3b3b%3A0x8e3f9a3b3b3b3b3b!2sSan%20Felipe%2C%20Bogot%C3%A1%2C%20Colombia!5e0!3m2!1ses!2sco!4v1620000000000!5m2!1ses!2sco"
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2736.4016760114637!2d-74.10221425164589!3d4.604803015278485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sComuneros!5e0!3m2!1sen!2sco!4v1749157781594!5m2!1sen!2sco"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Ubicación de Plura Coliving"
+                title="Ubicación de Bambu Coliving"
               ></iframe>
             </div>
           </div>
