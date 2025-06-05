@@ -15,21 +15,21 @@ export default function FeaturedRooms() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <RoomCard
             title="Bambu Tipo 1"
-            image="/images/Creativos1.jpg"
+            image="/images/living_1.png"
             price="3.000.000"
             features={["Cama doble", "WiFi ilimitado", "Cocina privada", "Baño privado"]}
             slug="tipo-1"
           />
           <RoomCard
             title="Bambu Tipo 2"
-            image="/images/Creativos1.jpg"
+            image="/images/living_2.png"
             price="3.500.000"
             features={["Cama queen", "WiFi ilimitado", "Cocina privada", "Baño privado", "Escritorio"]}
             slug="tipo-2"
           />
           <RoomCard
             title="Bambu Tipo 3"
-            image="/images/Creativos1.jpg"
+            image="/images/living_3.png"
             price="4.200.000"
             features={["Cama king", "WiFi ilimitado", "Cocina privada", "Baño privado", "Balcón"]}
             slug="tipo-3"

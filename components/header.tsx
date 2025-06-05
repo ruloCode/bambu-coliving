@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container mx-auto px-4 flex h-16 items-center justify-between">
         <Link href="/1Q " className="flex items-center gap-2">
           <div className="relative h-8 w-8">
             <img src="/images/LogoBambu.png" alt="Logo de Bambu" />
@@ -61,7 +61,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="rounded-full">
                 <Image
@@ -100,7 +100,7 @@ export default function Header() {
                 </div>
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
 
           <Button asChild className="rounded-full bg-teal-600 hover:bg-teal-700">
             <Link href="/reserva">Reserva Ahora</Link>
@@ -117,7 +117,7 @@ export default function Header() {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden border-t">
-          <div className="container py-4 space-y-4">
+          <div className="container mx-auto px-4 py-4 space-y-4">
             <Link
               href="/"
               className="flex w-full items-center py-2 text-sm font-medium transition-colors hover:text-primary"
