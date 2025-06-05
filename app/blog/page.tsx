@@ -34,7 +34,7 @@ const blogPosts = [
   },
   {
     id: 4,
-    title: "Los mejores cafés para trabajar cerca de Plura Coliving",
+    title: "Los mejores cafés para trabajar cerca de Bambu Coliving",
     excerpt:
       "Una selección de cafeterías con buen WiFi, enchufes y ambiente agradable para tus días de trabajo fuera de casa.",
     date: "5 de junio, 2025",

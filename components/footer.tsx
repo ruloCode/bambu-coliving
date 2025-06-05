@@ -13,7 +13,7 @@ export default function Footer() {
                   <path fill="currentColor" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                 </svg>
               </div>
-              <span className="font-bold text-xl text-white">Bambú</span>
+              <span className="font-bold text-xl text-white">Bambu</span>
             </Link>
             <p className="mb-4">
               Espacio de coliving moderno en Bogotá para nómadas digitales, estudiantes y profesionales.
@@ -120,7 +120,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; {new Date().getFullYear()} Plura Coliving. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Bambu Coliving. Todos los derechos reservados.</p>
           <div className="mt-4 md:mt-0 flex gap-4">
             <Link href="/terminos-y-condiciones" className="text-sm hover:text-teal-500">
               Términos

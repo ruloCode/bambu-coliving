@@ -4,7 +4,7 @@ export default function Benefits() {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-2 text-center">¿Por qué elegir Plura?</h2>
+        <h2 className="text-3xl font-bold mb-2 text-center">¿Por qué elegir Bambu?</h2>
         <p className="text-gray-600 mb-10 text-center max-w-2xl mx-auto">
           Ofrecemos más que un lugar para vivir. Somos una comunidad donde podrás conectar, crecer y disfrutar.
         </p>

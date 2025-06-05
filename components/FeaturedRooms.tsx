@@ -14,22 +14,22 @@ export default function FeaturedRooms() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <RoomCard
-            title="Bambú Tipo 1"
-            image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-05-14%20a%20las%2014.04.39_4b76c038.jpg-UuM2MMRM2jvoxKNMXUNECk8s0xIjZM.jpeg"
+            title="Bambu Tipo 1"
+            image="/images/Creativos1.jpg"
             price="3.000.000"
             features={["Cama doble", "WiFi ilimitado", "Cocina privada", "Baño privado"]}
             slug="tipo-1"
           />
           <RoomCard
-            title="Bambú Tipo 2"
-            image="/placeholder.svg?height=400&width=600"
+            title="Bambu Tipo 2"
+            image="/images/Creativos1.jpg"
             price="3.500.000"
             features={["Cama queen", "WiFi ilimitado", "Cocina privada", "Baño privado", "Escritorio"]}
             slug="tipo-2"
           />
           <RoomCard
-            title="Bambú Tipo 3"
-            image="/placeholder.svg?height=400&width=600"
+            title="Bambu Tipo 3"
+            image="/images/Creativos1.jpg"
             price="4.200.000"
             features={["Cama king", "WiFi ilimitado", "Cocina privada", "Baño privado", "Balcón"]}
             slug="tipo-3"

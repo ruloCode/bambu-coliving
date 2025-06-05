@@ -9,7 +9,7 @@ export default function HeroSection() {
     <section className="relative h-[90vh] w-full">
       <Image
         src="/images/Creativos1.jpg"
-        alt="Bambú Coliving Bogotá"
+        alt="Bambu Coliving Bogotá"
         fill
         className="object-cover"
         priority
@@ -17,12 +17,12 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
         <div className="relative w-full max-w-4xl mx-auto px-4 text-center text-white">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] rounded-full bg-rose-300/30 backdrop-blur-sm flex flex-col items-center justify-center">
-            <div className="mb-4">
+            {/* <div className="mb-4">
               <svg viewBox="0 0 100 24" className="w-20 h-8 mx-auto">
                 <path fill="currentColor" d="M0,12 L20,0 L40,12 L60,0 L80,12 L100,0 L100,24 L0,24 Z" />
               </svg>
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-2">BAMBÚ</h1>
+            </div> */}
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-2">BAMBU</h1>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-2">TU ESPACIO,</h2>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-2">TU</h2>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">ESENCIA</h2>
