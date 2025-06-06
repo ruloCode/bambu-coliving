@@ -8,7 +8,7 @@ import RoomBookingSection from "@/components/habitaciones/slug/RoomBookingSectio
 // Simulación de datos de habitación
 const roomData = {
   "tipo-1": {
-    title: "Plura Tipo 1",
+    title: "Bambu 1",
     description:
       "Nuestra habitación estándar ofrece todo lo que necesitas para una estancia cómoda y productiva. Con una cama doble, baño privado, cocina equipada y un espacio de trabajo, es perfecta para nómadas digitales y profesionales.",
     price: "3.000.000",
@@ -25,11 +25,11 @@ const roomData = {
       { icon: <Bath className="h-5 w-5" />, name: "Baño privado" },
     ],
     images: [
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-05-14%20a%20las%2014.04.39_4b76c038.jpg-UuM2MMRM2jvoxKNMXUNECk8s0xIjZM.jpeg",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
+      "/images/habitacion_1.avif",
+      "/images/habitacion_2.avif",
+      "/images/habitacion_3.avif",
+      "/images/habitacion_4.avif",
+      "/images/habitacion_5.avif",
     ],
     size: "25m²",
     maxGuests: 2,
@@ -44,7 +44,7 @@ export default function RoomDetail({ params }: { params: { slug: string } }) {
     <div className="flex flex-col w-full">
       <RoomGallerySection images={room.images} title={room.title} />
 
-      <section className="py-12 bg-white">
+      <section className="md:py-6 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
