@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { heroContent } from "@/content"
 
 export default function HeroSection() {
   return (
@@ -15,8 +16,8 @@ export default function HeroSection() {
         className="relative h-full w-full"
       >
         <Image
-          src="/images/Creativos1.jpg"
-          alt="Bambu Coliving Bogotá"
+          src={heroContent.backgroundImage}
+          alt={heroContent.alt}
           fill
           className="object-cover"
           priority
@@ -37,7 +38,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-4xl md:text-6xl font-bold tracking-tight mb-2"
           >
-            BAMBU
+            {heroContent.titles.main}
           </motion.h1>
           
           <motion.h2 
@@ -46,7 +47,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 1.0 }}
             className="text-3xl md:text-5xl font-bold tracking-tight mb-2"
           >
-            TU ESPACIO,
+            {heroContent.titles.subtitle1}
           </motion.h2>
           
           <motion.h2 
@@ -55,7 +56,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="text-3xl md:text-5xl font-bold tracking-tight mb-2"
           >
-            TU
+            {heroContent.titles.subtitle2}
           </motion.h2>
           
           <motion.h2 
@@ -64,7 +65,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 1.4 }}
             className="text-3xl md:text-5xl font-bold tracking-tight mb-6"
           >
-            ESENCIA
+            {heroContent.titles.subtitle3}
           </motion.h2>
           
           <motion.div
@@ -84,7 +85,13 @@ export default function HeroSection() {
             whileTap={{ scale: 0.95 }}
           >
             <Button asChild size="lg" className="rounded-full px-12 py-4 text-lg font-semibold bg-teal-600 hover:bg-teal-700 text-white transition-all duration-300 shadow-lg hover:shadow-xl">
-              <Link href="https://wa.me/573007438588?text=Hola,%20estoy%20interesado%20en%20reservar%20una%20habitación%20en%20Bambu%20Coliving" target="_blank" rel="noopener noreferrer">Reserva Ahora</Link>
+              <Link 
+                href={heroContent.cta.href} 
+                target={heroContent.cta.isExternal ? "_blank" : undefined}
+                rel={heroContent.cta.isExternal ? "noopener noreferrer" : undefined}
+              >
+                {heroContent.cta.text}
+              </Link>
             </Button>
           </motion.div>
         </div>

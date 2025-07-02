@@ -2,6 +2,15 @@
 
 import { Wifi, Users, MapPin, Coffee } from "lucide-react"
 import { motion } from "framer-motion"
+import { benefitsContent } from "@/content"
+
+// Icon mapping
+const iconMap = {
+  Wifi,
+  Users,
+  MapPin,
+  Coffee
+}
 
 export default function Benefits() {
   const containerVariants = {
@@ -39,7 +48,7 @@ export default function Benefits() {
           viewport={{ once: true }}
           className="text-3xl font-bold mb-2 text-center"
         >
-          ¿Por qué elegir Bambu?
+          {benefitsContent.title}
         </motion.h2>
         <motion.p 
           initial={{ y: 20, opacity: 0 }}
@@ -48,7 +57,7 @@ export default function Benefits() {
           viewport={{ once: true }}
           className="text-gray-600 mb-10 text-center max-w-2xl mx-auto"
         >
-          Ofrecemos más que un lugar para vivir. Somos una comunidad donde podrás conectar, crecer y disfrutar.
+          {benefitsContent.description}
         </motion.p>
         <motion.div 
           variants={containerVariants}
@@ -57,74 +66,33 @@ export default function Benefits() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
-          <motion.div 
-            variants={cardVariants}
-            whileHover={{ y: -5, transition: { duration: 0.3 } }}
-            className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300"
-          >
-            <motion.div 
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <Wifi className="h-8 w-8 text-teal-600" />
-            </motion.div>
-            <h3 className="text-xl font-bold mb-2">WiFi de Alta Velocidad</h3>
-            <p className="text-gray-600">Conexión estable y rápida para trabajar sin interrupciones.</p>
-          </motion.div>
-          <motion.div 
-            variants={cardVariants}
-            whileHover={{ y: -5, transition: { duration: 0.3 } }}
-            className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300"
-          >
-            <motion.div 
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="bg-rose-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <Users className="h-8 w-8 text-rose-600" />
-            </motion.div>
-            <h3 className="text-xl font-bold mb-2">Comunidad Vibrante</h3>
-            <p className="text-gray-600">Conoce personas de todo el mundo y expande tu red profesional.</p>
-          </motion.div>
-          <motion.div 
-            variants={cardVariants}
-            whileHover={{ y: -5, transition: { duration: 0.3 } }}
-            className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300"
-          >
-            <motion.div 
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <MapPin className="h-8 w-8 text-teal-600" />
-            </motion.div>
-            <h3 className="text-xl font-bold mb-2">Ubicación Estratégica</h3>
-            <p className="text-gray-600">En el corazón de Bogotá, cerca de todo lo que necesitas.</p>
-          </motion.div>
-          <motion.div 
-            variants={cardVariants}
-            whileHover={{ y: -5, transition: { duration: 0.3 } }}
-            className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300"
-          >
-            <motion.div 
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-rose-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <Coffee className="h-8 w-8 text-rose-600" />
-            </motion.div>
-            <h3 className="text-xl font-bold mb-2">Espacios Compartidos</h3>
-            <p className="text-gray-600">Coworking, cocina, gimnasio y áreas de descanso a tu disposición.</p>
-          </motion.div>
+          {benefitsContent.benefits.map((benefit, index) => {
+            const IconComponent = iconMap[benefit.icon as keyof typeof iconMap]
+            const colorClasses = benefit.iconColor === 'teal' 
+              ? { bg: 'bg-teal-100', text: 'text-teal-600' }
+              : { bg: 'bg-rose-100', text: 'text-rose-600' }
+            
+            return (
+              <motion.div 
+                key={benefit.title}
+                variants={cardVariants}
+                whileHover={{ y: -5, transition: { duration: 0.3 } }}
+                className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300"
+              >
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                  viewport={{ once: true }}
+                  className={`${colorClasses.bg} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4`}
+                >
+                  <IconComponent className={`h-8 w-8 ${colorClasses.text}`} />
+                </motion.div>
+                <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
+              </motion.div>
+            )
+          })}
         </motion.div>
       </div>
     </section>

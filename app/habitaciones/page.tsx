@@ -5,6 +5,7 @@ import { useState } from "react"
 import HabitacionesHeader from "@/components/habitaciones/HabitacionesHeader"
 import HabitacionesFilters from "@/components/habitaciones/HabitacionesFilters"
 import HabitacionesList from "@/components/habitaciones/HabitacionesList"
+import HabitacionesDetails from "@/components/habitaciones/HabitacionesDetails"
 
 export default function Habitaciones() {
   const [date, setDate] = useState<Date | undefined>(new Date())
@@ -21,7 +22,7 @@ export default function Habitaciones() {
         setGuests={setGuests}
       />
       <HabitacionesList />
-
+      <HabitacionesDetails />
     </div>
   )
 }

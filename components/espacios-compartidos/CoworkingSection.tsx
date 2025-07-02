@@ -1,44 +1,53 @@
 import Image from "next/image"
-import { Wifi, Users, Coffee } from "lucide-react"
+import { Wifi, LayoutGrid, Monitor, Sun } from "lucide-react"
+import { SharedSpaceSection } from "@/content"
 
-export default function CoworkingSection() {
+const iconMap = {
+  Wifi,
+  LayoutGrid,
+  Monitor,
+  Sun
+}
+
+interface CoworkingSectionProps {
+  content: SharedSpaceSection
+}
+
+export default function CoworkingSection({ content }: CoworkingSectionProps) {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 bg-teal-100 text-teal-800 px-4 py-1 rounded-full mb-4">
-              <Coffee className="h-4 w-4" />
-              <span className="text-sm font-medium">Coworking</span>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">{content.title}</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">{content.description}</p>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {content.features.map((feature, index) => {
+            const Icon = iconMap[feature.icon as keyof typeof iconMap]
+            return (
+              <div key={index} className="text-center">
+                {Icon && <Icon className="h-8 w-8 mx-auto mb-4 text-teal-600" />}
+                <h3 className="font-semibold mb-2">{feature.title}</h3>
+                <p className="text-gray-600 text-sm">{feature.description}</p>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Images Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {content.images.map((image, index) => (
+            <div key={index} className="relative h-64 rounded-lg overflow-hidden">
+              <Image
+                src={image}
+                alt={`${content.title} - Imagen ${index + 1}`}
+                fill
+                className="object-cover"
+              />
             </div>
-            <h2 className="text-3xl font-bold mb-4">Espacio de Coworking</h2>
-            <p className="text-gray-600 mb-6">
-              Nuestro espacio de coworking está diseñado para maximizar tu productividad. Con escritorios ergonómicos,
-              sillas cómodas, y un ambiente inspirador, tendrás todo lo que necesitas para trabajar eficientemente.
-            </p>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2">
-                <Wifi className="h-5 w-5 text-teal-600" />
-                <span>Internet de alta velocidad (300 Mbps)</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Coffee className="h-5 w-5 text-teal-600" />
-                <span>Café y té gratuitos</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Users className="h-5 w-5 text-teal-600" />
-                <span>Salas de reuniones reservables</span>
-              </li>
-            </ul>
-          </div>
-          <div className="relative h-[400px] rounded-xl overflow-hidden">
-            <Image
-              src="images/Creativos1.jpg"
-              alt="Espacio de Coworking"
-              fill
-              className="object-cover"
-            />
-          </div>
+          ))}
         </div>
       </div>
     </section>

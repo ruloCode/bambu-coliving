@@ -5,6 +5,7 @@ import RoomCard from "@/components/room-card"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 import { motion } from "framer-motion"
+import { featuredRoomsContent } from "@/content"
 
 export default function FeaturedRooms() {
   const containerVariants = {
@@ -41,7 +42,7 @@ export default function FeaturedRooms() {
           viewport={{ once: true }}
           className="text-3xl font-bold mb-2 text-center"
         >
-          Nuestros Espacios
+          {featuredRoomsContent.title}
         </motion.h2>
         <motion.p 
           initial={{ y: 20, opacity: 0 }}
@@ -50,8 +51,7 @@ export default function FeaturedRooms() {
           viewport={{ once: true }}
           className="text-gray-600 mb-10 text-center max-w-2xl mx-auto"
         >
-          Descubre nuestras habitaciones diseñadas para ofrecerte confort, privacidad y todo lo que necesitas para
-          vivir, trabajar y disfrutar en Bogotá.
+          {featuredRoomsContent.description}
         </motion.p>
         <motion.div 
           variants={containerVariants}
@@ -60,33 +60,17 @@ export default function FeaturedRooms() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          <motion.div variants={itemVariants}>
-            <RoomCard
-              title="Bambu Tipo 1"
-              image="/images/living_1.png"
-              price="3.000.000"
-              features={["Cama doble", "WiFi ilimitado", "Cocina privada", "Baño privado"]}
-              slug="tipo-1"
-            />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <RoomCard
-              title="Bambu Tipo 2"
-              image="/images/living_2.png"
-              price="3.500.000"
-              features={["Cama queen", "WiFi ilimitado", "Cocina privada", "Baño privado", "Escritorio"]}
-              slug="tipo-2"
-            />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <RoomCard
-              title="Bambu Tipo 3"
-              image="/images/living_3.png"
-              price="4.200.000"
-              features={["Cama king", "WiFi ilimitado", "Cocina privada", "Baño privado", "Balcón"]}
-              slug="tipo-3"
-            />
-          </motion.div>
+          {featuredRoomsContent.rooms.map((room, index) => (
+            <motion.div key={room.slug} variants={itemVariants}>
+              <RoomCard
+                title={room.title}
+                image={room.image}
+                price={room.price}
+                features={room.features}
+                slug={room.slug}
+              />
+            </motion.div>
+          ))}
         </motion.div>
         <motion.div 
           initial={{ y: 30, opacity: 0 }}
@@ -100,8 +84,8 @@ export default function FeaturedRooms() {
             whileTap={{ scale: 0.95 }}
           >
             <Button asChild variant="outline" size="lg" className="rounded-full px-8 transition-all duration-300">
-              <Link href="/habitaciones">
-                Ver todas las habitaciones <ChevronRight className="ml-2 h-4 w-4" />
+              <Link href={featuredRoomsContent.cta.href}>
+                {featuredRoomsContent.cta.text} <ChevronRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </motion.div>

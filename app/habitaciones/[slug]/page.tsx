@@ -1,44 +1,39 @@
-import { Wifi, Tv, Bath, UtensilsCrossed, PawPrint } from "lucide-react"
+import { Wifi, Tv, Bath, UtensilsCrossed, PawPrint, MonitorSmartphone, Warehouse, Sun, Users, Lock, Hotel, Sofa } from "lucide-react"
 import RoomGallerySection from "@/components/habitaciones/slug/RoomGallerySection"
 import RoomFeaturesSection from "@/components/habitaciones/slug/RoomFeaturesSection"
 import RoomDetailsSection from "@/components/habitaciones/slug/RoomDetailsSection"
 import RoomPricesSection from "@/components/habitaciones/slug/RoomPricesSection"
 import RoomBookingSection from "@/components/habitaciones/slug/RoomBookingSection"
+import { roomDetails } from "@/content"
+import { createElement } from "react"
 
-// Simulación de datos de habitación
-const roomData = {
-  "tipo-1": {
-    title: "Bambu 1",
-    description:
-      "Nuestra habitación estándar ofrece todo lo que necesitas para una estancia cómoda y productiva. Con una cama doble, baño privado, cocina equipada y un espacio de trabajo, es perfecta para nómadas digitales y profesionales.",
-    price: "3.000.000",
-    discounts: {
-      "3": "2.700.000",
-      "6": "2.500.000",
-      "12": "2.380.000",
-    },
-    features: [
-      { icon: <Wifi className="h-5 w-5" />, name: "WiFi ilimitado" },
-      { icon: <UtensilsCrossed className="h-5 w-5" />, name: "Cocina privada" },
-      { icon: <PawPrint className="h-5 w-5" />, name: "Pet friendly" },
-      { icon: <Tv className="h-5 w-5" />, name: "Smart TV" },
-      { icon: <Bath className="h-5 w-5" />, name: "Baño privado" },
-    ],
-    images: [
-      "/images/habitacion_1.avif",
-      "/images/habitacion_2.avif",
-      "/images/habitacion_3.avif",
-      "/images/habitacion_4.avif",
-      "/images/habitacion_5.avif",
-    ],
-    size: "25m²",
-    maxGuests: 2,
-  },
+const iconMap = {
+  Wifi,
+  Tv,
+  Bath,
+  UtensilsCrossed,
+  PawPrint,
+  MonitorSmartphone,
+  Warehouse,
+  Sun,
+  Users,
+  Lock,
+  Hotel,
+  Sofa
 }
 
 export default function RoomDetail({ params }: { params: { slug: string } }) {
   const { slug } = params
-  const room = roomData[slug as keyof typeof roomData] || roomData["tipo-1"]
+  const room = roomDetails[slug] || roomDetails["tipo-1"]
+
+  // Map the feature icons to their components using createElement
+  const featuresWithIcons = room.features.map(feature => ({
+    icon: createElement(iconMap[feature.iconName as keyof typeof iconMap], { 
+      className: "h-5 w-5",
+      key: feature.name 
+    }),
+    name: feature.name
+  }))
 
   return (
     <div className="flex flex-col w-full">
@@ -50,7 +45,7 @@ export default function RoomDetail({ params }: { params: { slug: string } }) {
             <div className="lg:col-span-2">
               <h1 className="text-3xl font-bold mb-4">{room.title}</h1>
               <p className="text-gray-600 mb-6">{room.description}</p>
-              <RoomFeaturesSection features={room.features} />
+              <RoomFeaturesSection features={featuresWithIcons} />
               <RoomDetailsSection size={room.size} maxGuests={room.maxGuests} />
               <RoomPricesSection price={room.price} discounts={room.discounts} />
             </div>

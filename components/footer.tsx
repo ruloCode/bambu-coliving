@@ -1,7 +1,15 @@
 import Link from "next/link"
-import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react"
+import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin, LucideIcon } from "lucide-react"
+import { aboutUsContent } from "@/content"
 
 export default function Footer() {
+  // Map of icon names to Lucide icon components
+  const iconMap: Record<string, LucideIcon> = {
+    MapPin,
+    Phone,
+    Mail
+  }
+
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-12">
@@ -103,18 +111,15 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold text-lg mb-4">Contacto</h3>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-teal-500 mt-0.5" />
-                <span>dirección, Bogotá, Colombia</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-teal-500 mt-0.5" />
-                <span>+57 (601) telefono</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="h-5 w-5 text-teal-500 mt-0.5" />
-                <span>info@bambucoliving.co</span>
-              </li>
+              {aboutUsContent.location.contactInfo.map((info, index) => {
+                const Icon = iconMap[info.icon]
+                return (
+                  <li key={index} className="flex items-start gap-3">
+                    <Icon className="h-5 w-5 text-teal-500 mt-0.5" />
+                    <span>{info.value}</span>
+                  </li>
+                )
+              })}
             </ul>
           </div>
         </div>

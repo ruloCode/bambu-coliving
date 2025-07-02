@@ -1,4 +1,6 @@
-export default function RoomPricesSection({ price, discounts }: { price: string; discounts: Record<string, string> }) {
+import { RoomDiscount } from "@/content"
+
+export default function RoomPricesSection({ price, discounts }: { price: string; discounts: RoomDiscount }) {
   return (
     <div>
       <h2 className="text-xl font-bold mb-4">Precios</h2>

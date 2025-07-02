@@ -1,44 +1,53 @@
 import Image from "next/image"
-import { Utensils, Coffee, Users } from "lucide-react"
+import { UtensilsCrossed, Package, Coffee } from "lucide-react"
+import { SharedSpaceSection } from "@/content"
 
-export default function KitchenSection() {
+const iconMap = {
+  UtensilsCrossed,
+  Package,
+  Coffee,
+  Refrigerator: Coffee // Temporarily using Coffee icon as Refrigerator is not available in lucide
+}
+
+interface KitchenSectionProps {
+  content: SharedSpaceSection
+}
+
+export default function KitchenSection({ content }: KitchenSectionProps) {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative h-[400px] rounded-xl overflow-hidden order-last lg:order-first">
-            <Image
-              src="/images/Creativos3.jpg"
-              alt="Cocina Compartida"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div>
-            <div className="inline-flex items-center gap-2 bg-rose-100 text-rose-800 px-4 py-1 rounded-full mb-4">
-              <Utensils className="h-4 w-4" />
-              <span className="text-sm font-medium">Cocina</span>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">{content.title}</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">{content.description}</p>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {content.features.map((feature, index) => {
+            const Icon = iconMap[feature.icon as keyof typeof iconMap]
+            return (
+              <div key={index} className="text-center">
+                {Icon && <Icon className="h-8 w-8 mx-auto mb-4 text-teal-600" />}
+                <h3 className="font-semibold mb-2">{feature.title}</h3>
+                <p className="text-gray-600 text-sm">{feature.description}</p>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Images Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {content.images.map((image, index) => (
+            <div key={index} className="relative h-64 rounded-lg overflow-hidden">
+              <Image
+                src={image}
+                alt={`${content.title} - Imagen ${index + 1}`}
+                fill
+                className="object-cover"
+              />
             </div>
-            <h2 className="text-3xl font-bold mb-4">Cocina Compartida</h2>
-            <p className="text-gray-600 mb-6">
-              Nuestra cocina completamente equipada te permite preparar tus comidas favoritas y compartir momentos con
-              otros residentes. Un espacio diseñado para fomentar la comunidad a través de la gastronomía.
-            </p>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2">
-                <Utensils className="h-5 w-5 text-rose-600" />
-                <span>Electrodomésticos de alta gama</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Coffee className="h-5 w-5 text-rose-600" />
-                <span>Máquina de café profesional</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Users className="h-5 w-5 text-rose-600" />
-                <span>Amplio comedor para eventos comunitarios</span>
-              </li>
-            </ul>
-          </div>
+          ))}
         </div>
       </div>
     </section>

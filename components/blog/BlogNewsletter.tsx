@@ -1,26 +1,26 @@
+import { blogContent } from "@/content"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
-const BlogNewsletter = () => (
-  <section className="py-16 bg-gray-50">
-    <div className="container mx-auto px-4 text-center">
-      <div className="max-w-2xl mx-auto">
-        <h2 className="text-3xl font-bold mb-4">Suscríbete a nuestro newsletter</h2>
-        <p className="mb-6 text-gray-600">
-          Recibe artículos, consejos y novedades sobre coliving directamente en tu bandeja de entrada.
-        </p>
-        <form className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
-          <input
-            type="email"
-            placeholder="Tu correo electrónico"
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-          />
-          <Button type="submit" className="bg-teal-600 hover:bg-teal-700">
-            Suscribirme
-          </Button>
-        </form>
+export default function BlogNewsletter() {
+  return (
+    <section className="bg-gray-50 py-16">
+      <div className="container mx-auto px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">{blogContent.newsletter.title}</h2>
+          <p className="text-gray-600 mb-8">{blogContent.newsletter.description}</p>
+          <form className="flex flex-col sm:flex-row gap-4">
+            <Input
+              type="email"
+              placeholder={blogContent.newsletter.placeholder}
+              className="flex-grow"
+            />
+            <Button type="submit" className="bg-teal-600 hover:bg-teal-700">
+              {blogContent.newsletter.buttonText}
+            </Button>
+          </form>
+        </div>
       </div>
-    </div>
-  </section>
-)
-
-export default BlogNewsletter
+    </section>
+  )
+}
