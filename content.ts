@@ -23,24 +23,24 @@ export const featuredRoomsContent = {
   description: "Descubre nuestras habitaciones diseñadas para ofrecerte confort, privacidad y todo lo que necesitas para vivir, trabajar y disfrutar en Bogotá.",
   rooms: [
     {
-      title: "Bambu Tipo 1",
-      image: "/images/living_1.png",
-      price: "3.000.000",
-      features: ["Cama doble", "WiFi ilimitado", "Cocina privada", "Baño privado"],
+      title: "Bambu Tipo 2",
+      image: "/images/hb2.1.png",
+      price: "800.000",
+      features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Espacios comunes"],
       slug: "tipo-1"
     },
     {
-      title: "Bambu Tipo 2", 
-      image: "/images/living_2.png",
-      price: "3.500.000",
-      features: ["Cama queen", "WiFi ilimitado", "Cocina privada", "Baño privado", "Escritorio"],
+      title: "Bambu Tipo 7", 
+      image: "/images/hb7.1.png",
+      price: "900.000",
+      features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Espacios comunes"],
       slug: "tipo-2"
     },
     {
-      title: "Bambu Tipo 3",
-      image: "/images/living_3.png", 
-      price: "4.200.000",
-      features: ["Cama king", "WiFi ilimitado", "Cocina privada", "Baño privado", "Balcón"],
+      title: "Bambu Tipo 4",
+      image: "/images/hb4.2.png", 
+      price: "1.050.000",
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Espacios comunes"],
       slug: "tipo-3"
     }
   ],
@@ -150,52 +150,83 @@ const habitacionesList = {
   description: "Encuentra el espacio perfecto para tu estilo de vida",
   rooms: [
     {
-      title: "Bambu Tipo 1",
-      image: "/images/creativos1.jpg",
-      price: "3.000.000",
-      features: ["Cama doble", "WiFi ilimitado", "Cocina privada", "Baño privado"],
+      title: "Bambu Tipo 1 - 16m²",
+      image: "/images/hb1.png",
+      price: "1.050.000",
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-1",
       category: "privada"
     },
     {
-      title: "Bambu Tipo 2",
-      image: "/images/bambu1.png",
-      price: "3.500.000",
+      title: "Bambu Tipo 2 - 12m²",
+      image: "/images/hb2.1.png",
+      price: "800.000",
       features: ["Cama Semi Doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-2",
       category: "privada"
     },
     {
-      title: "Bambu Tipo 3",
-      image: "/images/Creativos3.jpg",
-      price: "4.200.000",
-      features: ["Cama king", "WiFi ilimitado", "Cocina privada", "Baño privado", "Balcón"],
+      title: "Bambu Tipo 3 - 12m²",
+      image: "/images/hb3.1.png",
+      price: "800.000",
+      features: ["Cama Semi Doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-3",
       category: "privada"
     },
     {
-      title: "Bambu Tipo 4 - Compartido",
-      image: "/images/Creativos1.jpg",
+      title: "Bambu Tipo 4 - 16m²",
+      image: "/images/hb4.1.png",
       price: "2.200.000",
-      features: ["Habitación compartida", "WiFi ilimitado", "Cocina compartida", "Baño compartido"],
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-4-compartido",
-      category: "compartida"
+      category: "privada"
     },
     {
-      title: "Bambu Tipo 5 - Suite",
-      image: "/images/Creativos2.jpg",
+      title: "Bambu Tipo 5 - 17m²",
+      image: "/images/hb5.1.png",
       price: "5.000.000",
-      features: ["Cama king", "WiFi ilimitado", "Cocina privada", "Baño privado", "Sala de estar"],
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-5-suite",
       category: "suite"
     },
     {
-      title: "Bambu Tipo 6 - Familiar",
-      image: "/images/Creativos3.jpg",
+      title: "Bambu Tipo 6 - 17m²",
+      image: "/images/hb6.1.png",
       price: "6.500.000",
-      features: ["2 habitaciones", "WiFi ilimitado", "Cocina privada", "2 baños", "Sala de estar"],
-      slug: "tipo-6-familiar",
-      category: "familiar"
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
+      slug: "tipo-6",
+      category: "suite"
+    },
+    {
+      title: "Bambu Tipo 7 - 14m²",
+      image: "/images/hb7.1.png",
+      price: "6.500.000",
+      features: ["Cama Semi Doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
+      slug: "tipo-7",
+      category: "privada"
+    },
+    {
+      title: "Bambu Tipo 8 - 17m²",
+      image: "/images/hb8.1.png",
+      price: "6.500.000",
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
+      slug: "tipo-8",
+      category: "suite"
+    },
+    {
+      title: "Bambu Tipo 9 - 17m²",
+      image: "/images/hb9.1.png",
+      price: "6.500.000",
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
+      slug: "tipo-9",
+      category: "suite"
+    },{
+      title: "Bambu Tipo 10 - 14m²",
+      image: "/images/hb10.1.png",
+      price: "6.500.000",
+      features: ["Cama Semi Doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
+      slug: "tipo-10",
+      category: "privada"
     }
   ]
 }
