@@ -176,7 +176,7 @@ const habitacionesList = {
     {
       title: "Bambu Tipo 4 - 16m²",
       image: "/images/hb4.1.png",
-      price: "2.200.000",
+      price: "1.050.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-4-compartido",
       category: "privada"
@@ -184,7 +184,7 @@ const habitacionesList = {
     {
       title: "Bambu Tipo 5 - 17m²",
       image: "/images/hb5.1.png",
-      price: "5.000.000",
+      price: "1.100.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-5-suite",
       category: "suite"
@@ -192,7 +192,7 @@ const habitacionesList = {
     {
       title: "Bambu Tipo 6 - 17m²",
       image: "/images/hb6.1.png",
-      price: "6.500.000",
+      price: "1.100.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-6",
       category: "suite"
@@ -200,7 +200,7 @@ const habitacionesList = {
     {
       title: "Bambu Tipo 7 - 14m²",
       image: "/images/hb7.1.png",
-      price: "6.500.000",
+      price: "900.000",
       features: ["Cama Semi Doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-7",
       category: "privada"
@@ -208,7 +208,7 @@ const habitacionesList = {
     {
       title: "Bambu Tipo 8 - 17m²",
       image: "/images/hb8.1.png",
-      price: "6.500.000",
+      price: "1.100.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-8",
       category: "suite"
@@ -216,14 +216,14 @@ const habitacionesList = {
     {
       title: "Bambu Tipo 9 - 17m²",
       image: "/images/hb9.1.png",
-      price: "6.500.000",
+      price: "1.100.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-9",
       category: "suite"
     },{
       title: "Bambu Tipo 10 - 14m²",
       image: "/images/hb10.1.png",
-      price: "6.500.000",
+      price: "900.000",
       features: ["Cama Semi Doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-10",
       category: "privada"
@@ -335,39 +335,39 @@ export interface DetailedRoom {
 
 export const roomDetails: Record<string, DetailedRoom> = {
   "tipo-1": {
-    title: "Bambu Tipo 1",
-    description: "Nuestra habitación estándar ofrece todo lo que necesitas para una estancia cómoda y productiva. Con una cama doble, baño privado, cocina equipada y un espacio de trabajo, es perfecta para nómadas digitales y profesionales.",
-    price: "3.000.000",
+    title: "Bambu Tipo 1 - 16m²",
+    description: "Nuestra habitación estándar ofrece todo lo que necesitas para una estancia cómoda y productiva. Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales y profesionales.",
+    price: "1.050.000",
     discounts: {
-      "3": "2.700.000",
-      "6": "2.500.000",
-      "12": "2.380.000",
+      "3": "1.025.000",
+      "6": "1.010.000",
+      "12": "1.000.000",
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },
-      { name: "Cocina privada", iconName: "UtensilsCrossed" },
+      { name: "Escritorio dedicado", iconName: "MonitorSmartphone" },
       { name: "Pet friendly", iconName: "PawPrint" },
       { name: "Smart TV", iconName: "Tv" },
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/habitacion_1.avif",
+      "/images/hb1.png",
       "/images/habitacion_2.avif",
       "/images/habitacion_3.avif",
       "/images/habitacion_4.avif",
       "/images/habitacion_5.avif"
     ],
-    size: "25m²",
+    size: "16m²",
     maxGuests: 2
   },
   "tipo-2": {
     title: "Bambu Tipo 2",
-    description: "Una habitación más espaciosa con cama semi doble y un área de trabajo dedicada. Perfecta para profesionales que necesitan un espacio confortable para vivir y trabajar.",
-    price: "3.500.000",
+    description: "Una habitación con cama semi doble y. Perfecta para profesionales que necesitan un espacio confortable para vivir y trabajar.",
+    price: "800.000",
     discounts: {
-      "3": "3.150.000",
-      "6": "2.975.000",
-      "12": "2.800.000",
+      "3": "790.000",
+      "6": "775.000",
+      "12": "750.000",
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -377,40 +377,40 @@ export const roomDetails: Record<string, DetailedRoom> = {
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/habitacion_2.avif",
-      "/images/habitacion_3.avif",
+      "/images/hb2.1.png",
+      "/images/hb2.2.png",
       "/images/habitacion_4.avif",
       "/images/habitacion_5.avif",
       "/images/habitacion_1.avif"
     ],
-    size: "30m²",
-    maxGuests: 2
+    size: "12m²",
+    maxGuests: 1
   },
   "tipo-3": {
     title: "Bambu Tipo 3",
-    description: "Nuestra habitación premium con cama king size y balcón privado. Disfruta de un espacio más amplio y vistas excepcionales de la ciudad.",
-    price: "4.200.000",
+    description: "Una habitación con cama semi doble y. Perfecta para profesionales que necesitan un espacio confortable para vivir y trabajar.",
+    price: "800.000",
     discounts: {
-      "3": "3.780.000",
-      "6": "3.570.000",
-      "12": "3.360.000",
+      "3": "790.000",
+      "6": "775.000",
+      "12": "750.000",
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },
-      { name: "Cocina privada", iconName: "UtensilsCrossed" },
-      { name: "Balcón privado", iconName: "Sun" },
+      { name: "Escritorio dedicado", iconName: "MonitorSmartphone" },
+      { name: "Closet amplio", iconName: "Warehouse" },
       { name: "Smart TV", iconName: "Tv" },
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/habitacion_3.avif",
-      "/images/habitacion_4.avif",
+      "/images/hb3.1.png",
+      "/images/hb3.2.png",
       "/images/habitacion_5.avif",
       "/images/habitacion_1.avif",
       "/images/habitacion_2.avif"
     ],
-    size: "35m²",
-    maxGuests: 2
+    size: "12m²",
+    maxGuests: 1
   },
   "tipo-4-compartido": {
     title: "Bambu Tipo 4 - Compartido",
