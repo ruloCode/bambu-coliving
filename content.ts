@@ -1049,6 +1049,141 @@ export const servicesContent = {
   }
 }
 
+// ============= EVENTOS PAGE CONTENT =============
+
+export const eventosContent = {
+  header: {
+    title: "Eventos Comunitarios",
+    description: "Únete a nuestros eventos semanales diseñados para crear conexiones auténticas y experiencias memorables en nuestra comunidad.",
+    backgroundColor: "bg-teal-600",
+    textColor: "text-white"
+  },
+
+  events: [
+    {
+      id: 1,
+      title: "Noche de Peli",
+      emoji: "🎬",
+      day: "Jueves",
+      time: "8:00 p.m.",
+      frequency: "Semanal",
+      description: "Una peli cada semana con sabor y ambiente suave.",
+      includes: ["palomitas artesanales", "sangría fría o té caliente"],
+      location: "Espacio común con mantas, luces bajas y sonido envolvente",
+      colorScheme: "teal"
+    },
+    {
+      id: 2,
+      title: "Música en Vivo",
+      emoji: "🎶",
+      day: "Sábados",
+      time: "8:00 p.m.",
+      frequency: "1er sábado del mes",
+      description: "Conciertos acústicos con músicos locales, en parche relajado.",
+      includes: ["pola fría", "snacks salados"],
+      location: "Tarima con chimenea, luz tenue, cojines y buen flow",
+      colorScheme: "rose"
+    },
+    {
+      id: 3,
+      title: "Open Mic",
+      emoji: "🎤",
+      day: "Sábados",
+      time: "8:00 p.m.",
+      frequency: "3er sábado del mes",
+      description: "Poetas, músicos, cuenteros y valientes. Micrófono libre, vibra cálida.",
+      includes: ["pola fría", "snacks salados"],
+      location: "Tarima acogedora, sin presión, solo expresión",
+      colorScheme: "teal"
+    },
+    {
+      id: 4,
+      title: "Taller de Letras",
+      emoji: "✍️",
+      day: "Martes",
+      time: "7:00 p.m.",
+      frequency: "Cada 15 días",
+      description: "Poesía, lectura en voz alta, escritura íntima. Palabras que abrazan.",
+      includes: ["vino tinto o infusión con especias"],
+      location: "Sala con velas, chimenea, materiales impresos y cuaderno comunitario",
+      colorScheme: "rose"
+    },
+    {
+      id: 5,
+      title: "DJ Sessions",
+      emoji: "🎧",
+      day: "Domingo",
+      time: "11:00 a.m. – 3:00 p.m.",
+      frequency: "1 domingo al mes",
+      description: "Domingos musicales con vinilos, sets suaves y traguito rico.",
+      includes: ["sangría o cocktail", "tabla de quesos y frutas"],
+      location: "Terraza o sala social con decoración sonora y ambiente chill",
+      colorScheme: "teal"
+    },
+    {
+      id: 6,
+      title: "Galería Abierta",
+      emoji: "🖼️",
+      day: "Domingo",
+      time: "3:00 p.m. – 7:00 p.m.",
+      frequency: "1 domingo al mes",
+      description: "Arte visual, pintura, fotografía, collages, objetos y más. Los residentes y amigos exponen lo que crean.",
+      includes: [
+        "Copa de vino de bienvenida",
+        "Mini catering dulce/salado",
+        "DJ set de fondo o música acústica suave",
+        "Estación libre de intervención",
+        "Rincón fotomatón análogo",
+        "Cuaderno de visitantes"
+      ],
+      location: "Espacio artístico con iluminación natural y ambiente creativo",
+      colorScheme: "rose"
+    }
+  ],
+  gallery: {
+    title: "Momentos especiales",
+    description: "Revive algunos de nuestros eventos más memorables",
+    images: [
+      {
+        src: "/images/Creativos1.jpg",
+        alt: "Noche de película en el espacio común",
+        caption: "Noche de peli con palomitas artesanales"
+      },
+      {
+        src: "/images/Creativos2.jpg",
+        alt: "Concierto acústico en la tarima",
+        caption: "Música en vivo con músicos locales"
+      },
+      {
+        src: "/images/Creativos3.jpg",
+        alt: "Open mic con residentes",
+        caption: "Open mic - micrófono libre"
+      },
+      {
+        src: "/images/Bambu1.png",
+        alt: "Taller de escritura",
+        caption: "Taller de letras y poesía"
+      },
+      {
+        src: "/images/Bambu2.png",
+        alt: "DJ session en la terraza",
+        caption: "DJ sessions dominicales"
+      },
+      {
+        src: "/images/Bambu3.png",
+        alt: "Galería de arte",
+        caption: "Galería abierta - arte comunitario"
+      }
+    ]
+  },
+  cta: {
+    title: "¿Listo para ser parte de nuestra comunidad?",
+    description: "Únete a Bambu Coliving y vive experiencias únicas cada semana. La comunidad te espera.",
+    buttonText: "Reserva tu lugar",
+    buttonLink: "/reserva"
+  }
+}
+
 // ============= FAQS CONTENT =============
 
 export interface FAQ {
