@@ -1053,8 +1053,8 @@ export const servicesContent = {
 
 export const eventosContent = {
   header: {
-    title: "Eventos Comunitarios",
-    description: "Únete a nuestros eventos semanales diseñados para crear conexiones auténticas y experiencias memorables en nuestra comunidad.",
+    title: "Eventos Sociales",
+    description: "Únete a nuestros eventos semanales diseñados para crear conexiones auténticas y experiencias memorables en nuestra comunidad, sin costo adicional.  ",
     backgroundColor: "bg-teal-600",
     textColor: "text-white"
   },
@@ -1181,6 +1181,158 @@ export const eventosContent = {
     description: "Únete a Bambu Coliving y vive experiencias únicas cada semana. La comunidad te espera.",
     buttonText: "Reserva tu lugar",
     buttonLink: "/reserva"
+  }
+}
+
+// ============= COMUNIDAD PAGE CONTENT =============
+
+export const comunidadContent = {
+  header: {
+    title: "Únete a la comunidad de Bambu Coliving",
+    description: "Conecta con nómadas digitales, emprendedores y profesionales de todo el mundo. Una comunidad vibrante donde las ideas florecen y las amistades duran para siempre.",
+    backgroundColor: "bg-gradient-to-br from-teal-50 to-white"
+  },
+  stats: [
+    { number: "150+", label: "Miembros activos" },
+    { number: "25+", label: "Nacionalidades" },
+    { number: "50+", label: "Eventos al año" },
+    { number: "95%", label: "Satisfacción" }
+  ],
+  features: [
+    {
+      icon: "MessageCircle",
+      title: "Networking Auténtico",
+      description: "Conecta con profesionales de diversas industrias en un ambiente relajado y natural.",
+      colorScheme: "teal"
+    },
+    {
+      icon: "Calendar",
+      title: "Eventos Regulares",
+      description: "Talleres, charlas, noches de juegos, salidas grupales y mucho más cada semana.",
+      colorScheme: "teal"
+    },
+    {
+      icon: "Wifi",
+      title: "Coworking Integrado",
+      description: "Trabaja junto a otros profesionales en espacios diseñados para la productividad.",
+      colorScheme: "teal"
+    },
+    {
+      icon: "MapPin",
+      title: "Exploración Local",
+      description: "Descubre Bogotá con guías locales y miembros que conocen los mejores secretos de la ciudad.",
+      colorScheme: "teal"
+    },
+    {
+      icon: "Coffee",
+      title: "Espacios Sociales",
+      description: "Cocina compartida, sala de estar, terraza y áreas diseñadas para la convivencia.",
+      colorScheme: "teal"
+    },
+    {
+      icon: "Heart",
+      title: "Apoyo Mutuo",
+      description: "Una red de apoyo para adaptarse a la vida en Bogotá y alcanzar tus metas profesionales.",
+      colorScheme: "teal"
+    }
+  ],
+  upcomingPlans: {
+    title: "Próximos Planes",
+    description: "Experiencias diseñadas para conectar con la ciudad y con nuestra comunidad",
+    plans: [
+      {
+        id: 1,
+        emoji: "🌆",
+        title: "Plan Cultural",
+        subtitle: "Descubre la historia y el alma de Bogotá.",
+        description: "Exploramos museos, monumentos y sitios emblemáticos como Monserrate, Guadalupe, Usaquén, el Jardín Botánico y más. Cada semana rotamos el destino, así que siempre habrá algo nuevo por conocer. ¡Perfecto para amantes del arte, la arquitectura y las buenas caminatas con historia!",
+        colorScheme: "teal",
+        image: "/images/Creativos1.jpg",
+        registerLink: "/reserva?plan=cultural"
+      },
+      {
+        id: 2,
+        emoji: "🍴",
+        title: "Plan Comida",
+        subtitle: "Sabores locales, barrios vibrantes.",
+        description: "Te llevamos a descubrir rincones gastronómicos únicos: plazas de mercado, calles icónicas como la Séptima, y barrios como Chapinero o Usaquén. Desde comida típica hasta fusiones inesperadas, cada tour es una experiencia distinta para el paladar. ¡Vente con hambre!",
+        colorScheme: "rose",
+        image: "/images/Creativos2.jpg",
+        registerLink: "/reserva?plan=comida"
+      },
+      {
+        id: 3,
+        emoji: "🌙",
+        title: "Plan Nocturno",
+        subtitle: "Farra con flow capitalino.",
+        description: "¿Noche de salsa o electrónica? ¿Un bar oculto o uno de los más top de la ciudad? Este plan es para mover el cuerpo, conocer la noche bogotana y pasarla rico con buena compañía. Cada salida tiene su estilo, pero todas tienen algo en común: buena vibra y fiesta garantizada.",
+        colorScheme: "teal",
+        image: "/images/Creativos3.jpg",
+        registerLink: "/reserva?plan=nocturno"
+      },
+      {
+        id: 4,
+        emoji: "🏞️",
+        title: "Plan Fuera",
+        subtitle: "Escape natural, cerca de la ciudad.",
+        description: "Cuando el cuerpo pide aire fresco, nos vamos de parche a pueblos, lagunas, cascadas y paisajes que te recargan. Siempre exploramos lugares distintos, ideales para desconectar sin ir muy lejos. Incluye transporte, snacks y parche bacano.",
+        colorScheme: "rose",
+        image: "/images/Bambu1.png",
+        registerLink: "/reserva?plan=fuera"
+      },
+      {
+        id: 5,
+        emoji: "🎶",
+        title: "Plan Live",
+        subtitle: "Música en vivo, energía real.",
+        description: "Desde conciertos de artistas locales hasta noches acústicas en bares con talento emergente, este plan es para los que gozan la música en directo. Lugares rotativos, géneros variados y siempre buena onda. ¡Lo importante es vibrar juntos!",
+        colorScheme: "teal",
+        image: "/images/Bambu2.png",
+        registerLink: "/reserva?plan=live"
+      }
+    ]
+  },
+  testimonials: [
+    {
+      name: "María González",
+      role: "Diseñadora UX",
+      origin: "España",
+      quote: "La comunidad de Bambu es increíble. He hecho amigos de todo el mundo y he crecido tanto profesional como personalmente.",
+      rating: 5,
+      avatar: "M"
+    },
+    {
+      name: "James Wilson",
+      role: "Desarrollador",
+      origin: "Canadá",
+      quote: "Los eventos y actividades hacen que cada semana sea diferente. Nunca me aburro y siempre hay algo interesante que hacer.",
+      rating: 5,
+      avatar: "J"
+    },
+    {
+      name: "Ana Rodríguez",
+      role: "Marketing Digital",
+      origin: "México",
+      quote: "El ambiente de colaboración es único. He encontrado socios de negocio y amigos para toda la vida aquí en Bambu.",
+      rating: 5,
+      avatar: "A"
+    }
+  ],
+  cta: {
+    title: "¿Listo para formar parte de nuestra comunidad?",
+    description: "Únete a Bambu Coliving y descubre una nueva forma de vivir, trabajar y conectar en Bogotá.",
+    buttons: [
+      {
+        text: "Reserva tu habitación",
+        href: "/reserva",
+        primary: true
+      },
+      {
+        text: "Contáctanos",
+        href: "/nosotros",
+        primary: false
+      }
+    ]
   }
 }
 
