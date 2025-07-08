@@ -381,10 +381,10 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "tipo-1": {
     title: "Bambu Tipo 1 - 16m²",
     description: "Nuestra habitación estándar ofrece todo lo que necesitas para una estancia cómoda y productiva. Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales y profesionales.",
-    price: "1.050.000",
+    price: "1.180.000",
     discounts: {
-      "2": "945.000",
-      "3": "892.500"
+      "2": "1.062.000",
+      "3": "1.003.000"
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -406,10 +406,10 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "tipo-2": {
     title: "Bambu Tipo 2",
     description: "Una habitación con cama semi doble y. Perfecta para profesionales que necesitan un espacio confortable para vivir y trabajar.",
-    price: "800.000",
+    price: "1.350.000",
     discounts: {
-      "2": "720.000",
-      "3": "680.000"
+      "2": "1.215.000",
+      "3": "1.147.500"
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -431,10 +431,10 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "tipo-3": {
     title: "Bambu Tipo 3",
     description: "Una habitación con cama semi doble y. Perfecta para profesionales que necesitan un espacio confortable para vivir y trabajar.",
-    price: "800.000",
+    price: "1.100.000",
     discounts: {
-      "2": "720.000",
-      "3": "680.000"
+      "2": "990.000",
+      "3": "935.000"
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -456,10 +456,10 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "tipo-4-compartido": {
     title: "Bambu Tipo 4 - Compartido",
     description: "Una opción económica y social con espacios compartidos. Perfecta para estudiantes y viajeros que buscan una experiencia más comunitaria.",
-    price: "2.200.000",
+    price: "1.510.000",
     discounts: {
-      "2": "1.980.000",
-      "3": "1.870.000"
+      "2": "1.359.000",
+      "3": "1.283.500"
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -481,10 +481,10 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "tipo-5-suite": {
     title: "Bambu Tipo 5 - Suite",
     description: "Nuestra suite ejecutiva con sala de estar independiente. El espacio perfecto para quienes buscan el máximo confort y privacidad.",
-    price: "5.000.000",
+    price: "1.550.000",
     discounts: {
-      "2": "4.500.000",
-      "3": "4.250.000"
+      "2": "1.395.000",
+      "3": "1.317.500"
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -506,10 +506,10 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "tipo-6-familiar": {
     title: "Bambu Tipo 6 - Familiar",
     description: "Un espacio amplio y versátil con dos habitaciones, ideal para familias o para compartir con un compañero de piso.",
-    price: "6.500.000",
+    price: "1.350.000",
     discounts: {
-      "2": "5.850.000",
-      "3": "5.525.000"
+      "2": "1.215.000",
+      "3": "1.147.500"
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },

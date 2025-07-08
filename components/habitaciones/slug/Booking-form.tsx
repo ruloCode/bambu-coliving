@@ -8,11 +8,16 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { CalendarIcon } from "lucide-react"
 import { format } from "date-fns"
 import { es } from "date-fns/locale"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
+import { useBookingStore } from "@/lib/booking-store"
+import { useRouter } from "next/navigation"
 
 interface BookingFormProps {
+  roomSlug: string
   roomTitle: string
+  roomImage: string
+  roomSize: string
   price: string
   discounts?: {
     "2": string
@@ -20,13 +25,35 @@ interface BookingFormProps {
   }
 }
 
-export default function BookingForm({ roomTitle, price, discounts }: BookingFormProps) {
+export default function BookingForm({ roomSlug, roomTitle, roomImage, roomSize, price, discounts }: BookingFormProps) {
   const [checkIn, setCheckIn] = useState<Date>()
   const [duration, setDuration] = useState("1")
   const [guests, setGuests] = useState("1")
+  const router = useRouter()
+  
+  const { updateRoomSelection, updateBookingDates } = useBookingStore()
 
   const handleDurationChange = (value: string) => {
     setDuration(value)
+  }
+
+  const handleBookingReservation = () => {
+    // Update the booking store with room selection
+    updateRoomSelection({
+      roomSlug,
+      roomTitle,
+      roomImage,
+      roomSize,
+      basePrice: price,
+      selectedDuration: duration as '1' | '2' | '3',
+      finalPrice: getDiscountedPrice(duration)
+    })
+
+    // Update booking dates
+    updateBookingDates(checkIn || null, Number.parseInt(guests))
+
+    // Navigate to reservation page
+    router.push('/reserva')
   }
 
   const getDiscountedPrice = (duration: string) => {
@@ -123,8 +150,12 @@ export default function BookingForm({ roomTitle, price, discounts }: BookingForm
         </div>
       </div>
 
-      <Button asChild className="w-full bg-teal-600 hover:bg-teal-700">
-        <Link href="/reserva">Reservar ahora</Link>
+      <Button 
+        onClick={handleBookingReservation}
+        className="w-full bg-teal-600 hover:bg-teal-700"
+        disabled={!checkIn}
+      >
+        Reservar ahora
       </Button>
 
       <p className="text-xs text-gray-500 text-center">

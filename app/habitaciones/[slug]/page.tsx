@@ -50,7 +50,14 @@ export default function RoomDetail({ params }: { params: { slug: string } }) {
               <RoomPricesSection price={room.price} discounts={room.discounts} />
             </div>
             <div>
-              <RoomBookingSection roomTitle={room.title} price={room.price} />
+              <RoomBookingSection 
+                roomSlug={slug}
+                roomTitle={room.title} 
+                roomImage={room.images[0]}
+                roomSize={room.size}
+                price={room.price} 
+                discounts={room.discounts}
+              />
             </div>
           </div>
         </div>
