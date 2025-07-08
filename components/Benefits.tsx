@@ -1,13 +1,13 @@
 "use client"
 
-import { Wifi, Users, MapPin, Coffee } from "lucide-react"
+import { Calendar, MapPin, Coffee } from "lucide-react"
 import { motion } from "framer-motion"
 import { benefitsContent } from "@/content"
+import Link from "next/link"
 
 // Icon mapping
 const iconMap = {
-  Wifi,
-  Users,
+  Calendar,
   MapPin,
   Coffee
 }
@@ -68,29 +68,31 @@ export default function Benefits() {
         >
           {benefitsContent.benefits.map((benefit, index) => {
             const IconComponent = iconMap[benefit.icon as keyof typeof iconMap]
-            const colorClasses = benefit.iconColor === 'teal' 
-              ? { bg: 'bg-teal-100', text: 'text-teal-600' }
-              : { bg: 'bg-rose-100', text: 'text-rose-600' }
+            const isRoseCard = benefit.title === "Bogotá Auténtica" || benefit.title === "Espacios Vibrantes"
+            const colorClasses = isRoseCard
+              ? { bg: 'bg-rose-100', text: 'text-rose-600' }
+              : { bg: 'bg-teal-100', text: 'text-teal-600' }
             
             return (
-              <motion.div 
-                key={benefit.title}
-                variants={cardVariants}
-                whileHover={{ y: -5, transition: { duration: 0.3 } }}
-                className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300"
-              >
+              <Link href={benefit.href} key={benefit.title} className="h-full">
                 <motion.div 
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  viewport={{ once: true }}
-                  className={`${colorClasses.bg} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4`}
+                  variants={cardVariants}
+                  whileHover={{ y: -5, transition: { duration: 0.3 } }}
+                  className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300 h-full flex flex-col"
                 >
-                  <IconComponent className={`h-8 w-8 ${colorClasses.text}`} />
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                    viewport={{ once: true }}
+                    className={`${colorClasses.bg} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4`}
+                  >
+                    <IconComponent className={`h-8 w-8 ${colorClasses.text}`} />
+                  </motion.div>
+                  <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
+                  <p className="text-gray-600 flex-grow">{benefit.description}</p>
                 </motion.div>
-                <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </motion.div>
+              </Link>
             )
           })}
         </motion.div>

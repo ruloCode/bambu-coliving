@@ -47,6 +47,12 @@ export default function Header() {
                   Eventos
                 </Link>
                 <Link 
+                  href="/planes" 
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
+                >
+                  Planes
+                </Link>
+                <Link 
                   href="/espacios-compartidos" 
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
                 >
@@ -125,6 +131,13 @@ export default function Header() {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Eventos
+                  </Link>
+                  <Link
+                    href="/planes"
+                    className="flex w-full items-center py-2 pl-6 text-sm text-gray-600 transition-colors hover:text-primary hover:bg-gray-50"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Planes
                   </Link>
                   <Link
                     href="/espacios-compartidos"

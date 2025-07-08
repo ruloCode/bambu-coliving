@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Card, CardContent } from "@/components/ui/card"
 import { Users, MessageCircle, Calendar, MapPin, Wifi, Coffee, Heart, Star } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
 import { comunidadContent } from "@/content"
 
@@ -40,7 +38,7 @@ export default function ComunidadPage() {
                 <Link href="/reserva">Únete Ahora</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="#eventos">Ver Eventos</Link>
+                <Link href="/planes">Explora Planes</Link>
               </Button>
             </div>
           </div>
@@ -88,59 +86,6 @@ export default function ComunidadPage() {
                 </div>
               )
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Upcoming Plans Section */}
-      <section id="eventos" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">{comunidadContent.upcomingPlans.title}</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">{comunidadContent.upcomingPlans.description}</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {comunidadContent.upcomingPlans.plans.map((plan) => (
-              <Card key={plan.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={plan.image}
-                    alt={plan.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <CardHeader className="bg-teal-50">
-                  <CardTitle className="text-xl font-bold text-gray-900 mb-2">
-                    {plan.title}
-                  </CardTitle>
-                  <Badge className="bg-teal-100 text-teal-800">
-                    {plan.subtitle}
-                  </Badge>
-                </CardHeader>
-                <CardContent className="p-6">
-                  <CardDescription className="text-gray-600 leading-relaxed mb-4">
-                    {plan.description}
-                  </CardDescription>
-                  <Button 
-                    asChild 
-                    className="w-full bg-teal-600 hover:bg-teal-700"
-                  >
-                    <Link href={plan.registerLink}>Registrarme</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-gray-600 mb-6">
-              ¿Quieres ser parte de nuestros próximos planes? Únete a la comunidad
-            </p>
-            <Button asChild size="lg" className="bg-teal-600 hover:bg-teal-700">
-              <Link href="/eventos">Ver todos los eventos</Link>
-            </Button>
           </div>
         </div>
       </section>
@@ -195,7 +140,7 @@ export default function ComunidadPage() {
                 size="lg" 
                 className={button.primary 
                   ? "bg-white text-teal-600 hover:bg-gray-100" 
-                  : "border-white  hover:bg-white hover:text-teal-600"
+                  : "border-white hover:bg-white hover:text-teal-600"
                 }
                 variant={button.primary ? "default" : "outline"}
               >

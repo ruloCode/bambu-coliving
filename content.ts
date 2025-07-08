@@ -56,28 +56,32 @@ export const benefitsContent = {
   description: "Ofrecemos más que un lugar para vivir. Somos una comunidad donde podrás conectar, crecer y disfrutar.",
   benefits: [
     {
-      icon: "Wifi",
+      icon: "Calendar",
       iconColor: "teal",
-      title: "WiFi de Alta Velocidad", 
-      description: "Conexión estable y rápida para trabajar sin interrupciones."
+      title: "Eventos Sociales",
+      description: "Actividades semanales para conectar y disfrutar en comunidad.",
+      href: "/eventos"
     },
     {
-      icon: "Users",
+      icon: "MapPin",
       iconColor: "rose",
-      title: "Comunidad Vibrante",
-      description: "Conoce personas de todo el mundo y expande tu red profesional."
+      title: "Bogotá Auténtica",
+      description: "Descubre la ciudad con experiencias únicas y planes locales.",
+      href: "/planes"
     },
     {
-      icon: "MapPin", 
+      icon: "MapPin",
       iconColor: "teal",
       title: "Ubicación Estratégica",
-      description: "En el corazón de Bogotá, cerca de todo lo que necesitas."
+      description: "En el corazón de Bogotá, cerca de todo lo que necesitas.",
+      href: "/servicios"
     },
     {
       icon: "Coffee",
-      iconColor: "rose", 
-      title: "Espacios Compartidos",
-      description: "Coworking, cocina, gimnasio y áreas de descanso a tu disposición."
+      iconColor: "rose",
+      title: "Espacios Vibrantes",
+      description: "Coworking, cocina, gimnasio y áreas de descanso a tu disposición.",
+      href: "/espacios-compartidos"
     }
   ]
 }
