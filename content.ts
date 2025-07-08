@@ -25,21 +25,21 @@ export const featuredRoomsContent = {
     {
       title: "Bambu Tipo 2",
       image: "/images/hb2.1.png",
-      price: "800.000",
+      price: "1.350.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Espacios comunes"],
       slug: "tipo-1"
     },
     {
       title: "Bambu Tipo 7", 
       image: "/images/hb7.1.png",
-      price: "900.000",
+      price: "1.680.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Espacios comunes"],
       slug: "tipo-2"
     },
     {
       title: "Bambu Tipo 4",
       image: "/images/hb4.2.png", 
-      price: "1.050.000",
+      price: "1.510.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Espacios comunes"],
       slug: "tipo-3"
     }
@@ -156,81 +156,122 @@ const habitacionesList = {
     {
       title: "Bambu Tipo 1 - 16m²",
       image: "/images/hb1.png",
-      price: "1.050.000",
+      price: "1.180.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-1",
-      category: "privada"
+      category: "privada",
+      discounts: {
+        "2": "1.062.000",
+        "3": "1.003.000"
+      }
     },
     {
       title: "Bambu Tipo 2 - 12m²",
       image: "/images/hb2.1.png",
-      price: "800.000",
+      price: "1.350.000",
       features: ["Cama Semi Doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-2",
-      category: "privada"
+      category: "privada",
+      discounts: {
+        "2": "1.215.000",
+        "3": "1.147.500"
+      }
     },
     {
       title: "Bambu Tipo 3 - 12m²",
       image: "/images/hb3.1.png",
-      price: "800.000",
+      price: "1.100.000",
       features: ["Cama Semi Doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-3",
-      category: "privada"
+      category: "privada",
+      discounts: {
+        "2": "990.000",
+        "3": "935.000"
+      }
     },
     {
       title: "Bambu Tipo 4 - 16m²",
       image: "/images/hb4.1.png",
-      price: "1.050.000",
+      price: "1.510.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-4-compartido",
-      category: "privada"
+      category: "privada",
+      discounts: {
+        "2": "1.359.000",
+        "3": "1.283.500"
+      }
     },
     {
       title: "Bambu Tipo 5 - 17m²",
       image: "/images/hb5.1.png",
-      price: "1.100.000",
+      price: "1.550.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-5-suite",
-      category: "suite"
+      category: "suite",
+      discounts: {
+        "2": "1.395.000",
+        "3": "1.317.500"
+      }
     },
     {
       title: "Bambu Tipo 6 - 17m²",
       image: "/images/hb6.1.png",
-      price: "1.100.000",
+      price: "1.350.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-6",
-      category: "suite"
+      category: "suite",
+      discounts: {
+        "2": "1.215.000",
+        "3": "1.147.500"
+      }
     },
     {
       title: "Bambu Tipo 7 - 14m²",
       image: "/images/hb7.1.png",
-      price: "900.000",
+      price: "1.680.000",
       features: ["Cama Semi Doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-7",
-      category: "privada"
+      category: "privada",
+      discounts: {
+        "2": "1.512.000",
+        "3": "1.428.000"
+      }
     },
     {
       title: "Bambu Tipo 8 - 17m²",
       image: "/images/hb8.1.png",
-      price: "1.100.000",
+      price: "1.700.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-8",
-      category: "suite"
+      category: "suite",
+      discounts: {
+        "2": "1.530.000",
+        "3": "1.445.000"
+      }
     },
     {
       title: "Bambu Tipo 9 - 17m²",
       image: "/images/hb9.1.png",
-      price: "1.100.000",
+      price: "1.680.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-9",
-      category: "suite"
-    },{
+      category: "suite",
+      discounts: {
+        "2": "1.512.000",
+        "3": "1.428.000"
+      }
+    },
+    {
       title: "Bambu Tipo 10 - 14m²",
       image: "/images/hb10.1.png",
-      price: "900.000",
+      price: "1.510.000",
       features: ["Cama Semi Doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-10",
-      category: "privada"
+      category: "privada",
+      discounts: {
+        "2": "1.359.000",
+        "3": "1.283.500"
+      }
     }
   ]
 }
@@ -316,9 +357,8 @@ export interface GuestOption {
 // ============= ROOM DETAILS CONTENT =============
 
 export interface RoomDiscount {
-  "3": string
-  "6": string
-  "12": string
+  "2": string // 10% discount
+  "3": string // 15% discount
 }
 
 export interface RoomFeature {
@@ -343,9 +383,8 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Nuestra habitación estándar ofrece todo lo que necesitas para una estancia cómoda y productiva. Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales y profesionales.",
     price: "1.050.000",
     discounts: {
-      "3": "1.025.000",
-      "6": "1.010.000",
-      "12": "1.000.000",
+      "2": "945.000",
+      "3": "892.500"
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -369,9 +408,8 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Una habitación con cama semi doble y. Perfecta para profesionales que necesitan un espacio confortable para vivir y trabajar.",
     price: "800.000",
     discounts: {
-      "3": "790.000",
-      "6": "775.000",
-      "12": "750.000",
+      "2": "720.000",
+      "3": "680.000"
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -395,9 +433,8 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Una habitación con cama semi doble y. Perfecta para profesionales que necesitan un espacio confortable para vivir y trabajar.",
     price: "800.000",
     discounts: {
-      "3": "790.000",
-      "6": "775.000",
-      "12": "750.000",
+      "2": "720.000",
+      "3": "680.000"
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -421,9 +458,8 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Una opción económica y social con espacios compartidos. Perfecta para estudiantes y viajeros que buscan una experiencia más comunitaria.",
     price: "2.200.000",
     discounts: {
-      "3": "1.980.000",
-      "6": "1.870.000",
-      "12": "1.760.000",
+      "2": "1.980.000",
+      "3": "1.870.000"
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -447,9 +483,8 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Nuestra suite ejecutiva con sala de estar independiente. El espacio perfecto para quienes buscan el máximo confort y privacidad.",
     price: "5.000.000",
     discounts: {
-      "3": "4.500.000",
-      "6": "4.250.000",
-      "12": "4.000.000",
+      "2": "4.500.000",
+      "3": "4.250.000"
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -473,9 +508,8 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Un espacio amplio y versátil con dos habitaciones, ideal para familias o para compartir con un compañero de piso.",
     price: "6.500.000",
     discounts: {
-      "3": "5.850.000",
-      "6": "5.525.000",
-      "12": "5.200.000",
+      "2": "5.850.000",
+      "3": "5.525.000"
     },
     features: [
       { name: "WiFi ilimitado", iconName: "Wifi" },

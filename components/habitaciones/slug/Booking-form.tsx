@@ -1,39 +1,55 @@
 "use client"
 
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
 import { Label } from "@/components/ui/label"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Calendar } from "@/components/ui/calendar"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { CalendarIcon } from "lucide-react"
-import { format, addDays } from "date-fns"
+import { format } from "date-fns"
 import { es } from "date-fns/locale"
+import { useState } from "react"
 import Link from "next/link"
 
 interface BookingFormProps {
   roomTitle: string
   price: string
+  discounts?: {
+    "2": string
+    "3": string
+  }
 }
 
-export default function BookingForm({ roomTitle, price }: BookingFormProps) {
-  const [checkIn, setCheckIn] = useState<Date | undefined>(new Date())
-  const [checkOut, setCheckOut] = useState<Date | undefined>(addDays(new Date(), 30))
-  const [guests, setGuests] = useState<string>("1")
-  const [duration, setDuration] = useState<string>("1")
-
-  const handleCheckInChange = (date: Date | undefined) => {
-    setCheckIn(date)
-    if (date && (!checkOut || checkOut <= date)) {
-      setCheckOut(addDays(date, 30))
-    }
-  }
+export default function BookingForm({ roomTitle, price, discounts }: BookingFormProps) {
+  const [checkIn, setCheckIn] = useState<Date>()
+  const [duration, setDuration] = useState("1")
+  const [guests, setGuests] = useState("1")
 
   const handleDurationChange = (value: string) => {
     setDuration(value)
-    if (checkIn) {
-      setCheckOut(addDays(checkIn, Number.parseInt(value) * 30))
+  }
+
+  const getDiscountedPrice = (duration: string) => {
+    if (!discounts) return price
+    switch (duration) {
+      case "2":
+        return discounts["2"]
+      case "3":
+        return discounts["3"]
+      default:
+        return price
     }
+  }
+
+  const calculateSecurityDeposit = () => {
+    const basePrice = Number.parseInt(price.replace(/\./g, ""))
+    return Math.round(basePrice * 0.1).toLocaleString("es-CO")
+  }
+
+  const calculateTotal = () => {
+    const monthlyPrice = Number.parseInt(getDiscountedPrice(duration).replace(/\./g, ""))
+    const deposit = Number.parseInt(price.replace(/\./g, "")) * 0.1
+    return (Number.parseInt(duration) * monthlyPrice + deposit).toLocaleString("es-CO")
   }
 
   return (
@@ -42,7 +58,7 @@ export default function BookingForm({ roomTitle, price }: BookingFormProps) {
         <Label htmlFor="check-in">Fecha de llegada</Label>
         <Popover>
           <PopoverTrigger asChild>
-            <Button variant="outline" className="w-full justify-start text-left font-normal mt-1">
+            <Button variant="outline" className="w-full mt-1">
               <CalendarIcon className="mr-2 h-4 w-4" />
               {checkIn ? format(checkIn, "PPP", { locale: es }) : <span>Selecciona una fecha</span>}
             </Button>
@@ -51,10 +67,9 @@ export default function BookingForm({ roomTitle, price }: BookingFormProps) {
             <Calendar
               mode="single"
               selected={checkIn}
-              onSelect={handleCheckInChange}
+              onSelect={setCheckIn}
               initialFocus
               locale={es}
-              disabled={(date) => date < new Date("2025-07-01")}
             />
           </PopoverContent>
         </Popover>
@@ -68,9 +83,8 @@ export default function BookingForm({ roomTitle, price }: BookingFormProps) {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="1">1 Mes - ${price}/mes</SelectItem>
-            <SelectItem value="3">3 Meses - $2.700.000/mes</SelectItem>
-            <SelectItem value="6">6 Meses - $2.500.000/mes</SelectItem>
-            <SelectItem value="12">12 Meses - $2.380.000/mes</SelectItem>
+            <SelectItem value="2">2 Meses - ${discounts?.["2"]}/mes (-10%)</SelectItem>
+            <SelectItem value="3">3 Meses - ${discounts?.["3"]}/mes (-15%)</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -91,9 +105,7 @@ export default function BookingForm({ roomTitle, price }: BookingFormProps) {
       <div className="pt-4 border-t">
         <div className="flex justify-between mb-2">
           <span>Precio mensual</span>
-          <span>
-            $ {duration === "1" ? price : duration === "3" ? "2.700.000" : duration === "6" ? "2.500.000" : "2.380.000"}
-          </span>
+          <span>$ {getDiscountedPrice(duration)}</span>
         </div>
         <div className="flex justify-between mb-2">
           <span>Duración</span>
@@ -102,25 +114,12 @@ export default function BookingForm({ roomTitle, price }: BookingFormProps) {
           </span>
         </div>
         <div className="flex justify-between mb-2">
-          <span>Depósito de seguridad</span>
-          <span>$ 1.000.000</span>
+          <span>Depósito de seguridad (10%)</span>
+          <span>$ {calculateSecurityDeposit()}</span>
         </div>
         <div className="flex justify-between font-bold text-lg pt-2 border-t">
           <span>Total</span>
-          <span>
-            ${" "}
-            {(
-              Number.parseInt(duration) *
-                (duration === "1"
-                  ? Number.parseInt(price.replace(/\./g, ""))
-                  : duration === "3"
-                    ? 2700000
-                    : duration === "6"
-                      ? 2500000
-                      : 2380000) +
-              1000000
-            ).toLocaleString("es-CO")}
-          </span>
+          <span>$ {calculateTotal()}</span>
         </div>
       </div>
 
