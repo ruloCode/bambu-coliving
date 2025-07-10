@@ -194,34 +194,16 @@ const habitacionesList = {
       image: "/images/hb4.1.png",
       price: "1.510.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
-<<<<<<< HEAD
       slug: "tipo-4",
       category: "privada"
-=======
-      slug: "tipo-4-compartido",
-      category: "privada",
-      discounts: {
-        "2": "1.359.000",
-        "3": "1.283.500"
-      }
->>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     },
     {
       title: "Bambu Tipo 5 - 17m²",
       image: "/images/hb5.1.png",
       price: "1.550.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
-<<<<<<< HEAD
       slug: "tipo-5",
       category: "suite"
-=======
-      slug: "tipo-5-suite",
-      category: "suite",
-      discounts: {
-        "2": "1.395.000",
-        "3": "1.317.500"
-      }
->>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     },
     {
       title: "Bambu Tipo 6 - 17m²",
@@ -389,15 +371,9 @@ export interface DetailedRoom {
 
 export const roomDetails: Record<string, DetailedRoom> = {
   "tipo-1": {
-<<<<<<< HEAD
     title: "Bambu Tipo 1",
     description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
     price: "1.050.000",
-=======
-    title: "Bambu Tipo 1 - 16m²",
-    description: "Nuestra habitación estándar ofrece todo lo que necesitas para una estancia cómoda y productiva. Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales y profesionales.",
-    price: "1.180.000",
->>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     discounts: {
       "2": "1.062.000",
       "3": "1.003.000"
@@ -421,13 +397,8 @@ export const roomDetails: Record<string, DetailedRoom> = {
   },
   "tipo-2": {
     title: "Bambu Tipo 2",
-<<<<<<< HEAD
     description: "Una habitación con cama semi doble y Perfecta para profesionales, estudiantes y nómadas digitales que necesitan un espacio confortable para vivir y trabajar.",
     price: "800.000",
-=======
-    description: "Una habitación con cama semi doble y. Perfecta para profesionales que necesitan un espacio confortable para vivir y trabajar.",
-    price: "1.350.000",
->>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     discounts: {
       "2": "1.215.000",
       "3": "1.147.500"
@@ -451,13 +422,8 @@ export const roomDetails: Record<string, DetailedRoom> = {
   },
   "tipo-3": {
     title: "Bambu Tipo 3",
-<<<<<<< HEAD
     description: "Una habitación con cama semi doble y Perfecta para profesionales, estudiantes y nómadas digitales que necesitan un espacio confortable para vivir y trabajar.",
     price: "800.000",
-=======
-    description: "Una habitación con cama semi doble y. Perfecta para profesionales que necesitan un espacio confortable para vivir y trabajar.",
-    price: "1.100.000",
->>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     discounts: {
       "2": "990.000",
       "3": "935.000"
@@ -479,24 +445,13 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "12m²",
     maxGuests: 1
   },
-<<<<<<< HEAD
   "tipo-4": {
     title: "Bambu Tipo 4",
     description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
-    price: "1.050.000",
-    discounts: {
-      "3": "1.025.000",
-      "6": "1.010.000",
-      "12": "1.000.000",
-=======
-  "tipo-4-compartido": {
-    title: "Bambu Tipo 4 - Compartido",
-    description: "Una opción económica y social con espacios compartidos. Perfecta para estudiantes y viajeros que buscan una experiencia más comunitaria.",
     price: "1.510.000",
     discounts: {
       "2": "1.359.000",
       "3": "1.283.500"
->>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     },
     features: [
       { name: "Cama doble", iconName: "Tv" },
@@ -515,24 +470,13 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "16m²",
     maxGuests: 2
   },
-<<<<<<< HEAD
   "tipo-5": {
     title: "Bambu Tipo 5",
     description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
-    price: "1.100.000",
-    discounts: {
-      "3": "1.075.000",
-      "6": "1.060.000",
-      "12": "1.050.000",
-=======
-  "tipo-5-suite": {
-    title: "Bambu Tipo 5 - Suite",
-    description: "Nuestra suite ejecutiva con sala de estar independiente. El espacio perfecto para quienes buscan el máximo confort y privacidad.",
     price: "1.550.000",
     discounts: {
       "2": "1.395.000",
       "3": "1.317.500"
->>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     },
     features: [
       { name: "Cama doble", iconName: "Tv" },
@@ -551,24 +495,13 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "17m²",
     maxGuests: 2
   },
-<<<<<<< HEAD
   "tipo-6": {
     title: "Bambu Tipo 6",
     description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
-    price: "1.100.000",
-    discounts: {
-      "3": "1.075.000",
-      "6": "1.060.000",
-      "12": "1.050.000",
-=======
-  "tipo-6-familiar": {
-    title: "Bambu Tipo 6 - Familiar",
-    description: "Un espacio amplio y versátil con dos habitaciones, ideal para familias o para compartir con un compañero de piso.",
     price: "1.350.000",
     discounts: {
       "2": "1.215.000",
       "3": "1.147.500"
->>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     },
     features: [
       { name: "Cama doble", iconName: "Tv" },
@@ -590,11 +523,10 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "tipo-7": {
     title: "Bambu Tipo 7",
     description: "Una habitación con cama semi doble y Perfecta para profesionales, estudiantes y nómadas digitales que necesitan un espacio confortable para vivir y trabajar.",
-    price: "900.000",
+    price: "1.680.000",
     discounts: {
-      "3": "890.000",
-      "6": "875.000",
-      "12": "850.000",
+      "2": "1.512.000",
+      "3": "1.428.000"
     },
     features: [
       { name: "Cama semidoble", iconName: "Tv" },
@@ -616,11 +548,10 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "tipo-8": {
     title: "Bambu Tipo 8",
     description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
-    price: "1.100.000",
+    price: "1.700.000",
     discounts: {
-      "3": "1.075.000",
-      "6": "1.060.000",
-      "12": "1.050.000",
+      "2": "1.530.000",
+      "3": "1.445.000"
     },
     features: [
       { name: "Cama doble", iconName: "Tv" },
@@ -642,11 +573,10 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "tipo-9": {
     title: "Bambu Tipo 9",
     description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
-    price: "1.100.000",
+    price: "1.680.000",
     discounts: {
-      "3": "1.085.000",
-      "6": "1.070.000",
-      "12": "1.050.000",
+      "2": "1.512.000",
+      "3": "1.428.000"
     },
     features: [
       { name: "Cama doble", iconName: "Tv" },
@@ -668,11 +598,10 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "tipo-10": {
     title: "Bambu Tipo 10",
     description: "Una habitación con cama semi doble y Perfecta para profesionales, estudiantes y nómadas digitales que necesitan un espacio confortable para vivir y trabajar.",
-    price: "900.000",
+    price: "1.510.000",
     discounts: {
-      "3": "890.000",
-      "6": "875.000",
-      "12": "850.000",
+      "2": "1.359.000",
+      "3": "1.283.500"
     },
     features: [
       { name: "Cama doble", iconName: "Tv" },
