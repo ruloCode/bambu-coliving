@@ -178,7 +178,7 @@ const habitacionesList = {
       image: "/images/hb4.1.png",
       price: "1.050.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
-      slug: "tipo-4-compartido",
+      slug: "tipo-4",
       category: "privada"
     },
     {
@@ -186,7 +186,7 @@ const habitacionesList = {
       image: "/images/hb5.1.png",
       price: "1.100.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
-      slug: "tipo-5-suite",
+      slug: "tipo-5",
       category: "suite"
     },
     {
@@ -335,8 +335,8 @@ export interface DetailedRoom {
 
 export const roomDetails: Record<string, DetailedRoom> = {
   "tipo-1": {
-    title: "Bambu Tipo 1 - 16m²",
-    description: "Nuestra habitación estándar ofrece todo lo que necesitas para una estancia cómoda y productiva. Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales y profesionales.",
+    title: "Bambu Tipo 1",
+    description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
     price: "1.050.000",
     discounts: {
       "3": "1.025.000",
@@ -344,10 +344,10 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "12": "1.000.000",
     },
     features: [
+      { name: "Cama doble", iconName: "Tv" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
       { name: "Escritorio dedicado", iconName: "MonitorSmartphone" },
-      { name: "Pet friendly", iconName: "PawPrint" },
-      { name: "Smart TV", iconName: "Tv" },
+      { name: "Closet amplio", iconName: "Warehouse" },
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
@@ -362,7 +362,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
   },
   "tipo-2": {
     title: "Bambu Tipo 2",
-    description: "Una habitación con cama semi doble y. Perfecta para profesionales que necesitan un espacio confortable para vivir y trabajar.",
+    description: "Una habitación con cama semi doble y Perfecta para profesionales, estudiantes y nómadas digitales que necesitan un espacio confortable para vivir y trabajar.",
     price: "800.000",
     discounts: {
       "3": "790.000",
@@ -370,10 +370,10 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "12": "750.000",
     },
     features: [
+      { name: "Cama Semidoble", iconName: "Tv" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
-      { name: "Escritorio dedicado", iconName: "MonitorSmartphone" },
-      { name: "Closet amplio", iconName: "Warehouse" },
-      { name: "Smart TV", iconName: "Tv" },
+      { name: "Escritorio", iconName: "MonitorSmartphone" },
+      { name: "Closet", iconName: "Warehouse" },
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
@@ -388,7 +388,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
   },
   "tipo-3": {
     title: "Bambu Tipo 3",
-    description: "Una habitación con cama semi doble y. Perfecta para profesionales que necesitan un espacio confortable para vivir y trabajar.",
+    description: "Una habitación con cama semi doble y Perfecta para profesionales, estudiantes y nómadas digitales que necesitan un espacio confortable para vivir y trabajar.",
     price: "800.000",
     discounts: {
       "3": "790.000",
@@ -396,10 +396,10 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "12": "750.000",
     },
     features: [
+      { name: "Cama Semidoble", iconName: "Tv" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
-      { name: "Escritorio dedicado", iconName: "MonitorSmartphone" },
-      { name: "Closet amplio", iconName: "Warehouse" },
-      { name: "Smart TV", iconName: "Tv" },
+      { name: "Escritorio", iconName: "MonitorSmartphone" },
+      { name: "Closet", iconName: "Warehouse" },
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
@@ -412,83 +412,187 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "12m²",
     maxGuests: 1
   },
-  "tipo-4-compartido": {
-    title: "Bambu Tipo 4 - Compartido",
-    description: "Una opción económica y social con espacios compartidos. Perfecta para estudiantes y viajeros que buscan una experiencia más comunitaria.",
-    price: "2.200.000",
+  "tipo-4": {
+    title: "Bambu Tipo 4",
+    description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
+    price: "1.050.000",
     discounts: {
-      "3": "1.980.000",
-      "6": "1.870.000",
-      "12": "1.760.000",
+      "3": "1.025.000",
+      "6": "1.010.000",
+      "12": "1.000.000",
     },
     features: [
+      { name: "Cama doble", iconName: "Tv" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
-      { name: "Cocina compartida", iconName: "UtensilsCrossed" },
-      { name: "Área social", iconName: "Users" },
-      { name: "Lockers privados", iconName: "Lock" },
-      { name: "Baño compartido", iconName: "Bath" }
+      { name: "Escritorio dedicado", iconName: "MonitorSmartphone" },
+      { name: "Closet amplio", iconName: "Warehouse" },
+      { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/habitacion_4.avif",
-      "/images/habitacion_5.avif",
+      "/images/hb4.1.png",
+      "/images/hb4.2.png",
       "/images/habitacion_1.avif",
       "/images/habitacion_2.avif",
       "/images/habitacion_3.avif"
     ],
-    size: "20m²",
-    maxGuests: 4
+    size: "16m²",
+    maxGuests: 2
   },
-  "tipo-5-suite": {
-    title: "Bambu Tipo 5 - Suite",
-    description: "Nuestra suite ejecutiva con sala de estar independiente. El espacio perfecto para quienes buscan el máximo confort y privacidad.",
-    price: "5.000.000",
+  "tipo-5": {
+    title: "Bambu Tipo 5",
+    description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
+    price: "1.100.000",
     discounts: {
-      "3": "4.500.000",
-      "6": "4.250.000",
-      "12": "4.000.000",
+      "3": "1.075.000",
+      "6": "1.060.000",
+      "12": "1.050.000",
     },
     features: [
+      { name: "Cama doble", iconName: "Tv" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
-      { name: "Cocina completa", iconName: "UtensilsCrossed" },
-      { name: "Sala de estar", iconName: "Sofa" },
-      { name: "Smart TV", iconName: "Tv" },
-      { name: "Baño de lujo", iconName: "Bath" }
+      { name: "Escritorio dedicado", iconName: "MonitorSmartphone" },
+      { name: "Closet amplio", iconName: "Warehouse" },
+      { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/habitacion_5.avif",
-      "/images/habitacion_1.avif",
+      "/images/hb5.1.png",
+      "/images/hb5.2.png",
       "/images/habitacion_2.avif",
       "/images/habitacion_3.avif",
       "/images/habitacion_4.avif"
     ],
-    size: "45m²",
+    size: "17m²",
     maxGuests: 2
   },
-  "tipo-6-familiar": {
-    title: "Bambu Tipo 6 - Familiar",
-    description: "Un espacio amplio y versátil con dos habitaciones, ideal para familias o para compartir con un compañero de piso.",
-    price: "6.500.000",
+  "tipo-6": {
+    title: "Bambu Tipo 6",
+    description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
+    price: "1.100.000",
     discounts: {
-      "3": "5.850.000",
-      "6": "5.525.000",
-      "12": "5.200.000",
+      "3": "1.075.000",
+      "6": "1.060.000",
+      "12": "1.050.000",
     },
     features: [
+      { name: "Cama doble", iconName: "Tv" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
-      { name: "Cocina completa", iconName: "UtensilsCrossed" },
-      { name: "Dos habitaciones", iconName: "Hotel" },
-      { name: "Sala familiar", iconName: "Sofa" },
-      { name: "Dos baños", iconName: "Bath" }
+      { name: "Escritorio dedicado", iconName: "MonitorSmartphone" },
+      { name: "Closet amplio", iconName: "Warehouse" },
+      { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/habitacion_1.avif",
-      "/images/habitacion_2.avif",
+      "/images/hb6.1.png",
+      "/images/hb6.2.png",
       "/images/habitacion_3.avif",
       "/images/habitacion_4.avif",
       "/images/habitacion_5.avif"
     ],
-    size: "60m²",
-    maxGuests: 4
+    size: "17m²",
+    maxGuests: 2
+  },
+  "tipo-7": {
+    title: "Bambu Tipo 7",
+    description: "Una habitación con cama semi doble y Perfecta para profesionales, estudiantes y nómadas digitales que necesitan un espacio confortable para vivir y trabajar.",
+    price: "900.000",
+    discounts: {
+      "3": "890.000",
+      "6": "875.000",
+      "12": "850.000",
+    },
+    features: [
+      { name: "Cama semidoble", iconName: "Tv" },
+      { name: "WiFi ilimitado", iconName: "Wifi" },
+      { name: "Escritorio dedicado", iconName: "MonitorSmartphone" },
+      { name: "Closet amplio", iconName: "Warehouse" },
+      { name: "Baño privado", iconName: "Bath" }
+    ],
+    images: [
+      "/images/hb7.1.png",
+      "/images/hb7.2.png",
+      "/images/habitacion_3.avif",
+      "/images/habitacion_4.avif",
+      "/images/habitacion_5.avif"
+    ],
+    size: "14m²",
+    maxGuests: 1
+  },
+  "tipo-8": {
+    title: "Bambu Tipo 8",
+    description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
+    price: "1.100.000",
+    discounts: {
+      "3": "1.075.000",
+      "6": "1.060.000",
+      "12": "1.050.000",
+    },
+    features: [
+      { name: "Cama doble", iconName: "Tv" },
+      { name: "WiFi ilimitado", iconName: "Wifi" },
+      { name: "Escritorio dedicado", iconName: "MonitorSmartphone" },
+      { name: "Closet amplio", iconName: "Warehouse" },
+      { name: "Baño privado", iconName: "Bath" }
+    ],
+    images: [
+      "/images/hb8.1.png",
+      "/images/hb8.2.png",
+      "/images/habitacion_3.avif",
+      "/images/habitacion_4.avif",
+      "/images/habitacion_5.avif"
+    ],
+    size: "17m²",
+    maxGuests: 2
+  },
+  "tipo-9": {
+    title: "Bambu Tipo 9",
+    description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
+    price: "1.100.000",
+    discounts: {
+      "3": "1.085.000",
+      "6": "1.070.000",
+      "12": "1.050.000",
+    },
+    features: [
+      { name: "Cama doble", iconName: "Tv" },
+      { name: "WiFi ilimitado", iconName: "Wifi" },
+      { name: "Escritorio dedicado", iconName: "MonitorSmartphone" },
+      { name: "Closet amplio", iconName: "Warehouse" },
+      { name: "Baño privado", iconName: "Bath" }
+    ],
+    images: [
+      "/images/hb9.1.png",
+      "/images/hb9.2.png",
+      "/images/habitacion_3.avif",
+      "/images/habitacion_4.avif",
+      "/images/habitacion_5.avif"
+    ],
+    size: "17m²",
+    maxGuests: 2
+  },
+  "tipo-10": {
+    title: "Bambu Tipo 10",
+    description: "Una habitación con cama semi doble y Perfecta para profesionales, estudiantes y nómadas digitales que necesitan un espacio confortable para vivir y trabajar.",
+    price: "900.000",
+    discounts: {
+      "3": "890.000",
+      "6": "875.000",
+      "12": "850.000",
+    },
+    features: [
+      { name: "Cama doble", iconName: "Tv" },
+      { name: "WiFi ilimitado", iconName: "Wifi" },
+      { name: "Escritorio dedicado", iconName: "MonitorSmartphone" },
+      { name: "Closet amplio", iconName: "Warehouse" },
+      { name: "Baño privado", iconName: "Bath" }
+    ],
+    images: [
+      "/images/hb10.1.png",
+      "/images/hb10.2.png",
+      "/images/habitacion_3.avif",
+      "/images/habitacion_4.avif",
+      "/images/habitacion_5.avif"
+    ],
+    size: "14m²",
+    maxGuests: 2
   }
 }
 
