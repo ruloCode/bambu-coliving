@@ -25,21 +25,21 @@ export const featuredRoomsContent = {
     {
       title: "Bambu Tipo 2",
       image: "/images/hb2.1.png",
-      price: "800.000",
+      price: "1.350.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Espacios comunes"],
       slug: "tipo-1"
     },
     {
       title: "Bambu Tipo 7", 
       image: "/images/hb7.1.png",
-      price: "900.000",
+      price: "1.680.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Espacios comunes"],
       slug: "tipo-2"
     },
     {
       title: "Bambu Tipo 4",
       image: "/images/hb4.2.png", 
-      price: "1.050.000",
+      price: "1.510.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Espacios comunes"],
       slug: "tipo-3"
     }
@@ -56,28 +56,32 @@ export const benefitsContent = {
   description: "Ofrecemos más que un lugar para vivir. Somos una comunidad donde podrás conectar, crecer y disfrutar.",
   benefits: [
     {
-      icon: "Wifi",
+      icon: "Calendar",
       iconColor: "teal",
-      title: "WiFi de Alta Velocidad", 
-      description: "Conexión estable y rápida para trabajar sin interrupciones."
+      title: "Eventos Sociales",
+      description: "Actividades semanales para conectar y disfrutar en comunidad.",
+      href: "/eventos"
     },
     {
-      icon: "Users",
+      icon: "MapPin",
       iconColor: "rose",
-      title: "Comunidad Vibrante",
-      description: "Conoce personas de todo el mundo y expande tu red profesional."
+      title: "Bogotá Auténtica",
+      description: "Descubre la ciudad con experiencias únicas y planes locales.",
+      href: "/planes"
     },
     {
-      icon: "MapPin", 
+      icon: "MapPin",
       iconColor: "teal",
       title: "Ubicación Estratégica",
-      description: "En el corazón de Bogotá, cerca de todo lo que necesitas."
+      description: "En el corazón de Bogotá, cerca de todo lo que necesitas.",
+      href: "/servicios"
     },
     {
       icon: "Coffee",
-      iconColor: "rose", 
-      title: "Espacios Compartidos",
-      description: "Coworking, cocina, gimnasio y áreas de descanso a tu disposición."
+      iconColor: "rose",
+      title: "Espacios Vibrantes",
+      description: "Coworking, cocina, gimnasio y áreas de descanso a tu disposición.",
+      href: "/espacios-compartidos"
     }
   ]
 }
@@ -152,81 +156,132 @@ const habitacionesList = {
     {
       title: "Bambu Tipo 1 - 16m²",
       image: "/images/hb1.png",
-      price: "1.050.000",
+      price: "1.180.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-1",
-      category: "privada"
+      category: "privada",
+      discounts: {
+        "2": "1.062.000",
+        "3": "1.003.000"
+      }
     },
     {
       title: "Bambu Tipo 2 - 12m²",
       image: "/images/hb2.1.png",
-      price: "800.000",
+      price: "1.350.000",
       features: ["Cama Semi Doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-2",
-      category: "privada"
+      category: "privada",
+      discounts: {
+        "2": "1.215.000",
+        "3": "1.147.500"
+      }
     },
     {
       title: "Bambu Tipo 3 - 12m²",
       image: "/images/hb3.1.png",
-      price: "800.000",
+      price: "1.100.000",
       features: ["Cama Semi Doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-3",
-      category: "privada"
+      category: "privada",
+      discounts: {
+        "2": "990.000",
+        "3": "935.000"
+      }
     },
     {
       title: "Bambu Tipo 4 - 16m²",
       image: "/images/hb4.1.png",
-      price: "1.050.000",
+      price: "1.510.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
+<<<<<<< HEAD
       slug: "tipo-4",
       category: "privada"
+=======
+      slug: "tipo-4-compartido",
+      category: "privada",
+      discounts: {
+        "2": "1.359.000",
+        "3": "1.283.500"
+      }
+>>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     },
     {
       title: "Bambu Tipo 5 - 17m²",
       image: "/images/hb5.1.png",
-      price: "1.100.000",
+      price: "1.550.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
+<<<<<<< HEAD
       slug: "tipo-5",
       category: "suite"
+=======
+      slug: "tipo-5-suite",
+      category: "suite",
+      discounts: {
+        "2": "1.395.000",
+        "3": "1.317.500"
+      }
+>>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     },
     {
       title: "Bambu Tipo 6 - 17m²",
       image: "/images/hb6.1.png",
-      price: "1.100.000",
+      price: "1.350.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-6",
-      category: "suite"
+      category: "suite",
+      discounts: {
+        "2": "1.215.000",
+        "3": "1.147.500"
+      }
     },
     {
       title: "Bambu Tipo 7 - 14m²",
       image: "/images/hb7.1.png",
-      price: "900.000",
+      price: "1.680.000",
       features: ["Cama Semi Doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-7",
-      category: "privada"
+      category: "privada",
+      discounts: {
+        "2": "1.512.000",
+        "3": "1.428.000"
+      }
     },
     {
       title: "Bambu Tipo 8 - 17m²",
       image: "/images/hb8.1.png",
-      price: "1.100.000",
+      price: "1.700.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-8",
-      category: "suite"
+      category: "suite",
+      discounts: {
+        "2": "1.530.000",
+        "3": "1.445.000"
+      }
     },
     {
       title: "Bambu Tipo 9 - 17m²",
       image: "/images/hb9.1.png",
-      price: "1.100.000",
+      price: "1.680.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-9",
-      category: "suite"
-    },{
+      category: "suite",
+      discounts: {
+        "2": "1.512.000",
+        "3": "1.428.000"
+      }
+    },
+    {
       title: "Bambu Tipo 10 - 14m²",
       image: "/images/hb10.1.png",
-      price: "900.000",
+      price: "1.510.000",
       features: ["Cama Semi Doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-10",
-      category: "privada"
+      category: "privada",
+      discounts: {
+        "2": "1.359.000",
+        "3": "1.283.500"
+      }
     }
   ]
 }
@@ -312,9 +367,8 @@ export interface GuestOption {
 // ============= ROOM DETAILS CONTENT =============
 
 export interface RoomDiscount {
-  "3": string
-  "6": string
-  "12": string
+  "2": string // 10% discount
+  "3": string // 15% discount
 }
 
 export interface RoomFeature {
@@ -335,13 +389,18 @@ export interface DetailedRoom {
 
 export const roomDetails: Record<string, DetailedRoom> = {
   "tipo-1": {
+<<<<<<< HEAD
     title: "Bambu Tipo 1",
     description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
     price: "1.050.000",
+=======
+    title: "Bambu Tipo 1 - 16m²",
+    description: "Nuestra habitación estándar ofrece todo lo que necesitas para una estancia cómoda y productiva. Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales y profesionales.",
+    price: "1.180.000",
+>>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     discounts: {
-      "3": "1.025.000",
-      "6": "1.010.000",
-      "12": "1.000.000",
+      "2": "1.062.000",
+      "3": "1.003.000"
     },
     features: [
       { name: "Cama doble", iconName: "Tv" },
@@ -362,12 +421,16 @@ export const roomDetails: Record<string, DetailedRoom> = {
   },
   "tipo-2": {
     title: "Bambu Tipo 2",
+<<<<<<< HEAD
     description: "Una habitación con cama semi doble y Perfecta para profesionales, estudiantes y nómadas digitales que necesitan un espacio confortable para vivir y trabajar.",
     price: "800.000",
+=======
+    description: "Una habitación con cama semi doble y. Perfecta para profesionales que necesitan un espacio confortable para vivir y trabajar.",
+    price: "1.350.000",
+>>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     discounts: {
-      "3": "790.000",
-      "6": "775.000",
-      "12": "750.000",
+      "2": "1.215.000",
+      "3": "1.147.500"
     },
     features: [
       { name: "Cama Semidoble", iconName: "Tv" },
@@ -388,12 +451,16 @@ export const roomDetails: Record<string, DetailedRoom> = {
   },
   "tipo-3": {
     title: "Bambu Tipo 3",
+<<<<<<< HEAD
     description: "Una habitación con cama semi doble y Perfecta para profesionales, estudiantes y nómadas digitales que necesitan un espacio confortable para vivir y trabajar.",
     price: "800.000",
+=======
+    description: "Una habitación con cama semi doble y. Perfecta para profesionales que necesitan un espacio confortable para vivir y trabajar.",
+    price: "1.100.000",
+>>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     discounts: {
-      "3": "790.000",
-      "6": "775.000",
-      "12": "750.000",
+      "2": "990.000",
+      "3": "935.000"
     },
     features: [
       { name: "Cama Semidoble", iconName: "Tv" },
@@ -412,6 +479,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "12m²",
     maxGuests: 1
   },
+<<<<<<< HEAD
   "tipo-4": {
     title: "Bambu Tipo 4",
     description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
@@ -420,6 +488,15 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "3": "1.025.000",
       "6": "1.010.000",
       "12": "1.000.000",
+=======
+  "tipo-4-compartido": {
+    title: "Bambu Tipo 4 - Compartido",
+    description: "Una opción económica y social con espacios compartidos. Perfecta para estudiantes y viajeros que buscan una experiencia más comunitaria.",
+    price: "1.510.000",
+    discounts: {
+      "2": "1.359.000",
+      "3": "1.283.500"
+>>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     },
     features: [
       { name: "Cama doble", iconName: "Tv" },
@@ -438,6 +515,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "16m²",
     maxGuests: 2
   },
+<<<<<<< HEAD
   "tipo-5": {
     title: "Bambu Tipo 5",
     description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
@@ -446,6 +524,15 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "3": "1.075.000",
       "6": "1.060.000",
       "12": "1.050.000",
+=======
+  "tipo-5-suite": {
+    title: "Bambu Tipo 5 - Suite",
+    description: "Nuestra suite ejecutiva con sala de estar independiente. El espacio perfecto para quienes buscan el máximo confort y privacidad.",
+    price: "1.550.000",
+    discounts: {
+      "2": "1.395.000",
+      "3": "1.317.500"
+>>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     },
     features: [
       { name: "Cama doble", iconName: "Tv" },
@@ -464,6 +551,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "17m²",
     maxGuests: 2
   },
+<<<<<<< HEAD
   "tipo-6": {
     title: "Bambu Tipo 6",
     description: "Nuestra habitación ofrece todo lo que necesitas para una estancia cómoda y productiva, Con una cama doble, baño privado y un espacio de trabajo, es perfecta para nómadas digitales, estudiantes y profesionales.",
@@ -472,6 +560,15 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "3": "1.075.000",
       "6": "1.060.000",
       "12": "1.050.000",
+=======
+  "tipo-6-familiar": {
+    title: "Bambu Tipo 6 - Familiar",
+    description: "Un espacio amplio y versátil con dos habitaciones, ideal para familias o para compartir con un compañero de piso.",
+    price: "1.350.000",
+    discounts: {
+      "2": "1.215.000",
+      "3": "1.147.500"
+>>>>>>> 75fd2309204fe21cccb9b9f8450b7a098882912a
     },
     features: [
       { name: "Cama doble", iconName: "Tv" },
@@ -1150,6 +1247,293 @@ export const servicesContent = {
     description: "Reserva ahora y disfruta de todos nuestros servicios premium desde el primer día.",
     buttonText: "Explorar habitaciones",
     buttonLink: "/habitaciones"
+  }
+}
+
+// ============= EVENTOS PAGE CONTENT =============
+
+export const eventosContent = {
+  header: {
+    title: "Eventos Sociales",
+    description: "Únete a nuestros eventos semanales diseñados para crear conexiones auténticas y experiencias memorables en nuestra comunidad, sin costo adicional.  ",
+    backgroundColor: "bg-teal-600",
+    textColor: "text-white"
+  },
+
+  events: [
+    {
+      id: 1,
+      title: "Noche de Peli",
+      emoji: "🎬",
+      day: "Jueves",
+      time: "8:00 p.m.",
+      frequency: "Semanal",
+      description: "Una peli cada semana con sabor y ambiente suave.",
+      includes: ["palomitas artesanales", "sangría fría o té caliente"],
+      location: "Espacio común con mantas, luces bajas y sonido envolvente",
+      colorScheme: "teal"
+    },
+    {
+      id: 2,
+      title: "Música en Vivo",
+      emoji: "🎶",
+      day: "Sábados",
+      time: "8:00 p.m.",
+      frequency: "1er sábado del mes",
+      description: "Conciertos acústicos con músicos locales, en parche relajado.",
+      includes: ["pola fría", "snacks salados"],
+      location: "Tarima con chimenea, luz tenue, cojines y buen flow",
+      colorScheme: "rose"
+    },
+    {
+      id: 3,
+      title: "Open Mic",
+      emoji: "🎤",
+      day: "Sábados",
+      time: "8:00 p.m.",
+      frequency: "3er sábado del mes",
+      description: "Poetas, músicos, cuenteros y valientes. Micrófono libre, vibra cálida.",
+      includes: ["pola fría", "snacks salados"],
+      location: "Tarima acogedora, sin presión, solo expresión",
+      colorScheme: "teal"
+    },
+    {
+      id: 4,
+      title: "Taller de Letras",
+      emoji: "✍️",
+      day: "Martes",
+      time: "7:00 p.m.",
+      frequency: "Cada 15 días",
+      description: "Poesía, lectura en voz alta, escritura íntima. Palabras que abrazan.",
+      includes: ["vino tinto o infusión con especias"],
+      location: "Sala con velas, chimenea, materiales impresos y cuaderno comunitario",
+      colorScheme: "rose"
+    },
+    {
+      id: 5,
+      title: "DJ Sessions",
+      emoji: "🎧",
+      day: "Domingo",
+      time: "11:00 a.m. – 3:00 p.m.",
+      frequency: "1 domingo al mes",
+      description: "Domingos musicales con vinilos, sets suaves y traguito rico.",
+      includes: ["sangría o cocktail", "tabla de quesos y frutas"],
+      location: "Terraza o sala social con decoración sonora y ambiente chill",
+      colorScheme: "teal"
+    },
+    {
+      id: 6,
+      title: "Galería Abierta",
+      emoji: "🖼️",
+      day: "Domingo",
+      time: "3:00 p.m. – 7:00 p.m.",
+      frequency: "1 domingo al mes",
+      description: "Arte visual, pintura, fotografía, collages, objetos y más. Los residentes y amigos exponen lo que crean.",
+      includes: [
+        "Copa de vino de bienvenida",
+        "Mini catering dulce/salado",
+        "DJ set de fondo o música acústica suave",
+        "Estación libre de intervención",
+        "Rincón fotomatón análogo",
+        "Cuaderno de visitantes"
+      ],
+      location: "Espacio artístico con iluminación natural y ambiente creativo",
+      colorScheme: "rose"
+    }
+  ],
+  gallery: {
+    title: "Momentos especiales",
+    description: "Revive algunos de nuestros eventos más memorables",
+    images: [
+      {
+        src: "/images/Creativos1.jpg",
+        alt: "Noche de película en el espacio común",
+        caption: "Noche de peli con palomitas artesanales"
+      },
+      {
+        src: "/images/Creativos2.jpg",
+        alt: "Concierto acústico en la tarima",
+        caption: "Música en vivo con músicos locales"
+      },
+      {
+        src: "/images/Creativos3.jpg",
+        alt: "Open mic con residentes",
+        caption: "Open mic - micrófono libre"
+      },
+      {
+        src: "/images/Bambu1.png",
+        alt: "Taller de escritura",
+        caption: "Taller de letras y poesía"
+      },
+      {
+        src: "/images/Bambu2.png",
+        alt: "DJ session en la terraza",
+        caption: "DJ sessions dominicales"
+      },
+      {
+        src: "/images/Bambu3.png",
+        alt: "Galería de arte",
+        caption: "Galería abierta - arte comunitario"
+      }
+    ]
+  },
+  cta: {
+    title: "¿Listo para ser parte de nuestra comunidad?",
+    description: "Únete a Bambu Coliving y vive experiencias únicas cada semana. La comunidad te espera.",
+    buttonText: "Reserva tu lugar",
+    buttonLink: "/reserva"
+  }
+}
+
+// ============= COMUNIDAD PAGE CONTENT =============
+
+export const comunidadContent = {
+  header: {
+    title: "Únete a la comunidad de Bambu Coliving",
+    description: "Conecta con nómadas digitales, emprendedores y profesionales de todo el mundo. Una comunidad vibrante donde las ideas florecen y las amistades duran para siempre.",
+    backgroundColor: "bg-gradient-to-br from-teal-50 to-white"
+  },
+  stats: [
+    { number: "150+", label: "Miembros activos" },
+    { number: "25+", label: "Nacionalidades" },
+    { number: "50+", label: "Eventos al año" },
+    { number: "95%", label: "Satisfacción" }
+  ],
+  features: [
+    {
+      icon: "MessageCircle",
+      title: "Networking Auténtico",
+      description: "Conecta con profesionales de diversas industrias en un ambiente relajado y natural.",
+      colorScheme: "teal"
+    },
+    {
+      icon: "Calendar",
+      title: "Eventos Regulares",
+      description: "Talleres, charlas, noches de juegos, salidas grupales y mucho más cada semana.",
+      colorScheme: "teal"
+    },
+    {
+      icon: "Wifi",
+      title: "Coworking Integrado",
+      description: "Trabaja junto a otros profesionales en espacios diseñados para la productividad.",
+      colorScheme: "teal"
+    },
+    {
+      icon: "MapPin",
+      title: "Exploración Local",
+      description: "Descubre Bogotá con guías locales y miembros que conocen los mejores secretos de la ciudad.",
+      colorScheme: "teal"
+    },
+    {
+      icon: "Coffee",
+      title: "Espacios Sociales",
+      description: "Cocina compartida, sala de estar, terraza y áreas diseñadas para la convivencia.",
+      colorScheme: "teal"
+    },
+    {
+      icon: "Heart",
+      title: "Apoyo Mutuo",
+      description: "Una red de apoyo para adaptarse a la vida en Bogotá y alcanzar tus metas profesionales.",
+      colorScheme: "teal"
+    }
+  ],
+  upcomingPlans: {
+    title: "Próximos Planes",
+    description: "Experiencias diseñadas para conectar con la ciudad y con nuestra comunidad",
+    plans: [
+      {
+        id: 1,
+        emoji: "🌆",
+        title: "Plan Cultural",
+        subtitle: "Descubre la historia y el alma de Bogotá.",
+        description: "Exploramos museos, monumentos y sitios emblemáticos como Monserrate, Guadalupe, Usaquén, el Jardín Botánico y más. Cada semana rotamos el destino, así que siempre habrá algo nuevo por conocer. ¡Perfecto para amantes del arte, la arquitectura y las buenas caminatas con historia!",
+        colorScheme: "teal",
+        image: "/images/Creativos1.jpg",
+        registerLink: "/reserva?plan=cultural"
+      },
+      {
+        id: 2,
+        emoji: "🍴",
+        title: "Plan Comida",
+        subtitle: "Sabores locales, barrios vibrantes.",
+        description: "Te llevamos a descubrir rincones gastronómicos únicos: plazas de mercado, calles icónicas como la Séptima, y barrios como Chapinero o Usaquén. Desde comida típica hasta fusiones inesperadas, cada tour es una experiencia distinta para el paladar. ¡Vente con hambre!",
+        colorScheme: "rose",
+        image: "/images/Creativos2.jpg",
+        registerLink: "/reserva?plan=comida"
+      },
+      {
+        id: 3,
+        emoji: "🌙",
+        title: "Plan Nocturno",
+        subtitle: "Farra con flow capitalino.",
+        description: "¿Noche de salsa o electrónica? ¿Un bar oculto o uno de los más top de la ciudad? Este plan es para mover el cuerpo, conocer la noche bogotana y pasarla rico con buena compañía. Cada salida tiene su estilo, pero todas tienen algo en común: buena vibra y fiesta garantizada.",
+        colorScheme: "teal",
+        image: "/images/Creativos3.jpg",
+        registerLink: "/reserva?plan=nocturno"
+      },
+      {
+        id: 4,
+        emoji: "🏞️",
+        title: "Plan Fuera",
+        subtitle: "Escape natural, cerca de la ciudad.",
+        description: "Cuando el cuerpo pide aire fresco, nos vamos de parche a pueblos, lagunas, cascadas y paisajes que te recargan. Siempre exploramos lugares distintos, ideales para desconectar sin ir muy lejos. Incluye transporte, snacks y parche bacano.",
+        colorScheme: "rose",
+        image: "/images/Bambu1.png",
+        registerLink: "/reserva?plan=fuera"
+      },
+      {
+        id: 5,
+        emoji: "🎶",
+        title: "Plan Live",
+        subtitle: "Música en vivo, energía real.",
+        description: "Desde conciertos de artistas locales hasta noches acústicas en bares con talento emergente, este plan es para los que gozan la música en directo. Lugares rotativos, géneros variados y siempre buena onda. ¡Lo importante es vibrar juntos!",
+        colorScheme: "teal",
+        image: "/images/Bambu2.png",
+        registerLink: "/reserva?plan=live"
+      }
+    ]
+  },
+  testimonials: [
+    {
+      name: "María González",
+      role: "Diseñadora UX",
+      origin: "España",
+      quote: "La comunidad de Bambu es increíble. He hecho amigos de todo el mundo y he crecido tanto profesional como personalmente.",
+      rating: 5,
+      avatar: "M"
+    },
+    {
+      name: "James Wilson",
+      role: "Desarrollador",
+      origin: "Canadá",
+      quote: "Los eventos y actividades hacen que cada semana sea diferente. Nunca me aburro y siempre hay algo interesante que hacer.",
+      rating: 5,
+      avatar: "J"
+    },
+    {
+      name: "Ana Rodríguez",
+      role: "Marketing Digital",
+      origin: "México",
+      quote: "El ambiente de colaboración es único. He encontrado socios de negocio y amigos para toda la vida aquí en Bambu.",
+      rating: 5,
+      avatar: "A"
+    }
+  ],
+  cta: {
+    title: "¿Listo para formar parte de nuestra comunidad?",
+    description: "Únete a Bambu Coliving y descubre una nueva forma de vivir, trabajar y conectar en Bogotá.",
+    buttons: [
+      {
+        text: "Reserva tu habitación",
+        href: "/reserva",
+        primary: true
+      },
+      {
+        text: "Contáctanos",
+        href: "/nosotros",
+        primary: false
+      }
+    ]
   }
 }
 
