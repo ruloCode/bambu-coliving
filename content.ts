@@ -26,21 +26,21 @@ export const featuredRoomsContent = {
       title: "Bambu Tipo 2",
       image: "/images/hb2.1.png",
       price: "1.350.000",
-      features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Espacios comunes"],
+      features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-1"
     },
     {
       title: "Bambu Tipo 7", 
       image: "/images/hb7.1.png",
       price: "1.680.000",
-      features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Espacios comunes"],
+      features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-2"
     },
     {
       title: "Bambu Tipo 4",
       image: "/images/hb4.2.png", 
       price: "1.510.000",
-      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Espacios comunes"],
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet"],
       slug: "tipo-3"
     }
   ],
@@ -1020,7 +1020,7 @@ export const sharedSpacesContent = {
         icon: "Coffee"
       }
     ],
-    images: ["/images/living_1.png", "/images/living_2.png", "/images/living_3.png"]
+    images: ["/images/cocina1.png", "/images/cocina2.png", "/images/cocina3.png"]
   },
   lounge: {
     title: "Sala de Estar",
