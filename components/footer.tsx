@@ -1,6 +1,9 @@
 import Link from "next/link"
 import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin, LucideIcon } from "lucide-react"
 import { aboutUsContent } from "@/content"
+import TermsAndConditions from "../app/terminos-y-condiciones/page"
+import ManualConvivencia from "@/app/manual-de-convivencia/page"
+
 
 export default function Footer() {
   // Map of icon names to Lucide icon components
@@ -91,8 +94,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/politica-de-privacidad" className="hover:text-teal-500">
-                  Política de Privacidad
+                <Link href="/manual-de-convivencia" className="hover:text-teal-500">
+                  Manual de Convivencia
                 </Link>
               </li>
               <li>
