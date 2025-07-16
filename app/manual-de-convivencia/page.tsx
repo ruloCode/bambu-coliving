@@ -3,15 +3,20 @@ import Footer from "@/components/footer";
 
 export default function ManualConvivencia() {
   return (
-    <div className="max-w-3xl mx-auto p-6 space-y-4">
-      <h1 className="text-3xl font-bold">Manual de Convivencia y Reglamento Interno de Bambu Coliving</h1>
+    <div className="max-w-4xl mx-auto py-12 px-6 text-gray-700">
+      <h1 className="text-4xl font-bold text-green-800 mb-6 border-b-2 border-green-300 pb-2">Manual de Convivencia y Reglamento Interno de Bambu Coliving</h1>
       <p><em>(Un Enfoque Legal, Cultural y Comunitario)</em></p>
 
       <h2 className="text-2xl font-semibold mt-6">Preámbulo: Nuestro Compromiso con una Comunidad Excepcional</h2>
-      <p>Bienvenido/a a Bambu Coliving. Este documento constituye el acuerdo de convivencia que rige nuestra comunidad...</p>
+      <p>Bienvenido(a) a Bambu Coliving. Este documento constituye el acuerdo de convivencia que rige nuestra comunidad. Su propósito es establecer un marco de referencia que, fundamentado en la legislación colombiana y en una filosofía de respeto mutuo, garantice una experiencia residencial segura, enriquecedora y armónica para todos sus miembros.
+        Creemos que la libertad individual y una comunidad vibrante coexisten perfectamente cuando se basan en reglas claras y en el respeto por los demás. El cumplimiento de este reglamento no es una opción, sino una parte integral de tu contrato con nosotros y tu compromiso con tus vecinos
+      </p>
 
-      <h2 className="text-2xl font-semibold mt-6">Sección 1: Fundamentos de Nuestra Comunidad</h2>
-      <h3 className="text-xl font-medium">1.1. Nuestra Filosofía: Respeto, Comunidad y Cuidado</h3>
+      <h2 className="text-3xl font-semibold text-green-700 mb-4">Sección 1: Fundamentos de Nuestra Comunidad</h2>
+      <ul className="list-disc pl-6 space-y-2">
+        <li><span className="font-bold">Nuestra Filosofía: Respeto, Comunidad y Cuidado. </span>Buscamos cultivar una comunidad conectada, equilibrando el espacio personal con un entorno colaborativo. Este manual se basa en una "cultura ciudadana" de respeto por el otro, sentido de pertenencia y cuidado de nuestro hogar compartido.</li>
+      </ul>
+      <h3 className="font-bold">1.1. Nuestra Filosofía: Respeto, Comunidad y Cuidado</h3>
       <p>Buscamos cultivar una comunidad conectada...</p>
 
       <h3 className="text-xl font-medium">1.2. Marco Legal Vinculante</h3>
