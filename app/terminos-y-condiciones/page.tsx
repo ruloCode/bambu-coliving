@@ -55,7 +55,7 @@ const TermsAndConditions: React.FC = () => {
       </ul>
 
       <h2 className="text-3xl font-semibold text-green-700 mt-8 mb-4">Sección 4: Vigencia, Renovación y Terminación</h2>
-      <ul className="list-disc pl-6 space-y-2">>
+      <ul className="list-disc pl-6 space-y-2">
         <li><span className="font-bold">Vigencia y Renovación:</span>La vigencia inicial de la membresía será la establecida en la reserva, con un mínimo de un (1) mes</li>
         <li><span className="font-bold">Terminación por incumplimiento grave (Expulsión):</span>El Operador podrá terminar la membresía de forma inmediata, exigiendo la desocupación en 24 horas, en caso de faltas graves como:
           <ul className="list-circle pl-6">

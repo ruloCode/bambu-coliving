@@ -99,11 +99,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/politica-de-cookies" className="hover:text-teal-500">
-                  Política de Cookies
-                </Link>
-              </li>
-              <li>
                 <Link href="/faqs" className="hover:text-teal-500">
                   Preguntas Frecuentes
                 </Link>

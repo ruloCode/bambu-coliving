@@ -1493,7 +1493,7 @@ export const faqsContent = {
         },
         {
           question: "¿Cuál es la estancia mínima?",
-          answer: "La estancia mínima en Bambu Coliving es de 1 mes. Ofrecemos descuentos especiales para estancias de 3, 6 y 12 meses."
+          answer: "La estancia mínima en Bambu Coliving es de 1 mes. Ofrecemos descuentos especiales para estancias de 2 y 3 meses."
         },
         {
           question: "¿Qué métodos de pago aceptan?",
