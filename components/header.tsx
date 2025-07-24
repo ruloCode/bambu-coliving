@@ -78,7 +78,7 @@ export default function Header() {
             Blog
           </Link>
           <Link href="/nosotros" className="text-sm font-medium transition-colors hover:text-primary">
-            Contáctanos
+            Nosotros
           </Link>
         </nav>
 

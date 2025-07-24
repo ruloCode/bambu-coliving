@@ -70,7 +70,7 @@ export default function AboutUs() {
       </section>
 
       {/* Location */}
-      <section className="py-16 bg-white">
+      <section id="ubicacion" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
@@ -117,7 +117,7 @@ export default function AboutUs() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-16 bg-gray-50">
+      <section id="contacto" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">{aboutUsContent.contact.title}</h2>

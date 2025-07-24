@@ -74,7 +74,7 @@ export const benefitsContent = {
       iconColor: "teal",
       title: "Ubicación Estratégica",
       description: "En el corazón de Bogotá, cerca de todo lo que necesitas.",
-      href: "/servicios"
+      href: "/nosotros#ubicacion"
     },
     {
       icon: "Coffee",
@@ -1553,7 +1553,7 @@ export const faqsContent = {
     description: "Si tienes alguna pregunta adicional, no dudes en contactarnos. Estamos aquí para ayudarte.",
     primaryButton: {
       text: "Contáctanos",
-      link: "/nosotros"
+      link: "/nosotros#contacto"
     },
     secondaryButton: {
       text: "Explorar habitaciones",
