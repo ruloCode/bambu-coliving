@@ -722,45 +722,44 @@ export interface BlogPostContent extends BlogPost {
 
 // Detailed blog post content
 export const blogPostsContent: Record<string, BlogPostContent> = {
-  "5-razones-para-elegir-coliving": {
+  "slowmads-en-bogota": {
     id: 1,
-    title: "5 razones para elegir coliving en tu próxima aventura",
-    excerpt: "Descubre por qué el coliving se ha convertido en la opción preferida para nómadas digitales y profesionales en todo el mundo.",
-    date: "15 de abril, 2025",
-    author: "María Rodríguez",
-    image: "/images/Creativos2.jpg",
-    slug: "5-razones-para-elegir-coliving",
+    title: "Slowmads en Bogotá: El Auge del Coliving para una inmersión cultural real.",
+    excerpt: "El mundo de los viajes está en constante evolución. La figura del nómada digital, siempre conectado y en rápido movimiento, está dando paso a una nueva ola de viajeros...",
+    date: "1 de julio, 2025",
+    author: "Fausto Abner",
+    image: "/images/blog_slowmad.jpg",
+    slug: "slowmads-en-bogota",
     content: {
       mainImage: "/images/Creativos2.jpg",
-      introduction: "El coliving está revolucionando la forma en que vivimos y trabajamos. En este artículo, exploraremos las principales razones por las que cada vez más personas eligen este estilo de vida moderno y colaborativo.",
+      introduction: "El mundo de los viajes está en constante evolución. La figura del nómada digital, siempre conectado y en rápido movimiento, está dando paso a una nueva ola de viajeros: los slowmads. Estos exploradores conscientes ya no buscan coleccionar sellos en su pasaporte a toda velocidad; anhelan algo más profundo. Buscan autenticidad, conexión y transformación. Y en esta búsqueda, han encontrado el ecosistema perfecto en espacios como Bambu Coliving, que redefine lo que es coliving y lo eleva a una experiencia de vida.",
       sections: [
+        
         {
-          title: "1. Comunidad y Conexiones Significativas",
-          content: "En un mundo cada vez más digital, el coliving ofrece la oportunidad de crear conexiones reales y significativas. Compartir espacios con personas afines no solo enriquece tu vida social, sino que también puede abrir puertas a nuevas oportunidades profesionales y colaboraciones.",
-          image: "/images/Creativos3.jpg"
+          title: "El Fin de la Prisa: Nace el Viajero Consciente",
+          content: "La tendencia es clara y las cifras la respaldan. Un informe de MBO Partners de 2024 revela que los nómadas digitales están cambiando su ritmo: ahora visitan menos lugares, pero se quedan más tiempo en cada uno, con una estancia promedio de casi doce semanas. Este no es un simple cambio de itinerario, es un cambio de mentalidad. El slowmadismo es la respuesta al agotamiento digital y a la superficialidad de los viajes turísticos tradicionales. Es una elección deliberada por la calidad sobre la cantidad, priorizando la inmersión cultural y las conexiones humanas genuinas por encima de una lista de atracciones.",
+          image: "/images/blog_slowmad.jpg"
         },
         {
-          title: "2. Flexibilidad y Libertad",
-          content: "Olvídate de los contratos largos y las preocupaciones del mantenimiento. El coliving te permite moverte con libertad y adaptarte a nuevas oportunidades sin ataduras, perfecto para el estilo de vida nómada digital.",
-          image: "/images/living_1.png"
+          title: "Más que un Techo: El Coliving como Epicentro de la Comunidad",
+          content: "Para un slowmad, un alojamiento es mucho más que cuatro paredes y una buena conexión a internet. Es su base de operaciones, su puerta de entrada a una nueva cultura y, lo más importante, su comunidad. Aquí es donde el coliving en Bogotá brilla con luz propia, ofreciendo mucho más que simples habitaciones amuebladas en arriendo. Se convierte en una de las mejores alternativas a un apartaestudio al proporcionar un entorno diseñado para la interacción. Espacios como cocinas compartidas, salas de estar y áreas de trabajo se transforman en escenarios de encuentros espontáneos, intercambios culturales y amistades duraderas, combatiendo la soledad que a menudo enfrentan los viajeros.",
         },
         {
-          title: "3. Comodidad y Servicios Todo Incluido",
-          content: "Desde internet de alta velocidad hasta servicios de limpieza, el coliving simplifica tu vida al incluir todo lo que necesitas en un solo pago mensual. Menos preocupaciones, más tiempo para lo que realmente importa.",
-          image: "/images/living_2.png"
+          title: "Bambu Coliving: Tu Hogar para Vivir Bogotá, no solo para Visitarla",
+          content: "En Bambu Coliving entendemos este nuevo paradigma. No ofrecemos solo un alquiler de habitación con baño privado; curamos una experiencia de vivienda compartida para que te sientas parte de la vibrante energía de Bogotá desde el primer día. Nuestro modelo de coliving todo incluido simplifica tu vida, permitiéndote enfocarte en lo que realmente importa: conectar, explorar y crecer. Olvídate de los contratos rígidos; con opciones de arriendo de habitaciones por meses, te damos la flexibilidad que tu estilo de vida necesita.",
+          image: "/images/blog_slowmad1.png"
         },
         {
-          title: "4. Ubicaciones Privilegiadas",
-          content: "Los espacios de coliving suelen estar ubicados en zonas estratégicas de la ciudad, cerca de transporte público, restaurantes y zonas de interés, permitiéndote aprovechar al máximo tu experiencia en la ciudad.",
-          image: "/images/living_3.png"
+          title: "Un Ecosistema para Crecer y Conectar",
+          content: "Nuestros espacios están pensados para el profesional moderno y el estudiante que busca más. La combinación de espacios de coliving con coworking integrados fomenta un equilibrio perfecto entre la vida personal y la profesional, ideal para el coliving para nómadas digitales y jóvenes en desarrollo. No se trata solo de convivencia en espacios compartidos, sino de crear una comunidad coliving activa y enriquecedora donde el networking surge de forma natural y las ideas fluyen libremente. Por eso, muchos nos consideran entre los mejores coliving en Bogotá."
         },
         {
-          title: "5. Crecimiento Personal y Profesional",
-          content: "El ambiente colaborativo del coliving fomenta el intercambio de conocimientos y habilidades. Los eventos comunitarios, workshops y espacios compartidos crean un ecosistema perfecto para el desarrollo personal y profesional."
-        }
+          title: "Da el Paso hacia un Viaje con Propósito",
+          content: "El movimiento slowmad ha llegado para quedarse, redefiniendo el éxito de un viaje no por la distancia recorrida, sino por la profundidad de la experiencia. Si estás buscando un alojamiento flexible en Bogotá que sea más que un simple lugar para dormir, si anhelas conectar con una comunidad de personas afines y vivir la ciudad de una manera auténtica, estás en el lugar correcto. Descubre cómo funciona un coliving diseñado para el viajero consciente. Explora los espacios y la comunidad que Bambu Coliving tiene para ti. Tu próxima gran aventura empieza viviendo con propósito.",
+        },
       ],
       conclusion: "El coliving no es solo una tendencia pasajera, sino una respuesta moderna a las necesidades cambiantes de una generación que valora la flexibilidad, la comunidad y las experiencias significativas por encima de las posesiones materiales.",
-      tags: ["coliving", "nómadas digitales", "comunidad", "estilo de vida", "flexibilidad"],
+      tags: ["coliving", "slowmads", "comunidad", "estilo de vida", "flexibilidad"],
       relatedPosts: ["guia-nomadas-digitales-bogota", "construir-comunidad-espacios-compartidos"]
     }
   },

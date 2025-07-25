@@ -6,13 +6,12 @@ import BlogNewsletter from "@/components/blog/BlogNewsletter"
 const blogPosts = [
   {
     id: 1,
-    title: "5 razones para elegir coliving en tu próxima aventura",
-    excerpt:
-      "Descubre por qué el coliving se ha convertido en la opción preferida para nómadas digitales y profesionales en todo el mundo.",
-    date: "15 de abril, 2025",
-    author: "María Rodríguez",
-    image: "/images/Creativos1.jpg",
-    slug: "5-razones-para-elegir-coliving",
+    title: "Slowmads en Bogotá: El Auge del Coliving para una inmersión cultural real.",
+    excerpt: "El mundo de los viajes está en constante evolución. La figura del nómada digital, siempre conectado y en rápido movimiento, está dando paso a una nueva ola de viajeros...",
+    date: "1 de julio, 2025",
+    author: "Fausto Abner",
+    image: "/images/Creativos2.jpg",
+    slug: "slowmads-en-bogota",
   },
   {
     id: 2,
