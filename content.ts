@@ -731,7 +731,7 @@ export const blogPostsContent: Record<string, BlogPostContent> = {
     image: "/images/blog_slowmad.jpg",
     slug: "slowmads-en-bogota",
     content: {
-      mainImage: "/images/Creativos2.jpg",
+      mainImage: "/images/blog_slowmad.jpg",
       introduction: "El mundo de los viajes está en constante evolución. La figura del nómada digital, siempre conectado y en rápido movimiento, está dando paso a una nueva ola de viajeros: los slowmads. Estos exploradores conscientes ya no buscan coleccionar sellos en su pasaporte a toda velocidad; anhelan algo más profundo. Buscan autenticidad, conexión y transformación. Y en esta búsqueda, han encontrado el ecosistema perfecto en espacios como Bambu Coliving, que redefine lo que es coliving y lo eleva a una experiencia de vida.",
       sections: [
         
