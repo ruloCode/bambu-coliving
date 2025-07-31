@@ -98,31 +98,34 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             <div className="mt-12 border-t pt-12">
               <h2 className="text-2xl font-bold mb-6">Artículos relacionados</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {post.content.relatedPosts.map((slug) => {
-                  const relatedPost = blogPostsContent[slug]
-                  return (
-                    <Link
-                      key={slug}
-                      href={`/blog/${slug}`}
-                      className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-                    >
-                      <div className="relative h-48">
-                        <Image
-                          src={relatedPost.image}
-                          alt={relatedPost.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="p-4">
-                        <h3 className="font-bold mb-2 group-hover:text-teal-600 transition-colors">
-                          {relatedPost.title}
-                        </h3>
-                        <p className="text-sm text-gray-600 line-clamp-2">{relatedPost.excerpt}</p>
-                      </div>
-                    </Link>
-                  )
-                })}
+              {post.content.relatedPosts.map((slug) => {
+  const relatedPost = blogPostsContent[slug]
+  if (!relatedPost || !relatedPost.image) return null  // ← Evita el error
+
+  return (
+    <Link
+      key={slug}
+      href={`/blog/${slug}`}
+      className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+    >
+      <div className="relative h-48">
+        <Image
+          src={relatedPost.image}
+          alt={relatedPost.title}
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="p-4">
+        <h3 className="font-bold mb-2 group-hover:text-teal-600 transition-colors">
+          {relatedPost.title}
+        </h3>
+        <p className="text-sm text-gray-600 line-clamp-2">{relatedPost.excerpt}</p>
+      </div>
+    </Link>
+  )
+})}
+
               </div>
             </div>
           )}

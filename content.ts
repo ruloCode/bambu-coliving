@@ -760,193 +760,153 @@ export const blogPostsContent: Record<string, BlogPostContent> = {
       ],
       conclusion: "El coliving no es solo una tendencia pasajera, sino una respuesta moderna a las necesidades cambiantes de una generación que valora la flexibilidad, la comunidad y las experiencias significativas por encima de las posesiones materiales.",
       tags: ["coliving", "slowmads", "comunidad", "estilo de vida", "flexibilidad"],
-      relatedPosts: ["guia-nomadas-digitales-bogota", "construir-comunidad-espacios-compartidos"]
+      relatedPosts: ["mas-alla-de-las-paredes", "coliving-vs-residencia"]
     }
   },
-  "guia-nomadas-digitales-bogota": {
+  "el-auge-del-coliving": {
     id: 2,
     title: "Guía para nómadas digitales en Bogotá",
-    excerpt: "Todo lo que necesitas saber para trabajar remotamente desde la vibrante capital colombiana.",
-    date: "2 de mayo, 2025",
-    author: "Carlos Gómez",
+    excerpt: "El coliving se consolida en Bogotá como una solución de vivienda cada vez más popular, atrayendo a una diversa gama de residentes.",
+    date: "8 de julio, 2025",
+    author: "Fausto Abner",
     image: "/images/Creativos1.jpg",
-    slug: "guia-nomadas-digitales-bogota",
+    slug: "el-auge-del-coliving",
     content: {
       mainImage: "/images/Creativos3.jpg",
-      introduction: "Bogotá se ha convertido en un hub para nómadas digitales en Latinoamérica. Esta guía te ayudará a navegar la ciudad y aprovechar al máximo tu estancia mientras trabajas remotamente.",
+      introduction: "El coliving se consolida en Bogotá como una solución de vivienda cada vez más popular, atrayendo a una diversa gama de residentes, desde jóvenes profesionales y estudiantes hasta nómadas digitales. Un análisis detallado de los términos de búsqueda más utilizados revela un mercado dinámico con claras intenciones de conversión, una creciente necesidad de información y una competencia que abarca desde operadores especializados hasta el mercado de arriendo tradicional.",
       sections: [
         {
-          title: "Conectividad y Espacios de Trabajo",
-          content: "Bogotá ofrece excelente infraestructura digital con internet de alta velocidad y numerosos espacios de coworking. Descubre las mejores opciones para mantenerte productivo.",
+          title: "Búsquedas de Alta Intención: La Conversión Directa y la Comparación de Precios.",
+          content: "En la cima de las búsquedas con mayor potencial de conversión se encuentra Coliving Bogotá. Este término, de alta especificidad, es utilizado por usuarios que ya conocen el concepto y buscan activamente un espacio en la capital colombiana. Directamente relacionada con la intención de compra, la búsqueda Coliving precios indica que el usuario se encuentra en una fase avanzada de consideración, comparando activamente opciones. Los precios en Bogotá varían significativamente dependiendo de la ubicación, las comodidades y el tipo de habitación, con opciones que pueden ir desde aproximadamente $1.000.000 COP hasta más de $4.000.000 COP mensuales, según lo observado en diversas plataformas. Varios operadores destacan en este segmento al promocionar un modelo todo incluido, una propuesta de valor atractiva para quienes buscan simplicidad en sus finanzas. Para aquellos que buscan validar su elección, Mejores coliving en Bogotá es una búsqueda crucial. Aquí, los rankings y las listas de blogs especializados y plataformas como Holafly y VICO juegan un papel fundamental, posicionando los diferentes espacios ofrecidos en Bogotá. ",
           image: "/images/Creativos1.jpg"
         },
         {
-          title: "Zonas Recomendadas para Vivir",
-          content: "Desde el moderno Chapinero hasta el histórico La Candelaria, cada barrio tiene su encanto. Analizamos las mejores zonas para establecerte según tu estilo de vida y presupuesto.",
-          image: "/images/Creativos2.jpg"
+          title: "El Mercado Amplio: Sinónimos y Competencia con el Arriendo Tradicional.",
+          content: "El término genérico Coliving atrae a un público en fase de exploración. Las búsquedas revelan un interés por entender el concepto, sus ventajas y cómo funciona, con resultados que a menudo provienen de medios de comunicación y blogs informativos. Sin embargo, el coliving compite directamente con el mercado de arriendo tradicional a través de términos como Habitaciones amuebladas en arriendo, Vivienda compartida, y Apartamentos compartidos. Estas búsquedas, con un alto volumen, muestran un solapamiento en la oferta, donde portales como Finca Raíz, Mitula, Trovit y MercadoLibre presentan tanto habitaciones en apartamentos tradicionales como espacios en colivings. Arriendo de habitaciones Bogotá es otra búsqueda transaccional clave que refleja esta competencia.",
         },
         {
-          title: "Costo de Vida y Presupuesto",
-          content: "Desglosamos los costos típicos mensuales, desde alojamiento hasta alimentación y entretenimiento, para ayudarte a planificar tu estancia efectivamente.",
-          image: "/images/living_1.png"
+          title: "La Importancia de las Características Específicas y la Flexibilidad.",
+          content: "Los usuarios no solo buscan un lugar para vivir, sino también características que se adapten a sus necesidades. Alquiler de habitación con baño privado es una de las búsquedas más demandadas, indicando una preferencia por la privacidad dentro de un entorno comunitario. La flexibilidad es otro factor clave, como lo demuestran búsquedas como Arriendo de habitaciones por meses, Alquiler temporal de habitaciones y Alojamiento flexible Bogotá. Estos términos atraen a expatriados, viajeros de negocios y locales que buscan soluciones habitacionales sin los compromisos de un contrato de arrendamiento tradicional a largo plazo.",
         },
         {
-          title: "Vida Social y Networking",
-          content: "Eventos, grupos y comunidades donde puedes conectar con otros nómadas digitales y profesionales locales. La clave para construir tu red en la ciudad."
-        }
+          title: "Contenido Educativo: Capturando al Usuario en la Fase de Descubrimiento",
+          content: "Para atraer a aquellos que recién exploran el concepto, el contenido informativo es esencial. Términos como Qué es coliving, Cómo funciona un coliving, y Beneficios del coliving presentan una oportunidad para que los operadores se posicionen como expertos y generen confianza. Los resultados actuales para estas búsquedas están dominados por blogs de empresas del sector inmobiliario y medios de comunicación que explican las ventajas de este modelo de vivienda: la vida en comunidad, la simplicidad en los pagos (todo incluido), el networking y la flexibilidad."
+        },
       ],
-      conclusion: "Bogotá ofrece una combinación única de modernidad, cultura y oportunidades para nómadas digitales. Con la preparación adecuada, tu experiencia en la ciudad será inolvidable y productiva.",
+      conclusion: "En resumen, el panorama de búsqueda del coliving en Bogotá refleja un mercado en plena expansión y diversificación. Desde la intención de reserva directa hasta la exploración inicial del concepto, las palabras clave utilizadas por los usuarios ofrecen una hoja de ruta clara para entender las demandas del público y las oportunidades para los actores del sector. La competencia es variada, y el éxito radica en la capacidad de ofrecer propuestas de valor claras, ya sea a través de la especialización en nichos, la oferta de comodidades específicas o la creación de contenido que eduque y atraiga a una nueva generación de residentes urbanos.",
       tags: ["Bogotá", "nómadas digitales", "trabajo remoto", "guía ciudad", "Colombia"],
-      relatedPosts: ["mejores-cafes-para-trabajar", "eventos-bogota-verano-2025"]
+      relatedPosts: ["slowmads-en-bogota", "coliving-vs-residencia"]
     }
   },
-  "construir-comunidad-espacios-compartidos": {
+  "coliving-vs-residencia": {
     id: 3,
-    title: "Cómo construir una comunidad en espacios compartidos",
-    excerpt: "Estrategias y consejos para fomentar conexiones significativas en entornos de coliving.",
-    date: "20 de mayo, 2025",
-    author: "Laura Martínez",
+    title: "Coliving vs Residencia Estudiantil: La evolución del alojamiento en Bogotá para la nueva generación",
+    excerpt: "En la vibrante Bogotá, la búsqueda del alojamiento ideal es una preocupación constante para estudiantes universitarios y jóvenes profesionales que inician su camino laboral.",
+    date: "15 de julio, 2025",
+    author: "Fausto Abner",
     image: "/images/Creativos1.jpg",
-    slug: "construir-comunidad-espacios-compartidos",
+    slug: "coliving-vs-residencia",
     content: {
       mainImage: "/images/Creativos2.jpg",
-      introduction: "La verdadera magia del coliving está en su comunidad. Descubre cómo puedes contribuir a crear y fortalecer lazos significativos en tu espacio compartido.",
+      introduction: "En la vibrante Bogotá, la búsqueda del alojamiento ideal es una preocupación constante para estudiantes universitarios y jóvenes profesionales que inician su camino laboral. Tradicionalmente, las residencias estudiantiles han sido una opción recurrente, pero un nuevo modelo ha emergido con fuerza, ofreciendo una alternativa moderna y atractiva: el coliving Bogotá. En este artículo, exploraremos a fondo el concepto de vivienda compartida bajo el esquema de comunidad coliving, comparándolo con las residencias tradicionales y destacando los significativos beneficios del coliving para la generación actual de jóvenes en la capital colombiana.",
       sections: [
         {
-          title: "El Poder de los Espacios Comunes",
-          content: "Los espacios compartidos son más que áreas físicas; son catalizadores de interacción social. Aprende a aprovecharlos para fomentar encuentros casuales y conexiones naturales.",
-          image: "/images/living_1.png"
+          title: "¿Qué es el Coliving? Una Nueva Forma de Conectar y Crecer",
+          content: "El coliving va más allá de compartir un espacio físico. Se trata de un concepto de alojamiento flexible en Bogotá que fomenta la creación de comunidades, el networking y el desarrollo personal a través de espacios diseñados para la interacción y la colaboración. En esencia, el coliving ofrece habitaciones privadas dentro de un inmueble que cuenta con amplias áreas comunes como cocinas equipadas, salas de estar, espacios de trabajo compartido e incluso áreas de recreación. La clave reside en la comunidad que se genera entre los residentes, quienes a menudo comparten intereses, aspiraciones y etapas de vida similares.",
         },
         {
-          title: "Organizando Eventos Comunitarios",
-          content: "Desde cenas compartidas hasta sesiones de skill-sharing, los eventos son fundamentales para construir comunidad. Te compartimos ideas y mejores prácticas.",
+          title: "Residencias Estudiantiles Tradicionales: Un Modelo Conocido",
+          content: "Las residencias estudiantiles tradicionales han sido durante mucho tiempo la opción predilecta para estudiantes que se mudan a Bogotá para cursar sus estudios. Generalmente ubicadas cerca de las universidades, ofrecen habitaciones privadas o compartidas y, en algunos casos, servicios básicos como alimentación y lavandería. Si bien cumplen una función primordial de proporcionar un lugar donde vivir, a menudo se centran más en la funcionalidad básica que en la creación de un ambiente comunitario enriquecedor.",
           image: "/images/living_2.png"
         },
         {
-          title: "Comunicación Efectiva",
-          content: "La comunicación es clave en espacios compartidos. Descubre herramientas y estrategias para mantener una comunicación fluida y positiva entre residentes."
+          title: "Coliving vs. Residencias: Un Análisis Detallado de los Beneficios",
+          content: "Para comprender mejor por qué el coliving se ha convertido en una alternativa tan atractiva, comparemos ambos modelos en aspectos clave:"
         },
         {
-          title: "Resolución de Conflictos",
-          content: "Aprende a manejar desacuerdos de manera constructiva y a convertir los retos en oportunidades para fortalecer la comunidad."
+          title: "1. Networking y Comunidad: Residencias Tradicionales: ",
+          content: "Si bien se convive con otros estudiantes, la interacción suele ser limitada a los compañeros de piso o a encuentros casuales. La creación de una red de contactos profesional y personal no es un objetivo central. Coliving: La comunidad coliving es el corazón del modelo. Los espacios comunes están diseñados para fomentar la interacción, se organizan eventos sociales y profesionales, y se facilita la creación de lazos significativos con personas de diversos orígenes y disciplinas. Para un recién graduado o un estudiante buscando oportunidades, esta red de contactos puede ser invaluable."
+        },
+        {
+          title: "2. Desarrollo Personal y Profesional: Residencias Tradicionales: ",
+          content: " El enfoque principal es el alojamiento, con escasas oportunidades estructuradas para el desarrollo de habilidades blandas, el aprendizaje compartido o la colaboración en proyectos. Coliving: Muchos espacios de coliving en Bogotá ofrecen talleres, charlas, mentorías y espacios de coworking, lo que facilita el desarrollo de nuevas habilidades, el intercambio de ideas y la colaboración en proyectos. Esta atmósfera de aprendizaje continuo es especialmente beneficiosa para estudiantes y jóvenes profesionales en sus primeras etapas de carrera."
+        },
+        {
+          title: "3. Flexibilidad: Residencias Tradicionales: ",
+          content: "Los contratos suelen ser anuales o semestrales, lo que puede ser un inconveniente para estudiantes que realizan intercambios académicos o jóvenes profesionales con trabajos temporales. Coliving: Una de las grandes ventajas del alojamiento flexible Bogotá es la diversidad de opciones de contrato, que pueden ser mensuales, trimestrales o semestrales, adaptándose mejor a las necesidades cambiantes de los jóvenes."
+        },
+        {
+          title: "4. Costos: Residencias Tradicionales: ",
+          content: "Los costos pueden variar considerablemente dependiendo de la ubicación, el tamaño de la habitación y los servicios incluidos. A menudo, se pagan servicios adicionales por separado. Coliving: El modelo de vivienda compartida a menudo incluye en una tarifa plana servicios como internet de alta velocidad, servicios públicos, limpieza de áreas comunes e incluso acceso a eventos y actividades. Si bien el costo base puede ser similar, la inclusión de estos servicios puede resultar más conveniente y predecible para el presupuesto de un estudiante o recién graduado."
+        },
+        {
+          title: "Beneficios Específicos del Coliving para Estudiantes y Recién Graduados en Bogotá",
+          content: "Los beneficios del coliving son especialmente relevantes para el público objetivo de BambuColiving: Oportunidades de Networking (Conectar con otros estudiantes de diferentes universidades y jóvenes profesionales de diversas industrias puede abrir puertas a futuras colaboraciones, oportunidades laborales y amistades duraderas).  Apoyo y Comunidad (Mudarse a una nueva ciudad o comenzar la vida profesional puede ser desafiante. El coliving ofrece un sentido de pertenencia y una red de apoyo inmediata). Desarrollo de Habilidades (La participación en talleres, charlas y eventos dentro de la comunidad coliving puede ayudar a desarrollar habilidades blandas como el liderazgo, la comunicación y el trabajo en equipo, fundamentales para el éxito académico y profesional). Reducción del Estrés (La gestión de facturas, la limpieza y el mantenimiento del hogar pueden ser una carga para estudiantes y jóvenes profesionales. El coliving simplifica estos aspectos, permitiendo a los residentes enfocarse en sus estudios y carreras)."
+        },
+        {
+          title: "¿Estás listo para ser parte de la comunidad BambuColiving? ¡Contáctanos hoy y descubre tu próximo hogar!",
+          content: "Referencias: 1)	Davidson, G., & Sahakijpinyo, C. (2008). Shared housing and the shifting landscape of urban housing in the developed world. International Journal of Housing Policy, 8(3), 259-279. 2) Madden, D. J., & Marcuse, P. (2016). In Defense of Housing: The Politics of Crisis. Verso Books. 3)The Class Foundation. (2019). The Class of 2020: Student Living in Europe."
         }
       ],
-      conclusion: "Construir una comunidad fuerte requiere tiempo, dedicación y participación activa de todos los miembros. Los beneficios de una comunidad vibrante hacen que todo el esfuerzo valga la pena.",
+      conclusion: "El Coliving como la Vivienda del Futuro para Jóvenes en Bogotá: El coliving en Bogotá representa una evolución significativa en el concepto de alojamiento para estudiantes y jóvenes profesionales. Al ofrecer más que un simple lugar para dormir, fomenta la creación de comunidades vibrantes, impulsa el desarrollo personal y profesional, y proporciona una alojamiento flexible en Bogotá que se adapta a las necesidades de la nueva generación. BambuColiving se posiciona como un facilitador de esta experiencia, ofreciendo espacios diseñados para conectar, crecer y prosperar en la dinámica capital colombiana. Si buscas más que una habitación, si valoras la comunidad, la flexibilidad y las oportunidades de crecimiento, el coliving es sin duda la alternativa moderna a las residencias estudiantiles tradicionales que debes considerar.",
       tags: ["comunidad", "coliving", "eventos", "conexiones", "convivencia"],
-      relatedPosts: ["5-razones-para-elegir-coliving", "equilibrio-trabajo-vida-personal"]
+      relatedPosts: ["el-auge-del-coliving", "slowmads-en-bogota"]
     }
   },
-  "mejores-cafes-para-trabajar": {
+  "mas-alla-de-las-paredes": {
     id: 4,
     title: "Los mejores cafés para trabajar cerca de Bambu Coliving",
     excerpt: "Una selección de cafeterías con buen WiFi, enchufes y ambiente agradable para tus días de trabajo fuera de casa.",
-    date: "5 de junio, 2025",
-    author: "Andrés Pérez",
+    date: "22 de julio, 2025",
+    author: "Fausto Abner",
     image: "/images/Creativos1.jpg",
-    slug: "mejores-cafes-para-trabajar",
+    slug: "mas-alla-de-las-paredes",
     content: {
       mainImage: "/images/Creativos3.jpg",
-      introduction: "A veces necesitas un cambio de ambiente para impulsar tu creatividad. Descubre los mejores cafés cerca de Bambu Coliving que combinan buen café, WiFi confiable y ambiente perfecto para trabajar.",
+      introduction: "Redefiniendo la vivienda en la capital: En una ciudad tan vibrante y competitiva como Bogotá, el concepto de hogar está en plena transformación. Para la nueva generación de profesionales y creativos, un lugar para vivir ya no es suficiente. Hoy, la búsqueda se centra en espacios que ofrezcan flexibilidad, comunidad y, sobre todo, oportunidades. Aquí es donde el coliving en Bogotá deja de ser una simple tendencia para convertirse en un ecosistema estratégico de crecimiento.",
       sections: [
         {
-          title: "Café Creativo",
-          content: "A solo 5 minutos caminando, este café ofrece espacios de trabajo individuales, WiFi de alta velocidad y los mejores lattes de la zona. Perfecto para sesiones largas de trabajo.",
+          title: "Pero, ¿qué es coliving? ",
+          content: "Lejos de ser una simple vivienda compartida, un coliving es un modelo residencial que fusiona lo privado con lo comunitario. Ofrece habitaciones amuebladas en arriendo, muchas veces con la opción de alquiler de habitación con baño privado, dentro de una propiedad con increíbles áreas sociales y de trabajo compartidas. La pregunta de cómo funciona un coliving tiene una respuesta sencilla: pagas una tarifa mensual que lo cubre todo (servicios, internet, limpieza y acceso a todas las amenidades), permitiéndote vivir sin complicaciones y enfocarte en lo que realmente importa: tu vida y tu carrera.",
           image: "/images/Creativos1.jpg"
         },
         {
-          title: "The Coffee Lab",
-          content: "Un espacio moderno con múltiples enchufes, mesas amplias y café de especialidad. Su ambiente tranquilo lo hace ideal para reuniones virtuales.",
-          image: "/images/Creativos2.jpg"
+          title: "El Ecosistema Oculto: Networking y Sinergias Profesionales en tu Propio Hogar",
+          content: "El mayor de los beneficios del coliving no siempre figura en el folleto de coliving precios, pero es el más valioso: la comunidad. Imagina eliminar la fricción de los eventos de networking tradicionales y, en su lugar, generar conexiones significativas mientras te preparas un café en la cocina o compartes ideas en la zona de coworking. Estos espacios están diseñados para fomentar la interacción. El coliving para profesionales y el coliving para nómadas digitales atraen a un perfil de personas con mentalidad de crecimiento, creando un caldo de cultivo para la innovación.",
         },
         {
-          title: "Biblioteca Café",
-          content: "Combina el encanto de una biblioteca con la comodidad de un café. Espacios silenciosos y conexión estable para máxima concentración.",
+          title: "Conexiones Orgánicas y Auténticas: ",
+          content: "En lugar de intercambiar tarjetas de presentación de manera forzada, en un coliving compartes experiencias. La convivencia en espacios compartidos transforma a tus vecinos en tu red de apoyo. Ese diseñador gráfico que vive en el pasillo puede convertirse en el socio perfecto para tu nuevo proyecto web.",
           image: "/images/living_1.png"
         },
         {
-          title: "Tips para Trabajar en Cafés",
-          content: "Consejos prácticos para maximizar tu productividad cuando trabajas desde un café, desde elegir el mejor horario hasta mantener tus dispositivos cargados."
-        }
+          title: "Colaboración Interdisciplinaria: ",
+          content: "Un estudio reciente de la Harvard Business Review destaca que las redes profesionales diversas son un catalizador para la innovación. En Bambu Coliving, no es raro encontrar a un ingeniero de software, una especialista en marketing digital y un emprendedor social discutiendo ideas en el salón. Esta diversidad de talentos convierte los espacios compartidos en verdaderos centros de pensamiento."
+        },
+        {
+          title: "Flexibilidad que Impulsa la Productividad: ",
+          content: "Al optar por un coliving todo incluido, te liberas de las preocupaciones administrativas de un arriendo tradicional. Esto te da más tiempo y energía mental para dedicar a tus proyectos. Ya sea que necesites en arriendo una habitacion por meses o un alojamiento flexible Bogotá para una estancia menos larga, el modelo se adapta a ti."
+        },
+        {
+          title: "Colaboración Interdisciplinaria: ",
+          content: "Un estudio reciente de la Harvard Business Review destaca que las redes profesionales diversas son un catalizador para la innovación. En Bambu Coliving, no es raro encontrar a un ingeniero de software, una especialista en marketing digital y un emprendedor social discutiendo ideas en el salón. Esta diversidad de talentos convierte los espacios compartidos en verdaderos centros de pensamiento."
+        },
+        {
+          title: "El Futuro del Trabajo es el Futuro del Hogar",
+          content: "Las estadísticas globales no mienten: la demanda de espacios de coliving sigue en aumento. Un informe de MarketsandMarkets proyecta un crecimiento sostenido del mercado global, una tendencia que se refleja con fuerza en polos de innovación como Bogotá. Los profesionales ya no solo buscan un arriendo de habitaciones Bogotá; buscan experiencias integrales. Los mejores coliving en Bogotá entienden esto a la perfección. No se trata solo de ofrecer un techo, sino de construir una comunidad coliving sólida, facilitar conexiones y proporcionar las herramientas para el éxito. Es la respuesta perfecta para quienes buscan un alojamiento estudiantil en Bogotá con un enfoque profesional, o para cualquier persona que valore la sinergia entre vida y trabajo."
+        },
+        {
+          title: "¿Estás listo para llevar tu carrera al siguiente nivel? ",
+          content: "Descubre cómo Bambu Coliving puede ser el ecosistema que impulse tu crecimiento. ¡Únete a una comunidad que avanza unida!"
+        },
+
       ],
-      conclusion: "Trabajar desde cafés puede ser una experiencia productiva y agradable. Estos espacios ofrecen el equilibrio perfecto entre ambiente profesional y casual que muchos trabajadores remotos buscan.",
-      tags: ["cafés", "trabajo remoto", "Bogotá", "productividad", "WiFi"],
-      relatedPosts: ["guia-nomadas-digitales-bogota", "equilibrio-trabajo-vida-personal"]
+      conclusion: "Bambu Coliving, tu Próximo Paso Estratégico: Elegir dónde vivir en Bogotá es una de las decisiones más importantes que tomarás. Al considerar tus opciones, piensa más allá del alquiler. Piensa en el valor añadido, en la comunidad que te rodeará y en las puertas que se pueden abrir. Bambu Coliving no es solo un lugar con habitaciones amuebladas en arriendo; es un trampolín. Es una inversión en tu red de contactos, en tu desarrollo profesional y en tu bienestar personal. Es el lugar donde tu vecino puede convertirse en tu próximo mentor, socio o amigo para toda la vida.",
+      tags: ["coliving", "networking", "crecimiento profesional", "Bogotá", "Bambu Coliving"],
+      relatedPosts: ["coliving-vs-residencia", "el-auge-del-coliving"]
     }
   },
-  "eventos-bogota-verano-2025": {
-    id: 5,
-    title: "Eventos imperdibles en Bogotá durante el verano 2025",
-    excerpt: "Festivales, exposiciones y actividades culturales para disfrutar al máximo tu estancia en la ciudad.",
-    date: "12 de junio, 2025",
-    author: "Sofía Vargas",
-    image: "/images/Creativos1.jpg",
-    slug: "eventos-bogota-verano-2025",
-    content: {
-      mainImage: "/images/Creativos2.jpg",
-      introduction: "El verano 2025 en Bogotá promete ser extraordinario. Te presentamos una guía completa de los eventos más destacados para que no te pierdas nada de la vibrante escena cultural de la ciudad.",
-      sections: [
-        {
-          title: "Festivales de Música",
-          content: "Desde conciertos al aire libre hasta festivales de música electrónica, la escena musical de Bogotá cobra vida en verano. Fechas, lugares y cómo conseguir entradas.",
-          image: "/images/Creativos3.jpg"
-        },
-        {
-          title: "Exposiciones de Arte",
-          content: "Las mejores galerías y museos presentan exposiciones especiales. Descubre artistas locales e internacionales en espacios únicos.",
-          image: "/images/living_1.png"
-        },
-        {
-          title: "Eventos Gastronómicos",
-          content: "Festivales de comida, mercados al aire libre y experiencias culinarias que no te puedes perder este verano.",
-          image: "/images/living_2.png"
-        },
-        {
-          title: "Actividades al Aire Libre",
-          content: "Desde yoga en el parque hasta ciclovías especiales, aprovecha el buen clima con eventos al aire libre."
-        }
-      ],
-      conclusion: "El verano en Bogotá es la temporada perfecta para explorar la rica oferta cultural de la ciudad. Con tantos eventos emocionantes, cada día trae una nueva aventura por descubrir.",
-      tags: ["eventos", "Bogotá", "cultura", "festivales", "verano 2025"],
-      relatedPosts: ["guia-nomadas-digitales-bogota", "mejores-cafes-para-trabajar"]
-    }
-  },
-  "equilibrio-trabajo-vida-personal": {
-    id: 6,
-    title: "Equilibrio entre trabajo y vida personal en espacios de coliving",
-    excerpt: "Consejos prácticos para mantener la productividad sin sacrificar tu bienestar en entornos compartidos.",
-    date: "25 de junio, 2025",
-    author: "Daniel Moreno",
-    image: "/images/Creativos1.jpg",
-    slug: "equilibrio-trabajo-vida-personal",
-    content: {
-      mainImage: "/images/Creativos2.jpg",
-      introduction: "Mantener un equilibrio saludable entre trabajo y vida personal puede ser un reto en espacios de coliving. Descubre estrategias efectivas para maximizar tu productividad mientras cuidas tu bienestar.",
-      sections: [
-        {
-          title: "Creando Rutinas Efectivas",
-          content: "Establece rutinas que separen claramente el tiempo de trabajo del tiempo personal, incluso cuando trabajas desde casa.",
-          image: "/images/Creativos3.jpg"
-        },
-        {
-          title: "Espacios de Trabajo vs. Descanso",
-          content: "Aprende a delimitar espacios físicos y mentales para diferentes actividades, maximizando la funcionalidad de tu entorno de coliving.",
-          image: "/images/living_1.png"
-        },
-        {
-          title: "Gestión del Tiempo",
-          content: "Técnicas y herramientas para organizar tu tiempo efectivamente, incluyendo el método Pomodoro y otras estrategias de productividad.",
-          image: "/images/living_2.png"
-        },
-        {
-          title: "Actividades de Desconexión",
-          content: "Ideas para actividades que te ayuden a desconectar del trabajo y reconectar con tu comunidad y contigo mismo."
-        }
-      ],
-      conclusion: "El equilibrio entre trabajo y vida personal es fundamental para tu éxito y bienestar en un espacio de coliving. Con las estrategias adecuadas, puedes crear una rutina que te permita ser productivo sin sacrificar tu calidad de vida.",
-      tags: ["productividad", "bienestar", "trabajo remoto", "coliving", "equilibrio"],
-      relatedPosts: ["5-razones-para-elegir-coliving", "construir-comunidad-espacios-compartidos"]
-    }
-  }
+  
 }
 
 // ============= SHARED SPACES CONTENT =============
