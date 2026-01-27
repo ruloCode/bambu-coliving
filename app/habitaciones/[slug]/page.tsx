@@ -48,7 +48,7 @@ export default function RoomDetail({ params }: { params: { slug: string } }) {
               <p className="text-gray-600 mb-6">{room.description}</p>
               <RoomFeaturesSection features={featuresWithIcons} />
               <RoomDetailsSection size={room.size} maxGuests={room.maxGuests} />
-              <RoomPricesSection price={room.price} discounts={room.discounts} />
+              <RoomPricesSection prices={room.discounts} />
             </div>
             <div>
               <RoomBookingSection 

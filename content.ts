@@ -380,9 +380,14 @@ export interface GuestOption {
 // ============= ROOM DETAILS CONTENT =============
 
 export interface RoomDiscount {
-  "3": string // 3 meses - 15% descuento
-  "6": string // 6 meses - 20% descuento
-  "12": string // 12 meses - 30% descuento
+  "1d": string   // 1 día - precio base por día
+  "3d": string   // 3 días - 2.5% descuento
+  "7d": string   // 7 días - 3% descuento
+  "15d": string  // 15 días - 5% descuento
+  "1m": string   // 1 mes - 10% descuento
+  "3m": string   // 3 meses - 15% descuento
+  "6m": string   // 6 meses - 20% descuento
+  "12m": string  // 12 meses - 30% descuento
 }
 
 export interface RoomFeature {
@@ -407,9 +412,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Habitación acogedora con ambiente tranquilo, perfecta para quienes buscan un espacio íntimo y relajante para descansar y trabajar.",
     price: "952.000",
     discounts: {
-      "3": "1.156.000",
-      "6": "1.088.000",
-      "12": "952.000"
+      "1d": "90.667",
+      "3d": "139.400",
+      "7d": "326.853",
+      "15d": "714.000",
+      "1m": "1.224.000",
+      "3m": "1.156.000",
+      "6m": "1.088.000",
+      "12m": "952.000"
     },
     features: [
       { name: "Cama semidoble", iconName: "Bed" },
@@ -431,9 +441,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Habitación con detalles arquitectónicos únicos y amplio espacio. Ideal para profesionales y nómadas digitales.",
     price: "1.152.000",
     discounts: {
-      "3": "1.398.857",
-      "6": "1.316.571",
-      "12": "1.152.000"
+      "1d": "109.714",
+      "3d": "168.686",
+      "7d": "395.520",
+      "15d": "864.000",
+      "1m": "1.481.143",
+      "3m": "1.398.857",
+      "6m": "1.316.571",
+      "12m": "1.152.000"
     },
     features: [
       { name: "Cama semidoble", iconName: "Bed" },
@@ -455,9 +470,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Espacio compacto pero luminoso con techos altos que crean una sensación de amplitud. Perfecta para estadías económicas.",
     price: "752.000",
     discounts: {
-      "3": "913.143",
-      "6": "859.429",
-      "12": "752.000"
+      "1d": "71.619",
+      "3d": "110.114",
+      "7d": "258.187",
+      "15d": "564.000",
+      "1m": "966.857",
+      "3m": "913.143",
+      "6m": "859.429",
+      "12m": "752.000"
     },
     features: [
       { name: "Cama semidoble", iconName: "Bed" },
@@ -479,9 +499,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Suite espaciosa con closet XL y cama doble. Diseñada para quienes valoran el confort y necesitan espacio extra de almacenamiento.",
     price: "1.304.000",
     discounts: {
-      "3": "1.583.429",
-      "6": "1.490.286",
-      "12": "1.304.000"
+      "1d": "124.190",
+      "3d": "190.943",
+      "7d": "447.707",
+      "15d": "978.000",
+      "1m": "1.676.571",
+      "3m": "1.583.429",
+      "6m": "1.490.286",
+      "12m": "1.304.000"
     },
     features: [
       { name: "Cama doble", iconName: "Bed" },
@@ -503,9 +528,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Una de nuestras suites más amplias con carácter único. Closet XL y ambiente perfecto para estadías largas.",
     price: "1.352.000",
     discounts: {
-      "3": "1.641.714",
-      "6": "1.545.143",
-      "12": "1.352.000"
+      "1d": "128.762",
+      "3d": "197.971",
+      "7d": "464.187",
+      "15d": "1.014.000",
+      "1m": "1.738.286",
+      "3m": "1.641.714",
+      "6m": "1.545.143",
+      "12m": "1.352.000"
     },
     features: [
       { name: "Cama doble", iconName: "Bed" },
@@ -527,9 +557,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Ubicación privilegiada en el segundo piso con vista y tranquilidad. Espacio cómodo para profesionales.",
     price: "1.136.000",
     discounts: {
-      "3": "1.379.429",
-      "6": "1.298.286",
-      "12": "1.136.000"
+      "1d": "108.190",
+      "3d": "166.343",
+      "7d": "390.027",
+      "15d": "852.000",
+      "1m": "1.460.571",
+      "3m": "1.379.429",
+      "6m": "1.298.286",
+      "12m": "1.136.000"
     },
     features: [
       { name: "Cama semidoble", iconName: "Bed" },
@@ -551,9 +586,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Nuestra habitación más grande y premium. Suite ejecutiva con todo el espacio que necesitas para vivir y trabajar cómodamente.",
     price: "1.496.000",
     discounts: {
-      "3": "1.816.571",
-      "6": "1.709.714",
-      "12": "1.496.000"
+      "1d": "142.476",
+      "3d": "219.057",
+      "7d": "513.627",
+      "15d": "1.122.000",
+      "1m": "1.923.429",
+      "3m": "1.816.571",
+      "6m": "1.709.714",
+      "12m": "1.496.000"
     },
     features: [
       { name: "Cama doble", iconName: "Bed" },
@@ -575,9 +615,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Suite amplia con carácter especial. Closet XL y espacio generoso para quienes buscan comodidad premium.",
     price: "1.440.000",
     discounts: {
-      "3": "1.748.571",
-      "6": "1.645.714",
-      "12": "1.440.000"
+      "1d": "137.143",
+      "3d": "210.857",
+      "7d": "494.400",
+      "15d": "1.080.000",
+      "1m": "1.851.429",
+      "3m": "1.748.571",
+      "6m": "1.645.714",
+      "12m": "1.440.000"
     },
     features: [
       { name: "Cama doble", iconName: "Bed" },
@@ -599,9 +644,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Suite en primer piso con fácil acceso. Espacio amplio y cómodo, ideal para estadías prolongadas.",
     price: "1.416.000",
     discounts: {
-      "3": "1.719.429",
-      "6": "1.618.286",
-      "12": "1.416.000"
+      "1d": "134.857",
+      "3d": "207.343",
+      "7d": "486.160",
+      "15d": "1.062.000",
+      "1m": "1.820.571",
+      "3m": "1.719.429",
+      "6m": "1.618.286",
+      "12m": "1.416.000"
     },
     features: [
       { name: "Cama doble", iconName: "Bed" },
@@ -623,9 +673,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Habitación con personalidad única y buen espacio. Perfecta para profesionales que buscan un ambiente diferente.",
     price: "1.024.000",
     discounts: {
-      "3": "1.243.429",
-      "6": "1.170.286",
-      "12": "1.024.000"
+      "1d": "97.524",
+      "3d": "149.943",
+      "7d": "351.573",
+      "15d": "768.000",
+      "1m": "1.316.571",
+      "3m": "1.243.429",
+      "6m": "1.170.286",
+      "12m": "1.024.000"
     },
     features: [
       { name: "Cama semidoble", iconName: "Bed" },
@@ -647,9 +702,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     description: "Suite con baño amplio y espacioso. Ideal para quienes valoran el confort en el baño y necesitan espacio extra.",
     price: "1.256.000",
     discounts: {
-      "3": "1.525.143",
-      "6": "1.435.429",
-      "12": "1.256.000"
+      "1d": "119.619",
+      "3d": "183.914",
+      "7d": "431.227",
+      "15d": "942.000",
+      "1m": "1.614.857",
+      "3m": "1.525.143",
+      "6m": "1.435.429",
+      "12m": "1.256.000"
     },
     features: [
       { name: "Cama doble", iconName: "Bed" },
