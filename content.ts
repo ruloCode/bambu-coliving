@@ -25,21 +25,21 @@ export const featuredRoomsContent = {
     {
       title: "Techo Alto - 8.6m²",
       image: "/images/hb3.1.png",
-      price: "1.074.286",
+      price: "752.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
       slug: "techo-alto"
     },
     {
       title: "Valeria - 15.1m²", 
       image: "/images/hb4.1.png",
-      price: "1.862.857",
+      price: "1.304.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
       slug: "valeria"
     },
     {
       title: "Gerente - 17.7m²",
       image: "/images/hb7.1.png", 
-      price: "2.137.143",
+      price: "1.496.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
       slug: "gerente"
     }
@@ -156,7 +156,7 @@ const habitacionesList = {
     {
       title: "Oscuro - 11.4m²",
       image: "/images/hb1.png",
-      price: "1.360.000",
+      price: "952.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XS"],
       slug: "oscuro",
       category: "privada",
@@ -169,7 +169,7 @@ const habitacionesList = {
     {
       title: "Puerta Arco - 13.4m²",
       image: "/images/hb2.1.png",
-      price: "1.645.714",
+      price: "1.152.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
       slug: "puerta-arco",
       category: "privada",
@@ -182,7 +182,7 @@ const habitacionesList = {
     {
       title: "Techo Alto - 8.6m²",
       image: "/images/hb3.1.png",
-      price: "1.074.286",
+      price: "752.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
       slug: "techo-alto",
       category: "privada",
@@ -195,7 +195,7 @@ const habitacionesList = {
     {
       title: "Valeria - 15.1m²",
       image: "/images/hb4.1.png",
-      price: "1.862.857",
+      price: "1.304.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
       slug: "valeria",
       category: "suite",
@@ -208,7 +208,7 @@ const habitacionesList = {
     {
       title: "Old Me - 15.7m²",
       image: "/images/hb5.1.png",
-      price: "1.931.429",
+      price: "1.352.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
       slug: "old-me",
       category: "suite",
@@ -221,7 +221,7 @@ const habitacionesList = {
     {
       title: "Mitad Segundo Piso - 13.4m²",
       image: "/images/hb6.1.png",
-      price: "1.622.857",
+      price: "1.136.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
       slug: "mitad-segundo-piso",
       category: "privada",
@@ -234,7 +234,7 @@ const habitacionesList = {
     {
       title: "Gerente - 17.7m²",
       image: "/images/hb7.1.png",
-      price: "2.137.143",
+      price: "1.496.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
       slug: "gerente",
       category: "suite",
@@ -247,7 +247,7 @@ const habitacionesList = {
     {
       title: "Altillo - 16.8m²",
       image: "/images/hb8.1.png",
-      price: "2.057.143",
+      price: "1.440.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
       slug: "altillo",
       category: "suite",
@@ -260,7 +260,7 @@ const habitacionesList = {
     {
       title: "Apt 1 Piso - 16.7m²",
       image: "/images/hb9.1.png",
-      price: "2.022.857",
+      price: "1.416.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
       slug: "apt-1piso",
       category: "suite",
@@ -273,7 +273,7 @@ const habitacionesList = {
     {
       title: "Corredor Sin Sentido - 12m²",
       image: "/images/hb10.1.png",
-      price: "1.462.857",
+      price: "1.024.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
       slug: "corredor-sin-sentido",
       category: "privada",
@@ -285,9 +285,9 @@ const habitacionesList = {
     },
     {
       title: "Baño Grande - 14.7m²",
-      image: "/images/hb11.1.png",
-      price: "1.794.286",
-      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
+      image: "/images/hb10.1.png",
+      price: "1.256.000",
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado amplio", "Closet L"],
       slug: "bano-grande",
       category: "suite",
       discounts: {
@@ -405,7 +405,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "oscuro": {
     title: "Oscuro",
     description: "Habitación acogedora con ambiente tranquilo, perfecta para quienes buscan un espacio íntimo y relajante para descansar y trabajar.",
-    price: "1.360.000",
+    price: "952.000",
     discounts: {
       "3": "1.156.000",
       "6": "1.088.000",
@@ -429,7 +429,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "puerta-arco": {
     title: "Puerta Arco",
     description: "Habitación con detalles arquitectónicos únicos y amplio espacio. Ideal para profesionales y nómadas digitales.",
-    price: "1.645.714",
+    price: "1.152.000",
     discounts: {
       "3": "1.398.857",
       "6": "1.316.571",
@@ -453,7 +453,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "techo-alto": {
     title: "Techo Alto",
     description: "Espacio compacto pero luminoso con techos altos que crean una sensación de amplitud. Perfecta para estadías económicas.",
-    price: "1.074.286",
+    price: "752.000",
     discounts: {
       "3": "913.143",
       "6": "859.429",
@@ -477,7 +477,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "valeria": {
     title: "Valeria",
     description: "Suite espaciosa con closet XL y cama doble. Diseñada para quienes valoran el confort y necesitan espacio extra de almacenamiento.",
-    price: "1.862.857",
+    price: "1.304.000",
     discounts: {
       "3": "1.583.429",
       "6": "1.490.286",
@@ -501,7 +501,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "old-me": {
     title: "Old Me",
     description: "Una de nuestras suites más amplias con carácter único. Closet XL y ambiente perfecto para estadías largas.",
-    price: "1.931.429",
+    price: "1.352.000",
     discounts: {
       "3": "1.641.714",
       "6": "1.545.143",
@@ -525,7 +525,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "mitad-segundo-piso": {
     title: "Mitad Segundo Piso",
     description: "Ubicación privilegiada en el segundo piso con vista y tranquilidad. Espacio cómodo para profesionales.",
-    price: "1.622.857",
+    price: "1.136.000",
     discounts: {
       "3": "1.379.429",
       "6": "1.298.286",
@@ -549,7 +549,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "gerente": {
     title: "Gerente",
     description: "Nuestra habitación más grande y premium. Suite ejecutiva con todo el espacio que necesitas para vivir y trabajar cómodamente.",
-    price: "2.137.143",
+    price: "1.496.000",
     discounts: {
       "3": "1.816.571",
       "6": "1.709.714",
@@ -573,7 +573,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "altillo": {
     title: "Altillo",
     description: "Suite amplia con carácter especial. Closet XL y espacio generoso para quienes buscan comodidad premium.",
-    price: "2.057.143",
+    price: "1.440.000",
     discounts: {
       "3": "1.748.571",
       "6": "1.645.714",
@@ -597,7 +597,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "apt-1piso": {
     title: "Apt 1 Piso",
     description: "Suite en primer piso con fácil acceso. Espacio amplio y cómodo, ideal para estadías prolongadas.",
-    price: "2.022.857",
+    price: "1.416.000",
     discounts: {
       "3": "1.719.429",
       "6": "1.618.286",
@@ -621,7 +621,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "corredor-sin-sentido": {
     title: "Corredor Sin Sentido",
     description: "Habitación con personalidad única y buen espacio. Perfecta para profesionales que buscan un ambiente diferente.",
-    price: "1.462.857",
+    price: "1.024.000",
     discounts: {
       "3": "1.243.429",
       "6": "1.170.286",
@@ -645,7 +645,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
   "bano-grande": {
     title: "Baño Grande",
     description: "Suite con baño amplio y espacioso. Ideal para quienes valoran el confort en el baño y necesitan espacio extra.",
-    price: "1.794.286",
+    price: "1.256.000",
     discounts: {
       "3": "1.525.143",
       "6": "1.435.429",
@@ -659,7 +659,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
       { name: "Baño privado amplio", iconName: "Bath" }
     ],
     images: [
-      "/images/hb11.1.png",
+      "/images/hb10.1.png",
       "/images/habitacion_3.avif",
       "/images/habitacion_4.avif"
     ],

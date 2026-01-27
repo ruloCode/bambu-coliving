@@ -1,4 +1,4 @@
-import { Wifi, Tv, Bath, UtensilsCrossed, PawPrint, MonitorSmartphone, Warehouse, Sun, Users, Lock, Hotel, Sofa } from "lucide-react"
+import { Wifi, Tv, Bath, UtensilsCrossed, PawPrint, MonitorSmartphone, Warehouse, Sun, Users, Lock, Hotel, Sofa, Bed } from "lucide-react"
 import RoomGallerySection from "@/components/habitaciones/slug/RoomGallerySection"
 import RoomFeaturesSection from "@/components/habitaciones/slug/RoomFeaturesSection"
 import RoomDetailsSection from "@/components/habitaciones/slug/RoomDetailsSection"
@@ -19,12 +19,13 @@ const iconMap = {
   Users,
   Lock,
   Hotel,
-  Sofa
+  Sofa,
+  Bed
 }
 
 export default function RoomDetail({ params }: { params: { slug: string } }) {
   const { slug } = params
-  const room = roomDetails[slug] || roomDetails["tipo-1"]
+  const room = roomDetails[slug] || roomDetails["oscuro"]
 
   // Map the feature icons to their components using createElement
   const featuresWithIcons = room.features.map(feature => ({
