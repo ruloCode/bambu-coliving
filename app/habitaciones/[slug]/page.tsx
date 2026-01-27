@@ -1,11 +1,14 @@
+"use client"
+
 import { Wifi, Tv, Bath, UtensilsCrossed, PawPrint, MonitorSmartphone, Warehouse, Sun, Users, Lock, Hotel, Sofa, Bed } from "lucide-react"
+import { useState, createElement } from "react"
 import RoomGallerySection from "@/components/habitaciones/slug/RoomGallerySection"
 import RoomFeaturesSection from "@/components/habitaciones/slug/RoomFeaturesSection"
 import RoomDetailsSection from "@/components/habitaciones/slug/RoomDetailsSection"
 import RoomPricesSection from "@/components/habitaciones/slug/RoomPricesSection"
 import RoomBookingSection from "@/components/habitaciones/slug/RoomBookingSection"
 import { roomDetails } from "@/content"
-import { createElement } from "react"
+import { use } from "react"
 
 const iconMap = {
   Wifi,
@@ -23,9 +26,12 @@ const iconMap = {
   Bed
 }
 
-export default function RoomDetail({ params }: { params: { slug: string } }) {
-  const { slug } = params
+export default function RoomDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = use(params)
   const room = roomDetails[slug] || roomDetails["oscuro"]
+  
+  // Estado para el periodo seleccionado (por defecto 12 meses - el mejor precio)
+  const [selectedPeriod, setSelectedPeriod] = useState("12m")
 
   // Map the feature icons to their components using createElement
   const featuresWithIcons = room.features.map(feature => ({
@@ -35,6 +41,9 @@ export default function RoomDetail({ params }: { params: { slug: string } }) {
     }),
     name: feature.name
   }))
+
+  // Obtener el precio según el periodo seleccionado
+  const selectedPrice = room.discounts[selectedPeriod as keyof typeof room.discounts]
 
   return (
     <div className="flex flex-col w-full">
@@ -48,7 +57,11 @@ export default function RoomDetail({ params }: { params: { slug: string } }) {
               <p className="text-gray-600 mb-6">{room.description}</p>
               <RoomFeaturesSection features={featuresWithIcons} />
               <RoomDetailsSection size={room.size} maxGuests={room.maxGuests} />
-              <RoomPricesSection prices={room.discounts} />
+              <RoomPricesSection 
+                prices={room.discounts} 
+                selectedPeriod={selectedPeriod}
+                onSelectPeriod={setSelectedPeriod}
+              />
             </div>
             <div>
               <RoomBookingSection 
@@ -56,8 +69,9 @@ export default function RoomDetail({ params }: { params: { slug: string } }) {
                 roomTitle={room.title} 
                 roomImage={room.images[0]}
                 roomSize={room.size}
-                price={room.price} 
-                discounts={room.discounts}
+                selectedPeriod={selectedPeriod}
+                selectedPrice={selectedPrice}
+                prices={room.discounts}
               />
             </div>
           </div>
