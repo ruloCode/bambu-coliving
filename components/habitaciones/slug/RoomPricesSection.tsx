@@ -29,16 +29,12 @@ interface RoomPricesSectionProps {
 export default function RoomPricesSection({ prices, selectedPeriod, onSelectPeriod }: RoomPricesSectionProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
 
-  // Orden: más barato primero (12m) hasta más caro (1d)
+  // Solo precios mensuales (sin precios por día)
   const priceOptions: PriceOption[] = [
     { id: "12m", period: "12 Meses", price: prices["12m"], discount: "30%" },
     { id: "6m", period: "6 Meses", price: prices["6m"], discount: "20%" },
     { id: "3m", period: "3 Meses", price: prices["3m"], discount: "15%" },
     { id: "1m", period: "1 Mes", price: prices["1m"], discount: "10%" },
-    { id: "15d", period: "15 Días", price: prices["15d"], discount: "5%", perDay: true },
-    { id: "7d", period: "7 Días", price: prices["7d"], discount: "3%", perDay: true },
-    { id: "3d", period: "3 Días", price: prices["3d"], discount: "2.5%", perDay: true },
-    { id: "1d", period: "1 Día", price: prices["1d"], perDay: true },
   ]
 
   const scroll = (direction: "left" | "right") => {
@@ -97,7 +93,7 @@ export default function RoomPricesSection({ prices, selectedPeriod, onSelectPeri
                   ${option.price}
                 </p>
                 <p className="text-xs text-gray-500 mb-1">
-                  {option.perDay ? "COP / día" : "COP / mes"}
+                  COP / mes
                 </p>
                 {option.discount && (
                   <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
