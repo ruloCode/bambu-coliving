@@ -64,13 +64,14 @@ export default function RoomDetail({ params }: { params: Promise<{ slug: string 
               />
             </div>
             <div>
-              <RoomBookingSection 
+              <RoomBookingSection
                 roomSlug={slug}
-                roomTitle={room.title} 
+                roomTitle={room.title}
                 roomImage={room.images[0]}
                 roomSize={room.size}
                 selectedPeriod={selectedPeriod}
                 selectedPrice={selectedPrice}
+                maxGuests={room.maxGuests}
                 prices={room.discounts}
               />
             </div>

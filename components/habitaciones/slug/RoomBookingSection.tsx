@@ -5,9 +5,9 @@ import { Label } from "@/components/ui/label"
 import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { CalendarIcon, Users, Clock } from "lucide-react"
-import { format, addMonths } from "date-fns"
+import { format, differenceInDays, addDays, addMonths } from "date-fns"
 import { es } from "date-fns/locale"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useBookingStore } from "@/lib/booking-store"
 import { useRouter } from "next/navigation"
 
@@ -18,6 +18,7 @@ interface RoomBookingSectionProps {
   roomSize: string
   selectedPeriod: string
   selectedPrice: string
+  maxGuests: number
   prices: {
     "1d": string
     "3d": string
@@ -31,6 +32,10 @@ interface RoomBookingSectionProps {
 }
 
 const periodLabels: Record<string, string> = {
+  "1d": "1 Día",
+  "3d": "3 Días",
+  "7d": "7 Días",
+  "15d": "15 Días",
   "1m": "1 Mes",
   "3m": "3 Meses",
   "6m": "6 Meses",
@@ -38,6 +43,10 @@ const periodLabels: Record<string, string> = {
 }
 
 const periodMultipliers: Record<string, number> = {
+  "1d": 1,
+  "3d": 3,
+  "7d": 7,
+  "15d": 15,
   "1m": 1,
   "3m": 3,
   "6m": 6,
@@ -45,11 +54,16 @@ const periodMultipliers: Record<string, number> = {
 }
 
 const periodDiscounts: Record<string, string> = {
+  "3d": "2.5%",
+  "7d": "3%",
+  "15d": "5%",
   "1m": "10%",
   "3m": "15%",
   "6m": "20%",
   "12m": "30%"
 }
+
+const isDailyPeriod = (period: string) => period.endsWith("d")
 
 export default function RoomBookingSection({
   roomSlug,
@@ -58,33 +72,51 @@ export default function RoomBookingSection({
   roomSize,
   selectedPeriod,
   selectedPrice,
+  maxGuests,
   prices
 }: RoomBookingSectionProps) {
   const [checkIn, setCheckIn] = useState<Date>()
-  const [guests, setGuests] = useState(2)
+  const [checkOut, setCheckOut] = useState<Date>()
+  const [guests, setGuests] = useState(1)
   const router = useRouter()
 
   const { updateRoomSelection, updateBookingDates } = useBookingStore()
 
-  const priceNum = Number.parseInt(selectedPrice.replace(/\./g, ""))
-  const months = periodMultipliers[selectedPeriod] || 1
+  // Actualizar checkout al cambiar periodo o check-in
+  useEffect(() => {
+    if (!checkIn) return
+    const multiplier = periodMultipliers[selectedPeriod] || 1
+    if (isDailyPeriod(selectedPeriod)) {
+      setCheckOut(addDays(checkIn, multiplier))
+    } else {
+      setCheckOut(addMonths(checkIn, multiplier))
+    }
+  }, [selectedPeriod, checkIn])
 
-  // Calcular fecha de salida
-  const checkOutDate = checkIn ? addMonths(checkIn, months) : null
+  // Calcular días de estadía
+  const stayDays = checkIn && checkOut ? differenceInDays(checkOut, checkIn) : 0
+
+  const priceNum = Number.parseInt(selectedPrice.replace(/\./g, ""))
+  const isDaily = isDailyPeriod(selectedPeriod)
+
+  // Para periodos diarios el precio es total del periodo, calcular tarifa por día
+  // Para periodos mensuales el precio es por mes, calcular tarifa por día (mes = 30 días)
+  const dailyRate = isDaily
+    ? priceNum / (periodMultipliers[selectedPeriod] || 1)
+    : priceNum / 30
 
   // Recargo del 5% por huésped adicional (más de 1)
   const extraGuestSurcharge = guests > 1 ? (guests - 1) * 0.05 : 0
-  const surchargeAmount = Math.round(priceNum * extraGuestSurcharge)
 
   // Calcular total
-  const subtotal = priceNum * months
-  const totalSurcharge = surchargeAmount * months
+  const subtotal = Math.round(dailyRate * stayDays)
+  const surchargeAmount = Math.round(subtotal * extraGuestSurcharge)
 
   // Depósito de seguridad (10% del precio mensual base)
   const monthlyBase = Number.parseInt(prices["1m"].replace(/\./g, ""))
   const securityDepositNum = Math.round(monthlyBase * 0.1)
 
-  const total = subtotal + totalSurcharge + securityDepositNum
+  const total = subtotal + surchargeAmount + securityDepositNum
 
   const handleBookingReservation = () => {
     updateRoomSelection({
@@ -112,7 +144,7 @@ export default function RoomBookingSection({
           <span className="font-bold text-teal-700">{periodLabels[selectedPeriod] || selectedPeriod}</span>
         </div>
         <div className="flex justify-between items-center mt-2">
-          <span className="text-gray-600">Precio/mes:</span>
+          <span className="text-gray-600">{isDaily ? "Precio total:" : "Precio/mes:"}</span>
           <span className="font-bold text-lg">${selectedPrice} <span className="text-sm font-normal text-gray-500">COP</span></span>
         </div>
         {periodDiscounts[selectedPeriod] && (
@@ -147,17 +179,32 @@ export default function RoomBookingSection({
           </Popover>
         </div>
 
-        {/* Fecha de salida (calculada) */}
+        {/* Fecha de salida */}
         <div>
           <Label>Fecha de salida (Check-out)</Label>
-          <div className="w-full mt-1 flex items-center border rounded-md px-3 py-2 bg-gray-100 text-sm">
-            <CalendarIcon className="mr-2 h-4 w-4 text-gray-500" />
-            {checkOutDate ? (
-              <span>{format(checkOutDate, "PPP", { locale: es })}</span>
-            ) : (
-              <span className="text-gray-400">Se calcula al seleccionar fecha de llegada</span>
-            )}
-          </div>
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="outline" className="w-full mt-1 justify-start">
+                <CalendarIcon className="mr-2 h-4 w-4" />
+                {checkOut ? format(checkOut, "PPP", { locale: es }) : <span>Selecciona una fecha</span>}
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto p-0">
+              <Calendar
+                mode="single"
+                selected={checkOut}
+                onSelect={setCheckOut}
+                initialFocus
+                locale={es}
+                disabled={(date) => date <= (checkIn || new Date())}
+              />
+            </PopoverContent>
+          </Popover>
+          {stayDays > 0 && (
+            <p className="text-xs text-teal-600 mt-1 font-medium">
+              Estadía: {stayDays} {stayDays === 1 ? "día" : "días"}
+            </p>
+          )}
         </div>
 
         {/* Horarios de check-in / check-out */}
@@ -197,8 +244,8 @@ export default function RoomBookingSection({
             <Button
               variant="outline"
               size="icon"
-              onClick={() => setGuests(Math.min(4, guests + 1))}
-              disabled={guests >= 4}
+              onClick={() => setGuests(Math.min(maxGuests, guests + 1))}
+              disabled={guests >= maxGuests}
             >
               +
             </Button>
@@ -214,16 +261,19 @@ export default function RoomBookingSection({
         <div className="border-t pt-4 mt-4 space-y-2">
           <div className="flex justify-between text-sm">
             <span className="text-gray-600">
-              ${selectedPrice} × {months} {months === 1 ? "mes" : "meses"}
+              {stayDays > 0
+                ? `$${Math.round(dailyRate).toLocaleString("es-CO")}/día × ${stayDays} ${stayDays === 1 ? "día" : "días"}`
+                : "Selecciona fechas"
+              }
             </span>
             <span>${subtotal.toLocaleString("es-CO")}</span>
           </div>
-          {totalSurcharge > 0 && (
+          {surchargeAmount > 0 && (
             <div className="flex justify-between text-sm">
               <span className="text-gray-600">
                 Recargo huéspedes adicionales ({guests - 1} × 5%)
               </span>
-              <span>${totalSurcharge.toLocaleString("es-CO")}</span>
+              <span>${surchargeAmount.toLocaleString("es-CO")}</span>
             </div>
           )}
           <div className="flex justify-between text-sm">
@@ -243,7 +293,7 @@ export default function RoomBookingSection({
         <Button
           className="w-full bg-teal-600 hover:bg-teal-700 text-white py-6 text-lg"
           onClick={handleBookingReservation}
-          disabled={!checkIn}
+          disabled={!checkIn || !checkOut}
         >
           Reservar ahora
         </Button>

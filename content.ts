@@ -139,9 +139,7 @@ const habitacionesFilters = {
   guestsPlaceholder: "Selecciona el número de huéspedes",
   guestsOptions: [
     { value: "1", label: "1 Huésped" },
-    { value: "2", label: "2 Huéspedes" },
-    { value: "3", label: "3 Huéspedes" },
-    { value: "4", label: "4+ Huéspedes" }
+    { value: "2", label: "2 Huéspedes" }
   ],
   searchButton: {
     text: "Buscar disponibilidad",
@@ -492,7 +490,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/habitacion_5.avif"
     ],
     size: "8.6m²",
-    maxGuests: 1
+    maxGuests: 2
   },
   "valeria": {
     title: "Valeria",
