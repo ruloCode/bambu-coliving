@@ -3,9 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Menu, X, ChevronDown } from "lucide-react"
-import Image from "next/image"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -41,12 +39,6 @@ export default function Header() {
             <div className="absolute top-full left-0 mt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               <div className="bg-white border border-gray-200 rounded-md shadow-lg py-2 min-w-[200px]">
                 <Link 
-                  href="/eventos" 
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
-                >
-                  Eventos
-                </Link>
-                <Link 
                   href="/planes" 
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
                 >
@@ -57,12 +49,6 @@ export default function Header() {
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
                 >
                   Espacios Compartidos
-                </Link>
-                <Link 
-                  href="/servicios" 
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
-                >
-                  Servicios
                 </Link>
               </div>
             </div>
@@ -126,13 +112,6 @@ export default function Header() {
               {isCommunityOpen && (
                 <div className="pb-2 space-y-1">
                   <Link
-                    href="/eventos"
-                    className="flex w-full items-center py-2 pl-6 text-sm text-gray-600 transition-colors hover:text-primary hover:bg-gray-50"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Eventos
-                  </Link>
-                  <Link
                     href="/planes"
                     className="flex w-full items-center py-2 pl-6 text-sm text-gray-600 transition-colors hover:text-primary hover:bg-gray-50"
                     onClick={() => setIsMenuOpen(false)}
@@ -145,13 +124,6 @@ export default function Header() {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Espacios Compartidos
-                  </Link>
-                  <Link
-                    href="/servicios"
-                    className="flex w-full items-center py-2 pl-6 text-sm text-gray-600 transition-colors hover:text-primary hover:bg-gray-50"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Servicios
                   </Link>
                 </div>
               )}

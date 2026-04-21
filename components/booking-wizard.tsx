@@ -2,17 +2,17 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
+import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
-import { CalendarIcon, Check, ArrowLeft } from "lucide-react"
+import { Check, ArrowLeft } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { format, addDays } from "date-fns"
+import { format, addMonths } from "date-fns"
 import { es } from "date-fns/locale"
 import Image from "next/image"
+import Link from "next/link"
 import { useBookingStore } from "@/lib/booking-store"
 import { useRouter } from "next/navigation"
 
@@ -26,14 +26,13 @@ export default function BookingWizard() {
   const [currentStep, setCurrentStep] = useState(0)
   const router = useRouter()
   
-  const { 
-    bookingData, 
-    updateGuestInfo, 
+  const {
+    bookingData,
+    updateGuestInfo,
     updateSpecialRequests,
-    toggleTermsAgreement,
-    clearBooking,
-    isBookingValid,
-    updateBookingDates
+    setAgreedToTerms,
+    setAgreedToManual,
+    clearBooking
   } = useBookingStore()
 
   // Form state
@@ -196,8 +195,8 @@ export default function BookingWizard() {
               <div className="flex justify-between">
                 <span>Fecha de salida:</span>
                 <span>
-                  {bookingData.checkInDate 
-                    ? format(addDays(bookingData.checkInDate, Number.parseInt(bookingData.selectedDuration) * 30), "PPP", { locale: es }) 
+                  {bookingData.checkInDate
+                    ? format(addMonths(bookingData.checkInDate, Number.parseInt(bookingData.selectedDuration)), "PPP", { locale: es })
                     : "-"
                   }
                 </span>
@@ -321,6 +320,49 @@ export default function BookingWizard() {
                   placeholder="Ejemplo: Llegada temprana, alergias alimentarias, preferencias de habitación, etc."
                 />
               </div>
+
+              <div className="border-t pt-4 space-y-3">
+                <div className="flex items-start gap-3">
+                  <Checkbox
+                    id="agree-terms"
+                    checked={bookingData.agreedToTerms}
+                    onCheckedChange={(checked) => setAgreedToTerms(checked === true)}
+                    className="mt-1"
+                  />
+                  <Label htmlFor="agree-terms" className="text-sm font-normal leading-snug cursor-pointer">
+                    He leído y acepto los{" "}
+                    <Link
+                      href="/terminos-y-condiciones"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-teal-600 hover:underline font-medium"
+                    >
+                      Términos y Condiciones
+                    </Link>
+                    .
+                  </Label>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Checkbox
+                    id="agree-manual"
+                    checked={bookingData.agreedToManual}
+                    onCheckedChange={(checked) => setAgreedToManual(checked === true)}
+                    className="mt-1"
+                  />
+                  <Label htmlFor="agree-manual" className="text-sm font-normal leading-snug cursor-pointer">
+                    He leído y acepto el{" "}
+                    <Link
+                      href="/manual-de-convivencia"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-teal-600 hover:underline font-medium"
+                    >
+                      Manual de Convivencia
+                    </Link>
+                    .
+                  </Label>
+                </div>
+              </div>
             </div>
           </div>
         )}
@@ -355,8 +397,8 @@ export default function BookingWizard() {
                 <div className="flex justify-between">
                   <span>Fecha de salida:</span>
                   <span>
-                    {bookingData.checkInDate 
-                      ? format(addDays(bookingData.checkInDate, Number.parseInt(bookingData.selectedDuration) * 30), "PPP", { locale: es }) 
+                    {bookingData.checkInDate
+                      ? format(addMonths(bookingData.checkInDate, Number.parseInt(bookingData.selectedDuration)), "PPP", { locale: es })
                       : "-"
                     }
                   </span>
@@ -397,7 +439,15 @@ export default function BookingWizard() {
             className="bg-teal-600 hover:bg-teal-700"
             onClick={nextStep}
             disabled={
-              (currentStep === 1 && (!guestForm.firstName || !guestForm.lastName || !guestForm.email || !guestForm.phone || !guestForm.nationality))
+              currentStep === 1 && (
+                !guestForm.firstName ||
+                !guestForm.lastName ||
+                !guestForm.email ||
+                !guestForm.phone ||
+                !guestForm.nationality ||
+                !bookingData.agreedToTerms ||
+                !bookingData.agreedToManual
+              )
             }
           >
             {currentStep === 1 ? "Confirmar reserva" : "Siguiente"}

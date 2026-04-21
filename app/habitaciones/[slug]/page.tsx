@@ -1,14 +1,14 @@
 "use client"
 
 import { Wifi, Tv, Bath, UtensilsCrossed, PawPrint, MonitorSmartphone, Warehouse, Sun, Users, Lock, Hotel, Sofa, Bed } from "lucide-react"
-import { useState, createElement } from "react"
+import { createElement, use } from "react"
+import { notFound } from "next/navigation"
 import RoomGallerySection from "@/components/habitaciones/slug/RoomGallerySection"
 import RoomFeaturesSection from "@/components/habitaciones/slug/RoomFeaturesSection"
 import RoomDetailsSection from "@/components/habitaciones/slug/RoomDetailsSection"
 import RoomPricesSection from "@/components/habitaciones/slug/RoomPricesSection"
 import RoomBookingSection from "@/components/habitaciones/slug/RoomBookingSection"
 import { roomDetails } from "@/content"
-import { use } from "react"
 
 const iconMap = {
   Wifi,
@@ -28,22 +28,19 @@ const iconMap = {
 
 export default function RoomDetail({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
-  const room = roomDetails[slug] || roomDetails["oscuro"]
-  
-  // Estado para el periodo seleccionado (por defecto 12 meses - el mejor precio)
-  const [selectedPeriod, setSelectedPeriod] = useState("12m")
+  const room = roomDetails[slug]
 
-  // Map the feature icons to their components using createElement
+  if (!room) {
+    notFound()
+  }
+
   const featuresWithIcons = room.features.map(feature => ({
-    icon: createElement(iconMap[feature.iconName as keyof typeof iconMap], { 
+    icon: createElement(iconMap[feature.iconName as keyof typeof iconMap], {
       className: "h-5 w-5",
-      key: feature.name 
+      key: feature.name
     }),
     name: feature.name
   }))
-
-  // Obtener el precio según el periodo seleccionado
-  const selectedPrice = room.discounts[selectedPeriod as keyof typeof room.discounts]
 
   return (
     <div className="flex flex-col w-full">
@@ -57,11 +54,7 @@ export default function RoomDetail({ params }: { params: Promise<{ slug: string 
               <p className="text-gray-600 mb-6">{room.description}</p>
               <RoomFeaturesSection features={featuresWithIcons} />
               <RoomDetailsSection size={room.size} maxGuests={room.maxGuests} />
-              <RoomPricesSection 
-                prices={room.discounts} 
-                selectedPeriod={selectedPeriod}
-                onSelectPeriod={setSelectedPeriod}
-              />
+              <RoomPricesSection monthlyPrice={room.monthlyPrice} />
             </div>
             <div>
               <RoomBookingSection
@@ -69,10 +62,8 @@ export default function RoomDetail({ params }: { params: Promise<{ slug: string 
                 roomTitle={room.title}
                 roomImage={room.images[0]}
                 roomSize={room.size}
-                selectedPeriod={selectedPeriod}
-                selectedPrice={selectedPrice}
+                monthlyPrice={room.monthlyPrice}
                 maxGuests={room.maxGuests}
-                prices={room.discounts}
               />
             </div>
           </div>

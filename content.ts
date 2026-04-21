@@ -23,25 +23,25 @@ export const featuredRoomsContent = {
   description: "Descubre nuestras habitaciones diseñadas para ofrecerte confort, privacidad y todo lo que necesitas para vivir, trabajar y disfrutar en Bogotá.",
   rooms: [
     {
-      title: "Techo Alto - 8.6m²",
-      image: "/images/hb3.1.png",
-      price: "752.000",
-      features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
-      slug: "techo-alto"
-    },
-    {
-      title: "Valeria - 15.1m²", 
-      image: "/images/hb4.1.png",
-      price: "1.304.000",
-      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
-      slug: "valeria"
-    },
-    {
-      title: "Gerente - 17.7m²",
-      image: "/images/hb7.1.png", 
-      price: "1.496.000",
+      title: "Nogal - 17.7m²",
+      image: "/images/bambu_fotos/H7-4763.jpg",
+      price: "1.500.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
-      slug: "gerente"
+      slug: "nogal"
+    },
+    {
+      title: "Samán - 15.1m²",
+      image: "/images/bambu_fotos/H4-4805.jpg",
+      price: "1.300.000",
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
+      slug: "saman"
+    },
+    {
+      title: "Palma de Cera - 16.8m²",
+      image: "/images/bambu_fotos/H8-4775.jpg",
+      price: "1.400.000",
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
+      slug: "palma-de-cera"
     }
   ],
   cta: {
@@ -55,13 +55,6 @@ export const benefitsContent = {
   title: "¿Por qué elegir Bambu?",
   description: "Ofrecemos más que un lugar para vivir. Somos una comunidad donde podrás conectar, crecer y disfrutar.",
   benefits: [
-    {
-      icon: "Calendar",
-      iconColor: "teal",
-      title: "Eventos Sociales",
-      description: "Actividades semanales para conectar y disfrutar en comunidad.",
-      href: "/eventos"
-    },
     {
       icon: "MapPin",
       iconColor: "rose",
@@ -80,7 +73,7 @@ export const benefitsContent = {
       icon: "Coffee",
       iconColor: "rose",
       title: "Espacios Vibrantes",
-      description: "Coworking, cocina, gimnasio y áreas de descanso a tu disposición.",
+      description: "Coworking, cocina y áreas de descanso a tu disposición.",
       href: "/espacios-compartidos"
     }
   ]
@@ -152,147 +145,92 @@ const habitacionesList = {
   description: "Encuentra el espacio perfecto para tu estilo de vida",
   rooms: [
     {
-      title: "Oscuro - 11.4m²",
-      image: "/images/hb1.png",
-      price: "952.000",
+      title: "Gualanday - 11.4m²",
+      image: "/images/bambu_fotos/H1-4720.jpg",
+      price: "1.000.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XS"],
-      slug: "oscuro",
-      category: "privada",
-      discounts: {
-        "3": "1.156.000",
-        "6": "1.088.000",
-        "12": "952.000"
-      }
+      slug: "gualanday",
+      category: "privada"
     },
     {
-      title: "Puerta Arco - 13.4m²",
-      image: "/images/hb2.1.png",
-      price: "1.152.000",
+      title: "Ceiba - 13.4m²",
+      image: "/images/bambu_fotos/H2-4952.jpg",
+      price: "1.200.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
-      slug: "puerta-arco",
-      category: "privada",
-      discounts: {
-        "3": "1.398.857",
-        "6": "1.316.571",
-        "12": "1.152.000"
-      }
+      slug: "ceiba",
+      category: "privada"
     },
     {
-      title: "Techo Alto - 8.6m²",
-      image: "/images/hb3.1.png",
-      price: "752.000",
+      title: "Ocobo - 8.6m²",
+      image: "/images/bambu_fotos/H3-4817.jpg",
+      price: "900.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
-      slug: "techo-alto",
-      category: "privada",
-      discounts: {
-        "3": "913.143",
-        "6": "859.429",
-        "12": "752.000"
-      }
+      slug: "ocobo",
+      category: "privada"
     },
     {
-      title: "Valeria - 15.1m²",
-      image: "/images/hb4.1.png",
-      price: "1.304.000",
+      title: "Samán - 15.1m²",
+      image: "/images/bambu_fotos/H4-4805.jpg",
+      price: "1.300.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
-      slug: "valeria",
-      category: "suite",
-      discounts: {
-        "3": "1.583.429",
-        "6": "1.490.286",
-        "12": "1.304.000"
-      }
+      slug: "saman",
+      category: "suite"
     },
     {
-      title: "Old Me - 15.7m²",
-      image: "/images/hb5.1.png",
-      price: "1.352.000",
+      title: "Cedro - 15.7m²",
+      image: "/images/bambu_fotos/H5-4730.jpg",
+      price: "1.400.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
-      slug: "old-me",
-      category: "suite",
-      discounts: {
-        "3": "1.641.714",
-        "6": "1.545.143",
-        "12": "1.352.000"
-      }
+      slug: "cedro",
+      category: "suite"
     },
     {
-      title: "Mitad Segundo Piso - 13.4m²",
-      image: "/images/hb6.1.png",
-      price: "1.136.000",
+      title: "Caracolí - 13.4m²",
+      image: "/images/bambu_fotos/H6-4747.jpg",
+      price: "1.100.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
-      slug: "mitad-segundo-piso",
-      category: "privada",
-      discounts: {
-        "3": "1.379.429",
-        "6": "1.298.286",
-        "12": "1.136.000"
-      }
+      slug: "caracoli",
+      category: "privada"
     },
     {
-      title: "Gerente - 17.7m²",
-      image: "/images/hb7.1.png",
-      price: "1.496.000",
+      title: "Nogal - 17.7m²",
+      image: "/images/bambu_fotos/H7-4763.jpg",
+      price: "1.500.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
-      slug: "gerente",
-      category: "suite",
-      discounts: {
-        "3": "1.816.571",
-        "6": "1.709.714",
-        "12": "1.496.000"
-      }
+      slug: "nogal",
+      category: "suite"
     },
     {
-      title: "Altillo - 16.8m²",
-      image: "/images/hb8.1.png",
-      price: "1.440.000",
+      title: "Palma de Cera - 16.8m²",
+      image: "/images/bambu_fotos/H8-4775.jpg",
+      price: "1.400.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
-      slug: "altillo",
-      category: "suite",
-      discounts: {
-        "3": "1.748.571",
-        "6": "1.645.714",
-        "12": "1.440.000"
-      }
+      slug: "palma-de-cera",
+      category: "suite"
     },
     {
-      title: "Apt 1 Piso - 16.7m²",
-      image: "/images/hb9.1.png",
-      price: "1.416.000",
+      title: "Sauce - 16.7m²",
+      image: "/images/bambu_fotos/H9-4663.jpg",
+      price: "1.350.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
-      slug: "apt-1piso",
-      category: "suite",
-      discounts: {
-        "3": "1.719.429",
-        "6": "1.618.286",
-        "12": "1.416.000"
-      }
+      slug: "sauce",
+      category: "suite"
     },
     {
-      title: "Corredor Sin Sentido - 12m²",
-      image: "/images/hb10.1.png",
-      price: "1.024.000",
+      title: "Balso - 12m²",
+      image: "/images/bambu_fotos/H10-4687.jpg",
+      price: "1.000.000",
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
-      slug: "corredor-sin-sentido",
-      category: "privada",
-      discounts: {
-        "3": "1.243.429",
-        "6": "1.170.286",
-        "12": "1.024.000"
-      }
+      slug: "balso",
+      category: "privada"
     },
     {
-      title: "Baño Grande - 14.7m²",
-      image: "/images/hb10.1.png",
-      price: "1.256.000",
+      title: "Chicalá - 14.7m²",
+      image: "/images/bambu_fotos/H11-4705.jpg",
+      price: "1.200.000",
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado amplio", "Closet L"],
-      slug: "bano-grande",
-      category: "suite",
-      discounts: {
-        "3": "1.525.143",
-        "6": "1.435.429",
-        "12": "1.256.000"
-      }
+      slug: "chicala",
+      category: "suite"
     }
   ]
 }
@@ -303,8 +241,8 @@ const habitacionesDetails = {
     description: "Todas nuestras habitaciones incluyen:",
     list: [
       "WiFi de alta velocidad",
-      "Limpieza semanal",
-      "Servicios públicos incluidos",
+      "Aseo 1 vez al mes",
+      "Servicios públicos incluidos (agua, luz, gas)",
       "Acceso a espacios comunes",
       "Seguridad 24/7",
       "Recepción y conserjería"
@@ -377,17 +315,6 @@ export interface GuestOption {
 
 // ============= ROOM DETAILS CONTENT =============
 
-export interface RoomDiscount {
-  "1d": string   // 1 día - precio base por día
-  "3d": string   // 3 días - 2.5% descuento
-  "7d": string   // 7 días - 3% descuento
-  "15d": string  // 15 días - 5% descuento
-  "1m": string   // 1 mes - 10% descuento
-  "3m": string   // 3 meses - 15% descuento
-  "6m": string   // 6 meses - 20% descuento
-  "12m": string  // 12 meses - 30% descuento
-}
-
 export interface RoomFeature {
   name: string
   iconName: string
@@ -397,7 +324,7 @@ export interface DetailedRoom {
   title: string
   description: string
   price: string
-  discounts: RoomDiscount
+  monthlyPrice: string
   features: RoomFeature[]
   images: string[]
   size: string
@@ -405,20 +332,11 @@ export interface DetailedRoom {
 }
 
 export const roomDetails: Record<string, DetailedRoom> = {
-  "oscuro": {
-    title: "Oscuro",
-    description: "Habitación acogedora con ambiente tranquilo, perfecta para quienes buscan un espacio íntimo y relajante para descansar y trabajar.",
-    price: "952.000",
-    discounts: {
-      "1d": "90.667",
-      "3d": "139.400",
-      "7d": "326.853",
-      "15d": "714.000",
-      "1m": "1.224.000",
-      "3m": "1.156.000",
-      "6m": "1.088.000",
-      "12m": "952.000"
-    },
+  "gualanday": {
+    title: "Gualanday",
+    description: "De flores violetas y místicas; aporta un aire de magia y serenidad al entorno. Habitación acogedora, perfecta para quienes buscan un espacio íntimo y relajante para descansar y trabajar.",
+    price: "1.000.000",
+    monthlyPrice: "1.000.000",
     features: [
       { name: "Cama semidoble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -427,27 +345,17 @@ export const roomDetails: Record<string, DetailedRoom> = {
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/hb1.png",
-      "/images/habitacion_2.avif",
-      "/images/habitacion_3.avif"
+      "/images/bambu_fotos/H1-4720.jpg",
+      "/images/bambu_fotos/H1-4726.jpg"
     ],
     size: "11.4m²",
     maxGuests: 1
   },
-  "puerta-arco": {
-    title: "Puerta Arco",
-    description: "Habitación con detalles arquitectónicos únicos y amplio espacio. Ideal para profesionales y nómadas digitales.",
-    price: "1.152.000",
-    discounts: {
-      "1d": "109.714",
-      "3d": "168.686",
-      "7d": "395.520",
-      "15d": "864.000",
-      "1m": "1.481.143",
-      "3m": "1.398.857",
-      "6m": "1.316.571",
-      "12m": "1.152.000"
-    },
+  "ceiba": {
+    title: "Ceiba",
+    description: "La gigante protectora de la selva; representa la sabiduría ancestral y la conexión espiritual. Habitación con detalles únicos y amplio espacio, ideal para profesionales y nómadas digitales.",
+    price: "1.200.000",
+    monthlyPrice: "1.200.000",
     features: [
       { name: "Cama semidoble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -456,27 +364,17 @@ export const roomDetails: Record<string, DetailedRoom> = {
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/hb2.1.png",
-      "/images/hb2.2.png",
-      "/images/habitacion_4.avif"
+      "/images/bambu_fotos/H2-4952.jpg",
+      "/images/bambu_fotos/H2-4959.jpg"
     ],
     size: "13.4m²",
     maxGuests: 1
   },
-  "techo-alto": {
-    title: "Techo Alto",
-    description: "Espacio compacto pero luminoso con techos altos que crean una sensación de amplitud. Perfecta para estadías económicas.",
-    price: "752.000",
-    discounts: {
-      "1d": "71.619",
-      "3d": "110.114",
-      "7d": "258.187",
-      "15d": "564.000",
-      "1m": "966.857",
-      "3m": "913.143",
-      "6m": "859.429",
-      "12m": "752.000"
-    },
+  "ocobo": {
+    title: "Ocobo",
+    description: "La delicadeza rosada de la montaña; evoca la belleza sutil y el renacer de la primavera. Espacio compacto pero luminoso, perfecto para estadías económicas.",
+    price: "900.000",
+    monthlyPrice: "900.000",
     features: [
       { name: "Cama semidoble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -485,27 +383,18 @@ export const roomDetails: Record<string, DetailedRoom> = {
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/hb3.1.png",
-      "/images/hb3.2.png",
-      "/images/habitacion_5.avif"
+      "/images/bambu_fotos/H3-4817.jpg",
+      "/images/bambu_fotos/H3-4820.jpg",
+      "/images/bambu_fotos/H3-4824.jpg"
     ],
     size: "8.6m²",
     maxGuests: 2
   },
-  "valeria": {
-    title: "Valeria",
-    description: "Suite espaciosa con closet XL y cama doble. Diseñada para quienes valoran el confort y necesitan espacio extra de almacenamiento.",
-    price: "1.304.000",
-    discounts: {
-      "1d": "124.190",
-      "3d": "190.943",
-      "7d": "447.707",
-      "15d": "978.000",
-      "1m": "1.676.571",
-      "3m": "1.583.429",
-      "6m": "1.490.286",
-      "12m": "1.304.000"
-    },
+  "saman": {
+    title: "Samán",
+    description: "El árbol de la hospitalidad; su copa inmensa es el refugio perfecto para el descanso. Suite espaciosa con closet XL y cama doble, diseñada para quienes valoran el confort.",
+    price: "1.300.000",
+    monthlyPrice: "1.300.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -514,27 +403,18 @@ export const roomDetails: Record<string, DetailedRoom> = {
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/hb4.1.png",
-      "/images/hb4.2.png",
-      "/images/habitacion_1.avif"
+      "/images/bambu_fotos/H4-4805.jpg",
+      "/images/bambu_fotos/H4-4811.jpg",
+      "/images/bambu_fotos/H4-4815.jpg"
     ],
     size: "15.1m²",
     maxGuests: 2
   },
-  "old-me": {
-    title: "Old Me",
-    description: "Una de nuestras suites más amplias con carácter único. Closet XL y ambiente perfecto para estadías largas.",
-    price: "1.352.000",
-    discounts: {
-      "1d": "128.762",
-      "3d": "197.971",
-      "7d": "464.187",
-      "15d": "1.014.000",
-      "1m": "1.738.286",
-      "3m": "1.641.714",
-      "6m": "1.545.143",
-      "12m": "1.352.000"
-    },
+  "cedro": {
+    title: "Cedro",
+    description: "El aroma de la tradición; una madera preciosa que evoca lujo rústico y durabilidad. Una de nuestras suites más amplias, con ambiente perfecto para estadías largas.",
+    price: "1.400.000",
+    monthlyPrice: "1.400.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -543,27 +423,18 @@ export const roomDetails: Record<string, DetailedRoom> = {
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/hb5.1.png",
-      "/images/hb5.2.png",
-      "/images/habitacion_2.avif"
+      "/images/bambu_fotos/H5-4730.jpg",
+      "/images/bambu_fotos/H5-4733.jpg",
+      "/images/bambu_fotos/H5-4744.jpg"
     ],
     size: "15.7m²",
     maxGuests: 2
   },
-  "mitad-segundo-piso": {
-    title: "Mitad Segundo Piso",
-    description: "Ubicación privilegiada en el segundo piso con vista y tranquilidad. Espacio cómodo para profesionales.",
-    price: "1.136.000",
-    discounts: {
-      "1d": "108.190",
-      "3d": "166.343",
-      "7d": "390.027",
-      "15d": "852.000",
-      "1m": "1.460.571",
-      "3m": "1.379.429",
-      "6m": "1.298.286",
-      "12m": "1.136.000"
-    },
+  "caracoli": {
+    title: "Caracolí",
+    description: "El titán de los ríos; madera robusta que cuenta historias de agua y tierra caliente. Ubicación privilegiada con vista y tranquilidad, espacio cómodo para profesionales.",
+    price: "1.100.000",
+    monthlyPrice: "1.100.000",
     features: [
       { name: "Cama semidoble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -572,27 +443,17 @@ export const roomDetails: Record<string, DetailedRoom> = {
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/hb6.1.png",
-      "/images/hb6.2.png",
-      "/images/habitacion_3.avif"
+      "/images/bambu_fotos/H6-4747.jpg",
+      "/images/bambu_fotos/H6-4751.jpg"
     ],
     size: "13.4m²",
     maxGuests: 1
   },
-  "gerente": {
-    title: "Gerente",
-    description: "Nuestra habitación más grande y premium. Suite ejecutiva con todo el espacio que necesitas para vivir y trabajar cómodamente.",
-    price: "1.496.000",
-    discounts: {
-      "1d": "142.476",
-      "3d": "219.057",
-      "7d": "513.627",
-      "15d": "1.122.000",
-      "1m": "1.923.429",
-      "3m": "1.816.571",
-      "6m": "1.709.714",
-      "12m": "1.496.000"
-    },
+  "nogal": {
+    title: "Nogal",
+    description: "El señor de la capital; representa la nobleza de la madera y la resistencia bogotana. Nuestra habitación más grande y premium, suite ejecutiva con todo el espacio que necesitas.",
+    price: "1.500.000",
+    monthlyPrice: "1.500.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -601,27 +462,18 @@ export const roomDetails: Record<string, DetailedRoom> = {
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/hb7.1.png",
-      "/images/hb7.2.png",
-      "/images/habitacion_4.avif"
+      "/images/bambu_fotos/H7-4763.jpg",
+      "/images/bambu_fotos/H7-4770.jpg",
+      "/images/bambu_fotos/H7-4771.jpg"
     ],
     size: "17.7m²",
     maxGuests: 2
   },
-  "altillo": {
-    title: "Altillo",
-    description: "Suite amplia con carácter especial. Closet XL y espacio generoso para quienes buscan comodidad premium.",
-    price: "1.440.000",
-    discounts: {
-      "1d": "137.143",
-      "3d": "210.857",
-      "7d": "494.400",
-      "15d": "1.080.000",
-      "1m": "1.851.429",
-      "3m": "1.748.571",
-      "6m": "1.645.714",
-      "12m": "1.440.000"
-    },
+  "palma-de-cera": {
+    title: "Palma de Cera",
+    description: "Nuestro símbolo nacional; representa la elegancia que toca el cielo de los Andes. Suite amplia con carácter especial, closet XL y espacio generoso para comodidad premium.",
+    price: "1.400.000",
+    monthlyPrice: "1.400.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -630,27 +482,19 @@ export const roomDetails: Record<string, DetailedRoom> = {
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/hb8.1.png",
-      "/images/hb8.2.png",
-      "/images/habitacion_5.avif"
+      "/images/bambu_fotos/H8-4775.jpg",
+      "/images/bambu_fotos/H8-4780.jpg",
+      "/images/bambu_fotos/H8-4789.jpg",
+      "/images/bambu_fotos/H8-4790.jpg"
     ],
     size: "16.8m²",
     maxGuests: 2
   },
-  "apt-1piso": {
-    title: "Apt 1 Piso",
-    description: "Suite en primer piso con fácil acceso. Espacio amplio y cómodo, ideal para estadías prolongadas.",
-    price: "1.416.000",
-    discounts: {
-      "1d": "134.857",
-      "3d": "207.343",
-      "7d": "486.160",
-      "15d": "1.062.000",
-      "1m": "1.820.571",
-      "3m": "1.719.429",
-      "6m": "1.618.286",
-      "12m": "1.416.000"
-    },
+  "sauce": {
+    title: "Sauce",
+    description: "La danza del viento; sus ramas colgantes inspiran paz, fluidez y una calma profunda. Suite en primer piso con fácil acceso, espacio amplio ideal para estadías prolongadas.",
+    price: "1.350.000",
+    monthlyPrice: "1.350.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -659,27 +503,18 @@ export const roomDetails: Record<string, DetailedRoom> = {
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/hb9.1.png",
-      "/images/hb9.2.png",
-      "/images/habitacion_1.avif"
+      "/images/bambu_fotos/H9-4663.jpg",
+      "/images/bambu_fotos/H9-4666.jpg",
+      "/images/bambu_fotos/H9-4675.jpg"
     ],
     size: "16.7m²",
     maxGuests: 2
   },
-  "corredor-sin-sentido": {
-    title: "Corredor Sin Sentido",
-    description: "Habitación con personalidad única y buen espacio. Perfecta para profesionales que buscan un ambiente diferente.",
-    price: "1.024.000",
-    discounts: {
-      "1d": "97.524",
-      "3d": "149.943",
-      "7d": "351.573",
-      "15d": "768.000",
-      "1m": "1.316.571",
-      "3m": "1.243.429",
-      "6m": "1.170.286",
-      "12m": "1.024.000"
-    },
+  "balso": {
+    title: "Balso",
+    description: "La ligereza del bosque; una madera suave y blanca que simboliza la paz y la sencillez. Habitación con personalidad única y buen espacio, perfecta para profesionales.",
+    price: "1.000.000",
+    monthlyPrice: "1.000.000",
     features: [
       { name: "Cama semidoble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -688,27 +523,17 @@ export const roomDetails: Record<string, DetailedRoom> = {
       { name: "Baño privado", iconName: "Bath" }
     ],
     images: [
-      "/images/hb10.1.png",
-      "/images/hb10.2.png",
-      "/images/habitacion_2.avif"
+      "/images/bambu_fotos/H10-4687.jpg",
+      "/images/bambu_fotos/H10-4693.jpg"
     ],
     size: "12m²",
     maxGuests: 1
   },
-  "bano-grande": {
-    title: "Baño Grande",
-    description: "Suite con baño amplio y espacioso. Ideal para quienes valoran el confort en el baño y necesitan espacio extra.",
-    price: "1.256.000",
-    discounts: {
-      "1d": "119.619",
-      "3d": "183.914",
-      "7d": "431.227",
-      "15d": "942.000",
-      "1m": "1.614.857",
-      "3m": "1.525.143",
-      "6m": "1.435.429",
-      "12m": "1.256.000"
-    },
+  "chicala": {
+    title: "Chicalá",
+    description: "El destello del camino; arbusto de flores amarillas que celebra la resistencia y el brillo. Suite con baño amplio y espacioso, ideal para quienes valoran el confort.",
+    price: "1.200.000",
+    monthlyPrice: "1.200.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -717,9 +542,9 @@ export const roomDetails: Record<string, DetailedRoom> = {
       { name: "Baño privado amplio", iconName: "Bath" }
     ],
     images: [
-      "/images/hb10.1.png",
-      "/images/habitacion_3.avif",
-      "/images/habitacion_4.avif"
+      "/images/bambu_fotos/H11-4705.jpg",
+      "/images/bambu_fotos/H11-4712.jpg",
+      "/images/bambu_fotos/H11-4713.jpg"
     ],
     size: "14.7m²",
     maxGuests: 2
@@ -1111,269 +936,6 @@ export const sharedSpacesContent = {
       }
     ],
     images: ["/images/living_1.png", "/images/living_2.png", "/images/living_3.png"]
-  },
-  gym: {
-    title: "Gimnasio",
-    description: "Mantén tu rutina de ejercicios sin salir de casa en nuestro gimnasio completamente equipado.",
-    features: [
-      {
-        title: "Equipo Cardiovascular",
-        description: "Caminadoras, bicicletas estáticas y elípticas de última generación.",
-        icon: "Heart"
-      },
-      {
-        title: "Área de Pesas",
-        description: "Pesas libres, máquinas y equipamiento para entrenamiento de fuerza.",
-        icon: "Dumbbell"
-      },
-      {
-        title: "Espacio para Yoga",
-        description: "Área dedicada para yoga, estiramientos y ejercicios de suelo.",
-        icon: "Yoga"
-      },
-      {
-        title: "Ambiente Motivador",
-        description: "Espejos, sistema de sonido y ventilación adecuada para tu entrenamiento.",
-        icon: "Music"
-      }
-    ],
-    images: ["/images/living_1.png", "/images/living_2.png", "/images/living_3.png"]
-  }
-}
-
-// ============= SERVICES CONTENT =============
-
-export interface Service {
-  title: string
-  description: string
-  icon: string
-  features: string[]
-  colorScheme: 'teal' | 'rose'
-}
-
-export const servicesContent = {
-  header: {
-    title: "Nuestros Servicios",
-    description: "En Bambu Coliving, ofrecemos todo lo que necesitas para una experiencia de vida cómoda y productiva."
-  },
-  services: [
-    {
-      title: "Internet de Alta Velocidad",
-      description: "Conexión WiFi de 300 Mbps en todas las áreas del edificio, ideal para trabajo remoto y streaming.",
-      icon: "Wifi",
-      features: [
-        "Fibra óptica de alta velocidad",
-        "Red dedicada para trabajo",
-        "Soporte técnico disponible"
-      ],
-      colorScheme: "teal"
-    },
-    {
-      title: "Limpieza y Mantenimiento",
-      description: "Servicio de limpieza regular para áreas comunes y opción de limpieza para habitaciones privadas.",
-      icon: "Sparkles",
-      features: [
-        "Limpieza diaria de áreas comunes",
-        "Limpieza semanal de habitaciones (opcional)",
-        "Mantenimiento 24/7"
-      ],
-      colorScheme: "rose"
-    },
-    {
-      title: "Eventos Comunitarios",
-      description: "Actividades semanales para fomentar la comunidad y el networking entre residentes.",
-      icon: "Calendar",
-      features: [
-        "Happy hours semanales",
-        "Talleres y charlas profesionales",
-        "Excursiones y actividades culturales"
-      ],
-      colorScheme: "teal"
-    },
-    {
-      title: "Servicios de Cocina",
-      description: "Cocina completamente equipada y servicios adicionales para tu comodidad.",
-      icon: "UtensilsCrossed",
-      features: [
-        "Desayuno continental (opcional)",
-        "Cenas comunitarias semanales",
-        "Servicio de café y té gratuito"
-      ],
-      colorScheme: "rose"
-    },
-    {
-      title: "Bienestar y Fitness",
-      description: "Servicios para mantener un estilo de vida saludable durante tu estancia.",
-      icon: "Dumbbell",
-      features: [
-        "Gimnasio 24/7",
-        "Clases de yoga (2 veces por semana)",
-        "Asesoramiento de bienestar"
-      ],
-      colorScheme: "teal"
-    },
-    {
-      title: "Servicios Adicionales",
-      description: "Complementa tu experiencia con nuestros servicios premium adicionales.",
-      icon: "Wifi",
-      features: [
-        "Servicio de lavandería",
-        "Recepción de paquetes",
-        "Asistencia para turismo local"
-      ],
-      colorScheme: "rose"
-    }
-  ],
-  includedServices: [
-    "WiFi de alta velocidad (300 Mbps)",
-    "Servicios básicos (agua, luz, gas)",
-    "Limpieza de áreas comunes",
-    "Acceso a todas las áreas comunes",
-    "Mantenimiento del edificio",
-    "Seguridad 24/7",
-    "Participación en eventos comunitarios",
-    "Café y té gratuitos"
-  ],
-  cta: {
-    title: "¿Listo para experimentar Bambu?",
-    description: "Reserva ahora y disfruta de todos nuestros servicios premium desde el primer día.",
-    buttonText: "Explorar habitaciones",
-    buttonLink: "/habitaciones"
-  }
-}
-
-// ============= EVENTOS PAGE CONTENT =============
-
-export const eventosContent = {
-  header: {
-    title: "Eventos Sociales",
-    description: "Únete a nuestros eventos semanales diseñados para crear conexiones auténticas y experiencias memorables en nuestra comunidad, sin costo adicional.  ",
-    backgroundColor: "bg-teal-600",
-    textColor: "text-white"
-  },
-
-  events: [
-    {
-      id: 1,
-      title: "Noche de Peli",
-      emoji: "🎬",
-      day: "Jueves",
-      time: "8:00 p.m.",
-      frequency: "Semanal",
-      description: "Una peli cada semana con sabor y ambiente suave.",
-      includes: ["palomitas artesanales", "sangría fría o té caliente"],
-      location: "Espacio común con mantas, luces bajas y sonido envolvente",
-      colorScheme: "teal"
-    },
-    {
-      id: 2,
-      title: "Música en Vivo",
-      emoji: "🎶",
-      day: "Sábados",
-      time: "8:00 p.m.",
-      frequency: "1er sábado del mes",
-      description: "Conciertos acústicos con músicos locales, en parche relajado.",
-      includes: ["pola fría", "snacks salados"],
-      location: "Tarima con chimenea, luz tenue, cojines y buen flow",
-      colorScheme: "rose"
-    },
-    {
-      id: 3,
-      title: "Open Mic",
-      emoji: "🎤",
-      day: "Sábados",
-      time: "8:00 p.m.",
-      frequency: "3er sábado del mes",
-      description: "Poetas, músicos, cuenteros y valientes. Micrófono libre, vibra cálida.",
-      includes: ["pola fría", "snacks salados"],
-      location: "Tarima acogedora, sin presión, solo expresión",
-      colorScheme: "teal"
-    },
-    {
-      id: 4,
-      title: "Taller de Letras",
-      emoji: "✍️",
-      day: "Martes",
-      time: "7:00 p.m.",
-      frequency: "Cada 15 días",
-      description: "Poesía, lectura en voz alta, escritura íntima. Palabras que abrazan.",
-      includes: ["vino tinto o infusión con especias"],
-      location: "Sala con velas, chimenea, materiales impresos y cuaderno comunitario",
-      colorScheme: "rose"
-    },
-    {
-      id: 5,
-      title: "DJ Sessions",
-      emoji: "🎧",
-      day: "Domingo",
-      time: "11:00 a.m. – 3:00 p.m.",
-      frequency: "1 domingo al mes",
-      description: "Domingos musicales con vinilos, sets suaves y traguito rico.",
-      includes: ["sangría o cocktail", "tabla de quesos y frutas"],
-      location: "Terraza o sala social con decoración sonora y ambiente chill",
-      colorScheme: "teal"
-    },
-    {
-      id: 6,
-      title: "Galería Abierta",
-      emoji: "🖼️",
-      day: "Domingo",
-      time: "3:00 p.m. – 7:00 p.m.",
-      frequency: "1 domingo al mes",
-      description: "Arte visual, pintura, fotografía, collages, objetos y más. Los residentes y amigos exponen lo que crean.",
-      includes: [
-        "Copa de vino de bienvenida",
-        "Mini catering dulce/salado",
-        "DJ set de fondo o música acústica suave",
-        "Estación libre de intervención",
-        "Rincón fotomatón análogo",
-        "Cuaderno de visitantes"
-      ],
-      location: "Espacio artístico con iluminación natural y ambiente creativo",
-      colorScheme: "rose"
-    }
-  ],
-  gallery: {
-    title: "Momentos especiales",
-    description: "Revive algunos de nuestros eventos más memorables",
-    images: [
-      {
-        src: "/images/Creativos1.jpg",
-        alt: "Noche de película en el espacio común",
-        caption: "Noche de peli con palomitas artesanales"
-      },
-      {
-        src: "/images/Creativos2.jpg",
-        alt: "Concierto acústico en la tarima",
-        caption: "Música en vivo con músicos locales"
-      },
-      {
-        src: "/images/Creativos3.jpg",
-        alt: "Open mic con residentes",
-        caption: "Open mic - micrófono libre"
-      },
-      {
-        src: "/images/Bambu1.png",
-        alt: "Taller de escritura",
-        caption: "Taller de letras y poesía"
-      },
-      {
-        src: "/images/Bambu2.png",
-        alt: "DJ session en la terraza",
-        caption: "DJ sessions dominicales"
-      },
-      {
-        src: "/images/Bambu3.png",
-        alt: "Galería de arte",
-        caption: "Galería abierta - arte comunitario"
-      }
-    ]
-  },
-  cta: {
-    title: "¿Listo para ser parte de nuestra comunidad?",
-    description: "Únete a Bambu Coliving y vive experiencias únicas cada semana. La comunidad te espera.",
-    buttonText: "Reserva tu lugar",
-    buttonLink: "/reserva"
   }
 }
 

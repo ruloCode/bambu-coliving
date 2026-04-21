@@ -1,13 +1,15 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
+export type BookingDuration = '1' | '3' | '6' | '12'
+
 export interface BookingData {
   roomSlug: string
   roomTitle: string
   roomImage: string
   roomSize: string
   basePrice: string
-  selectedDuration: '1' | '2' | '3' // months
+  selectedDuration: BookingDuration
   finalPrice: string
   checkInDate: Date | null
   guests: number
@@ -26,6 +28,7 @@ export interface BookingData {
   }
   specialRequests: string
   agreedToTerms: boolean
+  agreedToManual: boolean
 }
 
 interface BookingStore {
@@ -36,13 +39,14 @@ interface BookingStore {
     roomImage: string
     roomSize: string
     basePrice: string
-    selectedDuration: '1' | '2' | '3'
+    selectedDuration: BookingDuration
     finalPrice: string
   }) => void
   updateBookingDates: (checkInDate: Date | null, guests: number) => void
   updateGuestInfo: (guestInfo: Partial<BookingData['guestInfo']>) => void
   updateSpecialRequests: (requests: string) => void
-  toggleTermsAgreement: () => void
+  setAgreedToTerms: (agreed: boolean) => void
+  setAgreedToManual: (agreed: boolean) => void
   clearBooking: () => void
   isBookingValid: () => boolean
 }
@@ -71,22 +75,23 @@ const initialBookingData: BookingData = {
     }
   },
   specialRequests: '',
-  agreedToTerms: false
+  agreedToTerms: false,
+  agreedToManual: false
 }
 
 export const useBookingStore = create<BookingStore>()(
   persist(
     (set, get) => ({
       bookingData: initialBookingData,
-      
-      updateRoomSelection: (roomData) => 
+
+      updateRoomSelection: (roomData) =>
         set((state) => ({
           bookingData: {
             ...state.bookingData,
             ...roomData
           }
         })),
-      
+
       updateBookingDates: (checkInDate, guests) =>
         set((state) => ({
           bookingData: {
@@ -95,7 +100,7 @@ export const useBookingStore = create<BookingStore>()(
             guests
           }
         })),
-      
+
       updateGuestInfo: (guestInfo) =>
         set((state) => ({
           bookingData: {
@@ -110,7 +115,7 @@ export const useBookingStore = create<BookingStore>()(
             }
           }
         })),
-      
+
       updateSpecialRequests: (requests) =>
         set((state) => ({
           bookingData: {
@@ -118,18 +123,26 @@ export const useBookingStore = create<BookingStore>()(
             specialRequests: requests
           }
         })),
-      
-      toggleTermsAgreement: () =>
+
+      setAgreedToTerms: (agreed) =>
         set((state) => ({
           bookingData: {
             ...state.bookingData,
-            agreedToTerms: !state.bookingData.agreedToTerms
+            agreedToTerms: agreed
           }
         })),
-      
+
+      setAgreedToManual: (agreed) =>
+        set((state) => ({
+          bookingData: {
+            ...state.bookingData,
+            agreedToManual: agreed
+          }
+        })),
+
       clearBooking: () =>
         set({ bookingData: initialBookingData }),
-      
+
       isBookingValid: () => {
         const { bookingData } = get()
         return (
@@ -139,7 +152,8 @@ export const useBookingStore = create<BookingStore>()(
           bookingData.guestInfo.lastName !== '' &&
           bookingData.guestInfo.email !== '' &&
           bookingData.guestInfo.phone !== '' &&
-          bookingData.agreedToTerms
+          bookingData.agreedToTerms &&
+          bookingData.agreedToManual
         )
       }
     }),
@@ -148,4 +162,4 @@ export const useBookingStore = create<BookingStore>()(
       partialize: (state) => ({ bookingData: state.bookingData })
     }
   )
-) 
+)

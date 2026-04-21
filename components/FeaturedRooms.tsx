@@ -8,60 +8,36 @@ import { motion } from "framer-motion"
 import { featuredRoomsContent } from "@/content"
 
 export default function FeaturedRooms() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        type: "spring",
-        stiffness: 100
-      }
-    }
-  }
-
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <motion.h2 
+        <motion.h2
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="text-3xl font-bold mb-2 text-center"
         >
           {featuredRoomsContent.title}
         </motion.h2>
-        <motion.p 
+        <motion.p
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="text-gray-600 mb-10 text-center max-w-2xl mx-auto"
         >
           {featuredRoomsContent.description}
         </motion.p>
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredRoomsContent.rooms.map((room, index) => (
-            <motion.div key={room.slug} variants={itemVariants}>
+            <motion.div
+              key={room.slug}
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
               <RoomCard
                 title={room.title}
                 image={room.image}
@@ -71,17 +47,12 @@ export default function FeaturedRooms() {
               />
             </motion.div>
           ))}
-        </motion.div>
-        <motion.div 
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-10"
-        >
+        </div>
+        <div className="text-center mt-10">
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            className="inline-block"
           >
             <Button asChild variant="outline" size="lg" className="rounded-full px-8 transition-all duration-300">
               <Link href={featuredRoomsContent.cta.href}>
@@ -89,7 +60,7 @@ export default function FeaturedRooms() {
               </Link>
             </Button>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

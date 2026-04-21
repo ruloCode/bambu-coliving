@@ -68,11 +68,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/servicios" className="hover:text-teal-500">
-                  Servicios
-                </Link>
-              </li>
-              <li>
                 <Link href="/comunidad" className="hover:text-teal-500">
                   Comunidad
                 </Link>
