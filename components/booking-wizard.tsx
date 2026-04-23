@@ -58,16 +58,9 @@ export default function BookingWizard() {
     }
   }, [bookingData.roomSlug, router])
 
-  // Calculate prices
-  const calculateSecurityDeposit = () => {
-    const basePrice = Number.parseInt(bookingData.basePrice.replace(/\./g, ""))
-    return Math.round(basePrice * 0.1).toLocaleString("es-CO")
-  }
-
   const calculateTotal = () => {
     const monthlyPrice = Number.parseInt(bookingData.finalPrice.replace(/\./g, ""))
-    const deposit = Number.parseInt(bookingData.basePrice.replace(/\./g, "")) * 0.1
-    return (Number.parseInt(bookingData.selectedDuration) * monthlyPrice + deposit).toLocaleString("es-CO")
+    return (Number.parseInt(bookingData.selectedDuration) * monthlyPrice).toLocaleString("es-CO")
   }
 
   const nextStep = () => {
@@ -214,10 +207,6 @@ export default function BookingWizard() {
               <div className="flex justify-between">
                 <span>Precio mensual:</span>
                 <span>$ {bookingData.finalPrice}</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Depósito de seguridad (10%):</span>
-                <span>$ {calculateSecurityDeposit()}</span>
               </div>
               <div className="flex justify-between font-bold pt-2 border-t">
                 <span>Total a pagar:</span>

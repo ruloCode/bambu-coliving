@@ -39,9 +39,6 @@ export default function HabitacionesDetails() {
               <div className="border-l-4 border-rose-600 pl-4">
                 <p className="font-semibold text-gray-800">{habitaciones.details.policies.minimumStay}</p>
               </div>
-              <div className="border-l-4 border-rose-600 pl-4">
-                <p className="font-semibold text-gray-800">{habitaciones.details.policies.deposit}</p>
-              </div>
               <div className="border-l-4 border-gray-400 pl-4">
                 <p className="font-semibold text-gray-800">{habitaciones.details.policies.cancellation}</p>
               </div>

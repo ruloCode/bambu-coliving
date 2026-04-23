@@ -13,9 +13,18 @@ interface RoomCardProps {
 
 export default function RoomCard({ title, image, price, features, slug }: RoomCardProps) {
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-sm border h-full md:h-[520px] flex flex-col">
-      <div className="relative h-48 flex-shrink-0">
-        <Image src={image || "/placeholder.svg"} alt={title} fill className="object-cover" />
+    <Link
+      href={`/habitaciones/${slug}`}
+      aria-label={`Ver detalles de ${title}`}
+      className="group bg-white rounded-xl overflow-hidden shadow-sm border h-full md:h-[520px] flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-2"
+    >
+      <div className="relative h-48 flex-shrink-0 overflow-hidden">
+        <Image
+          src={image || "/placeholder.svg"}
+          alt={title}
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+        />
       </div>
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold mb-2">{title}</h3>
@@ -33,10 +42,14 @@ export default function RoomCard({ title, image, price, features, slug }: RoomCa
             </li>
           ))}
         </ul>
-        <Button asChild className="w-full bg-teal-600 hover:bg-teal-700 mt-auto">
-          <Link href={`/habitaciones/${slug}`}>Ver detalles</Link>
+        <Button
+          asChild={false}
+          tabIndex={-1}
+          className="w-full bg-teal-600 hover:bg-teal-700 mt-auto pointer-events-none"
+        >
+          <span>Ver detalles</span>
         </Button>
       </div>
-    </div>
+    </Link>
   )
 }

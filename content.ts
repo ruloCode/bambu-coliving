@@ -100,7 +100,7 @@ export const testimonialsContent = {
       name: "Luisa Fernández",
       origin: "Colombia",
       quote: "La flexibilidad de los contratos y la calidad de los espacios hacen de Bambu la mejor opción en Bogotá para profesionales jóvenes.",
-      image: "/images/persona3.jpg"
+      image: "/images/luisa.png"
     }
   ]
 }
@@ -148,7 +148,7 @@ const habitacionesList = {
       title: "Gualanday - 11.4m²",
       image: "/images/bambu_fotos/H1-4720.jpg",
       price: "1.000.000",
-      features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XS"],
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XS"],
       slug: "gualanday",
       category: "privada"
     },
@@ -156,7 +156,7 @@ const habitacionesList = {
       title: "Ceiba - 13.4m²",
       image: "/images/bambu_fotos/H2-4952.jpg",
       price: "1.200.000",
-      features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
       slug: "ceiba",
       category: "privada"
     },
@@ -188,7 +188,7 @@ const habitacionesList = {
       title: "Caracolí - 13.4m²",
       image: "/images/bambu_fotos/H6-4747.jpg",
       price: "1.100.000",
-      features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
       slug: "caracoli",
       category: "privada"
     },
@@ -220,7 +220,7 @@ const habitacionesList = {
       title: "Balso - 12m²",
       image: "/images/bambu_fotos/H10-4687.jpg",
       price: "1.000.000",
-      features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
+      features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
       slug: "balso",
       category: "privada"
     },
@@ -253,7 +253,6 @@ const habitacionesDetails = {
     checkIn: "Check-in: 3:00 PM",
     checkOut: "Check-out: 11:00 AM", 
     minimumStay: "Estancia mínima: 1 mes",
-    deposit: "Depósito: 1 mes de renta",
     cancellation: "Política de cancelación flexible"
   },
   location: {
@@ -338,7 +337,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
     price: "1.000.000",
     monthlyPrice: "1.000.000",
     features: [
-      { name: "Cama semidoble", iconName: "Bed" },
+      { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
       { name: "Escritorio", iconName: "MonitorSmartphone" },
       { name: "Closet XS", iconName: "Warehouse" },
@@ -357,7 +356,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
     price: "1.200.000",
     monthlyPrice: "1.200.000",
     features: [
-      { name: "Cama semidoble", iconName: "Bed" },
+      { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
       { name: "Escritorio", iconName: "MonitorSmartphone" },
       { name: "Closet L", iconName: "Warehouse" },
@@ -436,7 +435,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
     price: "1.100.000",
     monthlyPrice: "1.100.000",
     features: [
-      { name: "Cama semidoble", iconName: "Bed" },
+      { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
       { name: "Escritorio", iconName: "MonitorSmartphone" },
       { name: "Closet S", iconName: "Warehouse" },
@@ -516,7 +515,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
     price: "1.000.000",
     monthlyPrice: "1.000.000",
     features: [
-      { name: "Cama semidoble", iconName: "Bed" },
+      { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
       { name: "Escritorio", iconName: "MonitorSmartphone" },
       { name: "Closet S", iconName: "Warehouse" },

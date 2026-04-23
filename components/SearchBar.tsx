@@ -1,13 +1,10 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
 import { Label } from "@/components/ui/label"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import MonthSelect from "@/components/ui/month-select"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { CalendarIcon } from "lucide-react"
-import { format } from "date-fns"
-import { es } from "date-fns/locale"
+import { addMonths } from "date-fns"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
@@ -54,32 +51,23 @@ export default function SearchBar() {
             className="grid grid-cols-1 md:grid-cols-4 gap-4"
           >
             <div>
-              <Label htmlFor="check-in">Fecha de llegada</Label>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button variant="outline" className="w-full justify-start text-left font-normal">
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {checkIn ? format(checkIn, "PPP", { locale: es }) : <span>Selecciona una fecha</span>}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
-                  <Calendar mode="single" selected={checkIn} onSelect={setCheckIn} initialFocus locale={es} disabled={(date) => date < new Date()} />
-                </PopoverContent>
-              </Popover>
+              <Label htmlFor="check-in">Mes de llegada</Label>
+              <MonthSelect
+                value={checkIn}
+                onChange={setCheckIn}
+                placeholder="Selecciona un mes"
+                className="w-full mt-1"
+              />
             </div>
             <div>
-              <Label htmlFor="check-out">Fecha de salida</Label>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button variant="outline" className="w-full justify-start text-left font-normal">
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {checkOut ? format(checkOut, "PPP", { locale: es }) : <span>Selecciona una fecha</span>}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
-                  <Calendar mode="single" selected={checkOut} onSelect={setCheckOut} initialFocus locale={es} disabled={(date) => date <= (checkIn || new Date())} />
-                </PopoverContent>
-              </Popover>
+              <Label htmlFor="check-out">Mes de salida</Label>
+              <MonthSelect
+                value={checkOut}
+                onChange={setCheckOut}
+                placeholder="Selecciona un mes"
+                minDate={checkIn ? addMonths(checkIn, 1) : undefined}
+                className="w-full mt-1"
+              />
             </div>
             <div>
               <Label htmlFor="guests">Huéspedes</Label>

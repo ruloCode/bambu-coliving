@@ -2,8 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { Calendar } from "@/components/ui/calendar"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import MonthSelect from "@/components/ui/month-select"
 import { CalendarIcon, Users, Clock } from "lucide-react"
 import { format, addMonths } from "date-fns"
 import { es } from "date-fns/locale"
@@ -50,8 +49,7 @@ export default function RoomBookingSection({
   const extraGuestSurcharge = guests > 1 ? (guests - 1) * 0.05 : 0
   const subtotal = priceNum * monthsNum
   const surchargeAmount = Math.round(subtotal * extraGuestSurcharge)
-  const securityDepositNum = Math.round(priceNum * 0.1)
-  const total = subtotal + surchargeAmount + securityDepositNum
+  const total = subtotal + surchargeAmount
 
   const handleBookingReservation = () => {
     updateRoomSelection({
@@ -102,32 +100,20 @@ export default function RoomBookingSection({
         </div>
 
         <div>
-          <Label htmlFor="check-in">Fecha de llegada (Check-in)</Label>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline" className="w-full mt-1 justify-start">
-                <CalendarIcon className="mr-2 h-4 w-4" />
-                {checkIn ? format(checkIn, "PPP", { locale: es }) : <span>Selecciona una fecha</span>}
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-auto p-0">
-              <Calendar
-                mode="single"
-                selected={checkIn}
-                onSelect={setCheckIn}
-                initialFocus
-                locale={es}
-                disabled={(date) => date < new Date()}
-              />
-            </PopoverContent>
-          </Popover>
+          <Label htmlFor="check-in">Mes de llegada (Check-in)</Label>
+          <MonthSelect
+            value={checkIn}
+            onChange={setCheckIn}
+            placeholder="Selecciona un mes"
+            className="w-full mt-1"
+          />
         </div>
 
         <div>
-          <Label>Fecha de salida (Check-out)</Label>
+          <Label>Mes de salida (Check-out)</Label>
           <div className="w-full mt-1 px-3 py-2 border rounded-md bg-white text-sm text-gray-700 flex items-center">
             <CalendarIcon className="mr-2 h-4 w-4 text-gray-500" />
-            {checkOut ? format(checkOut, "PPP", { locale: es }) : <span className="text-gray-400">Se calcula al elegir llegada</span>}
+            {checkOut ? format(checkOut, "MMMM yyyy", { locale: es }).replace(/^\w/, (c) => c.toUpperCase()) : <span className="text-gray-400">Se calcula al elegir llegada</span>}
           </div>
           {checkIn && (
             <p className="text-xs text-teal-600 mt-1 font-medium">
@@ -199,10 +185,6 @@ export default function RoomBookingSection({
               <span>${surchargeAmount.toLocaleString("es-CO")}</span>
             </div>
           )}
-          <div className="flex justify-between text-sm">
-            <span className="text-gray-600">Depósito de seguridad</span>
-            <span>${securityDepositNum.toLocaleString("es-CO")}</span>
-          </div>
           <div className="flex justify-between font-bold text-lg border-t pt-2">
             <span>Total</span>
             <span>
