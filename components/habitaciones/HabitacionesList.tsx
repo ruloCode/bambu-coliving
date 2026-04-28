@@ -3,7 +3,7 @@ import { habitaciones } from "@/content"
 
 export default function HabitacionesList() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section id="resultados" className="py-16 bg-gray-50 scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold mb-4">{habitaciones.roomsList.title}</h2>
