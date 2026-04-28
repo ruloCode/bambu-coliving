@@ -1,31 +1,43 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { format } from "date-fns"
+import { es } from "date-fns/locale"
+import { ArrowLeft, Check } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
-import { Check, ArrowLeft } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { format, addMonths } from "date-fns"
-import { es } from "date-fns/locale"
-import Image from "next/image"
-import Link from "next/link"
 import { useBookingStore } from "@/lib/booking-store"
-import { useRouter } from "next/navigation"
 
 const steps = [
   { id: "summary", name: "Resumen" },
   { id: "guest", name: "Información" },
-  { id: "confirmation", name: "Confirmación" },
+  { id: "confirmation", name: "Confirmación" }
 ]
 
+const formatCop = (value: number) => `$${value.toLocaleString("es-CO")}`
+
+const formatLongDate = (date: Date | null) =>
+  date ? format(date, "PPP", { locale: es }) : "-"
+
 export default function BookingWizard() {
-  const [currentStep, setCurrentStep] = useState(0)
   const router = useRouter()
-  
+  const [currentStep, setCurrentStep] = useState(0)
+
   const {
     bookingData,
     updateGuestInfo,
@@ -35,40 +47,39 @@ export default function BookingWizard() {
     clearBooking
   } = useBookingStore()
 
-  // Form state
   const [guestForm, setGuestForm] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    nationality: '',
-    occupation: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    nationality: "",
+    occupation: "",
     emergencyContact: {
-      name: '',
-      phone: '',
-      relationship: ''
+      name: "",
+      phone: "",
+      relationship: ""
     }
   })
-  const [specialRequests, setSpecialRequests] = useState('')
+  const [specialRequests, setSpecialRequests] = useState("")
 
-  // Redirect if no room selected
   useEffect(() => {
     if (!bookingData.roomSlug) {
-      router.push('/habitaciones')
+      router.push("/habitaciones")
     }
   }, [bookingData.roomSlug, router])
 
-  const calculateTotal = () => {
-    const monthlyPrice = Number.parseInt(bookingData.finalPrice.replace(/\./g, ""))
-    return (Number.parseInt(bookingData.selectedDuration) * monthlyPrice).toLocaleString("es-CO")
+  const handleGuestFormChange = (field: string, value: string) => {
+    setGuestForm((prev) => ({ ...prev, [field]: value }))
+  }
+
+  const handleConfirmBooking = () => {
+    setCurrentStep(2)
   }
 
   const nextStep = () => {
     if (currentStep === 1) {
-      // Update guest info in store before proceeding
       updateGuestInfo(guestForm)
       updateSpecialRequests(specialRequests)
-      // Go directly to confirmation after guest info
       handleConfirmBooking()
       return
     }
@@ -79,24 +90,9 @@ export default function BookingWizard() {
     setCurrentStep((prev) => Math.max(prev - 1, 0))
   }
 
-  const handleGuestFormChange = (field: string, value: string) => {
-    setGuestForm(prev => ({
-      ...prev,
-      [field]: value
-    }))
-  }
-
-
-
-  const handleConfirmBooking = () => {
-    // Here you would typically send the booking data to your backend
-    console.log('Booking confirmed:', bookingData)
-    setCurrentStep(2) // Go to confirmation step (now step 2)
-  }
-
   const handleBackToRooms = () => {
     clearBooking()
-    router.push('/habitaciones')
+    router.push("/habitaciones")
   }
 
   if (!bookingData.roomSlug) {
@@ -107,9 +103,26 @@ export default function BookingWizard() {
     )
   }
 
+  const {
+    roomImage,
+    roomTitle,
+    roomSize,
+    checkInDate,
+    checkOutDate,
+    nights,
+    guests,
+    tierLabel,
+    nightlyRate,
+    surchargePerNight,
+    displayMode,
+    displayAmount
+  } = bookingData
+
+  const isLongStay = displayMode === "monthly"
+  const extraGuests = Math.max(0, guests - 1)
+
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-      {/* Steps */}
       <div className="bg-gray-50 px-4 py-4 border-b">
         <nav aria-label="Progress">
           <ol className="flex space-x-2 sm:space-x-4">
@@ -118,7 +131,7 @@ export default function BookingWizard() {
                 <div
                   className={cn(
                     "group flex flex-col items-center",
-                    index <= currentStep ? "text-teal-600" : "text-gray-400",
+                    index <= currentStep ? "text-teal-600" : "text-gray-400"
                   )}
                 >
                   <span
@@ -128,7 +141,7 @@ export default function BookingWizard() {
                         ? "border-teal-600 bg-teal-600 text-white"
                         : index === currentStep
                           ? "border-teal-600 text-teal-600"
-                          : "border-gray-300",
+                          : "border-gray-300"
                     )}
                   >
                     {index < currentStep ? <Check className="h-5 w-5" /> : index + 1}
@@ -141,15 +154,13 @@ export default function BookingWizard() {
         </nav>
       </div>
 
-      {/* Content */}
       <div className="p-6">
-        {/* Step 0: Summary */}
         {currentStep === 0 && (
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <Button 
-                variant="ghost" 
-                size="sm" 
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={handleBackToRooms}
                 className="text-teal-600 hover:text-teal-700"
               >
@@ -157,66 +168,78 @@ export default function BookingWizard() {
                 Cambiar habitación
               </Button>
             </div>
-            
+
             <h2 className="text-xl font-bold mb-4">Resumen de tu reserva</h2>
-            
+
             <div className="border rounded-lg p-4 mb-6">
               <div className="flex gap-4">
                 <div className="relative h-24 w-24 rounded-md overflow-hidden flex-shrink-0">
                   <Image
-                    src={bookingData.roomImage}
-                    alt={bookingData.roomTitle}
+                    src={roomImage}
+                    alt={roomTitle}
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-bold">{bookingData.roomTitle}</h3>
-                  <p className="text-sm text-gray-500 mb-2">{bookingData.roomSize}</p>
+                  <h3 className="font-bold">{roomTitle}</h3>
+                  <p className="text-sm text-gray-500 mb-2">{roomSize}</p>
                   <p className="font-bold">
-                    $ {bookingData.finalPrice} <span className="font-normal text-sm text-gray-500">/ mes</span>
+                    {formatCop(nightlyRate)}{" "}
+                    <span className="font-normal text-sm text-gray-500">/ noche</span>
                   </p>
+                  {tierLabel && (
+                    <p className="text-xs text-teal-600 mt-1">Tarifa: {tierLabel}</p>
+                  )}
                 </div>
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div className="flex justify-between">
                 <span>Fecha de llegada:</span>
-                <span>{bookingData.checkInDate ? format(bookingData.checkInDate, "PPP", { locale: es }) : "-"}</span>
+                <span>{formatLongDate(checkInDate)}</span>
               </div>
               <div className="flex justify-between">
                 <span>Fecha de salida:</span>
-                <span>
-                  {bookingData.checkInDate
-                    ? format(addMonths(bookingData.checkInDate, Number.parseInt(bookingData.selectedDuration)), "PPP", { locale: es })
-                    : "-"
-                  }
-                </span>
+                <span>{formatLongDate(checkOutDate)}</span>
               </div>
               <div className="flex justify-between">
-                <span>Duración:</span>
-                <span>
-                  {bookingData.selectedDuration} {Number.parseInt(bookingData.selectedDuration) === 1 ? "mes" : "meses"}
-                </span>
+                <span>Noches:</span>
+                <span>{nights}</span>
               </div>
               <div className="flex justify-between">
                 <span>Huéspedes:</span>
-                <span>{bookingData.guests}</span>
+                <span>{guests}</span>
               </div>
               <div className="flex justify-between">
-                <span>Precio mensual:</span>
-                <span>$ {bookingData.finalPrice}</span>
+                <span>Tarifa por noche:</span>
+                <span>{formatCop(nightlyRate)}</span>
               </div>
+              {extraGuests > 0 && (
+                <div className="flex justify-between text-gray-600">
+                  <span>
+                    Recargo {extraGuests}{" "}
+                    {extraGuests === 1 ? "huésped adicional" : "huéspedes adicionales"}:
+                  </span>
+                  <span>+{formatCop(surchargePerNight)} / noche</span>
+                </div>
+              )}
               <div className="flex justify-between font-bold pt-2 border-t">
-                <span>Total a pagar:</span>
-                <span>$ {calculateTotal()}</span>
+                <span>{isLongStay ? "Pago mensual:" : "Total a pagar:"}</span>
+                <span>
+                  {formatCop(displayAmount)} COP{isLongStay ? "/mes" : ""}
+                </span>
               </div>
+              {isLongStay && (
+                <p className="text-xs text-gray-500">
+                  Estadía de {nights} noches facturada como pago mensual.
+                </p>
+              )}
             </div>
           </div>
         )}
 
-        {/* Step 1: Guest Information */}
         {currentStep === 1 && (
           <div>
             <h2 className="text-xl font-bold mb-4">Información del huésped</h2>
@@ -224,21 +247,21 @@ export default function BookingWizard() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="first-name">Nombre *</Label>
-                  <Input 
-                    id="first-name" 
-                    className="mt-1" 
+                  <Input
+                    id="first-name"
+                    className="mt-1"
                     value={guestForm.firstName}
-                    onChange={(e) => handleGuestFormChange('firstName', e.target.value)}
+                    onChange={(e) => handleGuestFormChange("firstName", e.target.value)}
                     required
                   />
                 </div>
                 <div>
                   <Label htmlFor="last-name">Apellido *</Label>
-                  <Input 
-                    id="last-name" 
-                    className="mt-1" 
+                  <Input
+                    id="last-name"
+                    className="mt-1"
                     value={guestForm.lastName}
-                    onChange={(e) => handleGuestFormChange('lastName', e.target.value)}
+                    onChange={(e) => handleGuestFormChange("lastName", e.target.value)}
                     required
                   />
                 </div>
@@ -246,30 +269,33 @@ export default function BookingWizard() {
 
               <div>
                 <Label htmlFor="email">Correo electrónico *</Label>
-                <Input 
-                  id="email" 
-                  type="email" 
-                  className="mt-1" 
+                <Input
+                  id="email"
+                  type="email"
+                  className="mt-1"
                   value={guestForm.email}
-                  onChange={(e) => handleGuestFormChange('email', e.target.value)}
+                  onChange={(e) => handleGuestFormChange("email", e.target.value)}
                   required
                 />
               </div>
 
               <div>
                 <Label htmlFor="phone">Teléfono *</Label>
-                <Input 
-                  id="phone" 
-                  className="mt-1" 
+                <Input
+                  id="phone"
+                  className="mt-1"
                   value={guestForm.phone}
-                  onChange={(e) => handleGuestFormChange('phone', e.target.value)}
+                  onChange={(e) => handleGuestFormChange("phone", e.target.value)}
                   required
                 />
               </div>
 
               <div>
                 <Label htmlFor="nationality">Nacionalidad *</Label>
-                <Select value={guestForm.nationality} onValueChange={(value) => handleGuestFormChange('nationality', value)}>
+                <Select
+                  value={guestForm.nationality}
+                  onValueChange={(value) => handleGuestFormChange("nationality", value)}
+                >
                   <SelectTrigger className="w-full mt-1">
                     <SelectValue placeholder="Selecciona tu nacionalidad" />
                   </SelectTrigger>
@@ -289,21 +315,19 @@ export default function BookingWizard() {
 
               <div>
                 <Label htmlFor="occupation">Ocupación</Label>
-                <Input 
-                  id="occupation" 
-                  className="mt-1" 
+                <Input
+                  id="occupation"
+                  className="mt-1"
                   value={guestForm.occupation}
-                  onChange={(e) => handleGuestFormChange('occupation', e.target.value)}
+                  onChange={(e) => handleGuestFormChange("occupation", e.target.value)}
                 />
               </div>
 
-
-
               <div>
                 <Label htmlFor="special-requests">Solicitudes especiales (opcional)</Label>
-                <Textarea 
-                  id="special-requests" 
-                  className="mt-1" 
+                <Textarea
+                  id="special-requests"
+                  className="mt-1"
                   value={specialRequests}
                   onChange={(e) => setSpecialRequests(e.target.value)}
                   placeholder="Ejemplo: Llegada temprana, alergias alimentarias, preferencias de habitación, etc."
@@ -318,7 +342,10 @@ export default function BookingWizard() {
                     onCheckedChange={(checked) => setAgreedToTerms(checked === true)}
                     className="mt-1"
                   />
-                  <Label htmlFor="agree-terms" className="text-sm font-normal leading-snug cursor-pointer">
+                  <Label
+                    htmlFor="agree-terms"
+                    className="text-sm font-normal leading-snug cursor-pointer"
+                  >
                     He leído y acepto los{" "}
                     <Link
                       href="/terminos-y-condiciones"
@@ -338,7 +365,10 @@ export default function BookingWizard() {
                     onCheckedChange={(checked) => setAgreedToManual(checked === true)}
                     className="mt-1"
                   />
-                  <Label htmlFor="agree-manual" className="text-sm font-normal leading-snug cursor-pointer">
+                  <Label
+                    htmlFor="agree-manual"
+                    className="text-sm font-normal leading-snug cursor-pointer"
+                  >
                     He leído y acepto el{" "}
                     <Link
                       href="/manual-de-convivencia"
@@ -356,7 +386,6 @@ export default function BookingWizard() {
           </div>
         )}
 
-        {/* Step 2: Confirmation */}
         {currentStep === 2 && (
           <div className="text-center py-8">
             <div className="bg-teal-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
@@ -364,7 +393,8 @@ export default function BookingWizard() {
             </div>
             <h2 className="text-2xl font-bold mb-2">¡Reserva enviada!</h2>
             <p className="text-gray-600 mb-6">
-              Hemos recibido tu solicitud de reserva. Te contactaremos pronto para coordinar el pago y confirmar los detalles.
+              Hemos recibido tu solicitud de reserva. Te contactaremos pronto para coordinar el
+              pago y confirmar los detalles.
             </p>
             <div className="bg-gray-50 p-6 rounded-lg text-left mb-6">
               <h3 className="font-bold mb-4">Detalles de la reserva</h3>
@@ -377,24 +407,29 @@ export default function BookingWizard() {
                 </div>
                 <div className="flex justify-between">
                   <span>Habitación:</span>
-                  <span>{bookingData.roomTitle}</span>
+                  <span>{roomTitle}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Fecha de llegada:</span>
-                  <span>{bookingData.checkInDate ? format(bookingData.checkInDate, "PPP", { locale: es }) : "-"}</span>
+                  <span>{formatLongDate(checkInDate)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Fecha de salida:</span>
-                  <span>
-                    {bookingData.checkInDate
-                      ? format(addMonths(bookingData.checkInDate, Number.parseInt(bookingData.selectedDuration)), "PPP", { locale: es })
-                      : "-"
-                    }
-                  </span>
+                  <span>{formatLongDate(checkOutDate)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Total estimado:</span>
-                  <span className="font-medium">$ {calculateTotal()}</span>
+                  <span>Noches:</span>
+                  <span>{nights}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Tarifa aplicada:</span>
+                  <span>{tierLabel || "—"}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>{isLongStay ? "Pago mensual estimado:" : "Total estimado:"}</span>
+                  <span className="font-medium">
+                    {formatCop(displayAmount)} COP{isLongStay ? "/mes" : ""}
+                  </span>
                 </div>
               </div>
             </div>
@@ -405,10 +440,10 @@ export default function BookingWizard() {
               </a>{" "}
               o al +57 300 7438588.
             </p>
-            <Button 
+            <Button
               onClick={() => {
                 clearBooking()
-                router.push('/')
+                router.push("/")
               }}
               className="bg-teal-600 hover:bg-teal-700"
             >
@@ -418,7 +453,6 @@ export default function BookingWizard() {
         )}
       </div>
 
-      {/* Actions */}
       {currentStep < 2 && (
         <div className="px-6 py-4 bg-gray-50 border-t flex justify-between">
           <Button variant="outline" onClick={prevStep} disabled={currentStep === 0}>
@@ -428,15 +462,14 @@ export default function BookingWizard() {
             className="bg-teal-600 hover:bg-teal-700"
             onClick={nextStep}
             disabled={
-              currentStep === 1 && (
-                !guestForm.firstName ||
+              currentStep === 1 &&
+              (!guestForm.firstName ||
                 !guestForm.lastName ||
                 !guestForm.email ||
                 !guestForm.phone ||
                 !guestForm.nationality ||
                 !bookingData.agreedToTerms ||
-                !bookingData.agreedToManual
-              )
+                !bookingData.agreedToManual)
             }
           >
             {currentStep === 1 ? "Confirmar reserva" : "Siguiente"}

@@ -1,123 +1,144 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import MonthSelect from "@/components/ui/month-select"
-import { CalendarIcon, Users, Clock } from "lucide-react"
-import { format, addMonths } from "date-fns"
-import { es } from "date-fns/locale"
-import { useState } from "react"
-import { useBookingStore, type BookingDuration } from "@/lib/booking-store"
+import { useMemo, useState } from "react"
 import { useRouter } from "next/navigation"
+import { differenceInCalendarDays, format, startOfToday } from "date-fns"
+import { es } from "date-fns/locale"
+import { Clock, Users } from "lucide-react"
+import type { DateRange } from "react-day-picker"
+
+import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
+import { Label } from "@/components/ui/label"
+import {
+  LONG_STAY_THRESHOLD_NIGHTS,
+  MONTHLY_BILLING_NIGHTS,
+  getExtraGuestRate,
+  getStayTierDefinition,
+  getTierForNights,
+  type NightlyRates
+} from "@/content"
+import { useBookingStore } from "@/lib/booking-store"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 interface RoomBookingSectionProps {
   roomSlug: string
   roomTitle: string
   roomImage: string
   roomSize: string
-  monthlyPrice: string
+  nightlyRates: NightlyRates
   maxGuests: number
 }
 
-const monthOptions: { value: BookingDuration; label: string }[] = [
-  { value: "1", label: "1 Mes" },
-  { value: "3", label: "3 Meses" },
-  { value: "6", label: "6 Meses" },
-  { value: "12", label: "12 Meses" }
-]
+const formatCop = (value: number) => `$${value.toLocaleString("es-CO")}`
+
+const formatRangeLabel = (range: DateRange | undefined) => {
+  if (!range?.from) return null
+  if (!range.to) return format(range.from, "d 'de' MMM yyyy", { locale: es })
+  return `${format(range.from, "d MMM", { locale: es })} - ${format(range.to, "d MMM yyyy", { locale: es })}`
+}
 
 export default function RoomBookingSection({
   roomSlug,
   roomTitle,
   roomImage,
   roomSize,
-  monthlyPrice,
+  nightlyRates,
   maxGuests
 }: RoomBookingSectionProps) {
-  const [checkIn, setCheckIn] = useState<Date>()
-  const [months, setMonths] = useState<BookingDuration>("1")
-  const [guests, setGuests] = useState(1)
   const router = useRouter()
+  const today = useMemo(() => startOfToday(), [])
+  const isMobile = useIsMobile()
 
-  const { updateRoomSelection, updateBookingDates } = useBookingStore()
+  const [range, setRange] = useState<DateRange | undefined>()
+  const [guests, setGuests] = useState(1)
 
-  const monthsNum = Number.parseInt(months)
-  const checkOut = checkIn ? addMonths(checkIn, monthsNum) : undefined
+  const { selectRoom, setDates, setGuests: setStoreGuests } = useBookingStore()
 
-  const priceNum = Number.parseInt(monthlyPrice.replace(/\./g, ""))
+  const monthlyFromPrice = nightlyRates["361+"] * MONTHLY_BILLING_NIGHTS
 
-  const extraGuestSurcharge = guests > 1 ? (guests - 1) * 0.05 : 0
-  const subtotal = priceNum * monthsNum
-  const surchargeAmount = Math.round(subtotal * extraGuestSurcharge)
-  const total = subtotal + surchargeAmount
+  const breakdown = useMemo(() => {
+    if (!range?.from || !range?.to) return null
+    const nights = differenceInCalendarDays(range.to, range.from)
+    if (nights < 1) return null
+    const tier = getTierForNights(nights)
+    const definition = getStayTierDefinition(tier)
+    const nightlyRate = nightlyRates[tier]
+    const extraGuestRate = getExtraGuestRate(tier)
+    const extraGuests = Math.max(0, guests - 1)
+    const surchargePerNight = extraGuestRate * extraGuests
+    const subtotal = nightlyRate * nights
+    const surchargeAmount = surchargePerNight * nights
+    const total = subtotal + surchargeAmount
+    const monthlyEquivalent = (nightlyRate + surchargePerNight) * MONTHLY_BILLING_NIGHTS
+    const isLongStay = nights >= LONG_STAY_THRESHOLD_NIGHTS
+    return {
+      nights,
+      tierLabel: definition.label,
+      nightlyRate,
+      extraGuestRate,
+      extraGuests,
+      surchargePerNight,
+      subtotal,
+      surchargeAmount,
+      total,
+      monthlyEquivalent,
+      isLongStay,
+      displayAmount: isLongStay ? monthlyEquivalent : total
+    }
+  }, [range, guests, nightlyRates])
 
-  const handleBookingReservation = () => {
-    updateRoomSelection({
-      roomSlug,
-      roomTitle,
-      roomImage,
-      roomSize,
-      basePrice: monthlyPrice,
-      selectedDuration: months,
-      finalPrice: monthlyPrice
+  const canReserve = Boolean(range?.from && range?.to && breakdown)
+
+  const handleReserve = () => {
+    if (!canReserve || !range?.from || !range?.to) return
+    selectRoom({
+      slug: roomSlug,
+      title: roomTitle,
+      image: roomImage,
+      size: roomSize
     })
-
-    updateBookingDates(checkIn || null, guests)
-    router.push('/reserva')
+    setDates(range.from, range.to)
+    setStoreGuests(guests)
+    router.push("/reserva")
   }
 
   return (
     <div className="bg-gray-50 rounded-xl p-6 sticky top-24">
-      <h2 className="text-xl font-bold mb-4">Reserva ahora</h2>
-
-      <div className="bg-teal-50 border border-teal-200 rounded-lg p-4 mb-4">
-        <div className="flex justify-between items-center">
-          <span className="text-gray-600">Precio mensual:</span>
-          <span className="font-bold text-lg">${monthlyPrice} <span className="text-sm font-normal text-gray-500">COP</span></span>
-        </div>
-        <p className="text-xs text-gray-500 mt-1">Estadía mínima: 1 mes</p>
-      </div>
+      <h2 className="text-xl font-bold mb-2">Reserva ahora</h2>
+      <p className="text-sm text-gray-600 mb-4">
+        Desde{" "}
+        <span className="font-semibold text-gray-900">{formatCop(monthlyFromPrice)}</span>{" "}
+        / mes
+      </p>
 
       <div className="space-y-4">
         <div>
-          <Label>Duración de la estadía</Label>
-          <div className="grid grid-cols-4 gap-2 mt-1">
-            {monthOptions.map((option) => (
-              <button
-                key={option.value}
-                type="button"
-                onClick={() => setMonths(option.value)}
-                className={`py-2 px-1 rounded-md border text-sm font-medium transition-colors ${
-                  months === option.value
-                    ? "border-teal-500 bg-teal-50 text-teal-700"
-                    : "border-gray-200 bg-white hover:border-gray-300 text-gray-700"
-                }`}
-              >
-                {option.label}
-              </button>
-            ))}
+          <Label className="mb-2 block">Fechas (check-in / check-out)</Label>
+          <div className="rounded-lg border bg-white p-2 flex justify-center overflow-x-auto">
+            <Calendar
+              mode="range"
+              selected={range}
+              onSelect={setRange}
+              numberOfMonths={isMobile ? 1 : 2}
+              locale={es}
+              disabled={{ before: today }}
+              defaultMonth={range?.from ?? today}
+            />
           </div>
-        </div>
-
-        <div>
-          <Label htmlFor="check-in">Mes de llegada (Check-in)</Label>
-          <MonthSelect
-            value={checkIn}
-            onChange={setCheckIn}
-            placeholder="Selecciona un mes"
-            className="w-full mt-1"
-          />
-        </div>
-
-        <div>
-          <Label>Mes de salida (Check-out)</Label>
-          <div className="w-full mt-1 px-3 py-2 border rounded-md bg-white text-sm text-gray-700 flex items-center">
-            <CalendarIcon className="mr-2 h-4 w-4 text-gray-500" />
-            {checkOut ? format(checkOut, "MMMM yyyy", { locale: es }).replace(/^\w/, (c) => c.toUpperCase()) : <span className="text-gray-400">Se calcula al elegir llegada</span>}
-          </div>
-          {checkIn && (
-            <p className="text-xs text-teal-600 mt-1 font-medium">
-              Estadía: {monthsNum} {monthsNum === 1 ? "mes" : "meses"}
+          {!range?.from && (
+            <p className="text-xs text-gray-500 mt-2">
+              Selecciona la fecha de llegada y salida para ver el precio.
+            </p>
+          )}
+          {range?.from && !range?.to && (
+            <p className="text-xs text-gray-500 mt-2">
+              Llegada: <span className="font-medium">{formatRangeLabel(range)}</span>. Selecciona la fecha de salida.
+            </p>
+          )}
+          {breakdown && (
+            <p className="text-xs text-teal-600 mt-2 font-medium">
+              {formatRangeLabel(range)} · {breakdown.nights} {breakdown.nights === 1 ? "noche" : "noches"} · Tarifa {breakdown.tierLabel}
             </p>
           )}
         </div>
@@ -130,11 +151,11 @@ export default function RoomBookingSection({
           <div className="grid grid-cols-2 gap-2 text-sm">
             <div>
               <span className="text-gray-500">Check-in:</span>
-              <p className="font-medium">2:00 PM</p>
+              <p className="font-medium">3:00 PM</p>
             </div>
             <div>
               <span className="text-gray-500">Check-out:</span>
-              <p className="font-medium">12:00 PM</p>
+              <p className="font-medium">11:00 AM</p>
             </div>
           </div>
         </div>
@@ -145,59 +166,69 @@ export default function RoomBookingSection({
             <Button
               variant="outline"
               size="icon"
+              type="button"
               onClick={() => setGuests(Math.max(1, guests - 1))}
               disabled={guests <= 1}
             >
               -
             </Button>
-            <div className="flex-1 text-center py-2 border rounded-md">
+            <div className="flex-1 text-center py-2 border rounded-md bg-white">
               <Users className="h-4 w-4 inline mr-2" />
               {guests} {guests === 1 ? "huésped" : "huéspedes"}
             </div>
             <Button
               variant="outline"
               size="icon"
+              type="button"
               onClick={() => setGuests(Math.min(maxGuests, guests + 1))}
               disabled={guests >= maxGuests}
             >
               +
             </Button>
           </div>
-          {guests > 1 && (
+          {guests > 1 && breakdown && (
             <p className="text-xs text-gray-500 mt-1">
-              +5% por cada huésped adicional
+              +{formatCop(breakdown.extraGuestRate)}/noche por cada huésped adicional en este tier.
             </p>
           )}
         </div>
 
-        <div className="border-t pt-4 mt-4 space-y-2">
-          <div className="flex justify-between text-sm">
-            <span className="text-gray-600">
-              ${priceNum.toLocaleString("es-CO")}/mes × {monthsNum} {monthsNum === 1 ? "mes" : "meses"}
-            </span>
-            <span>${subtotal.toLocaleString("es-CO")}</span>
-          </div>
-          {surchargeAmount > 0 && (
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-600">
-                Recargo huéspedes adicionales ({guests - 1} × 5%)
-              </span>
-              <span>${surchargeAmount.toLocaleString("es-CO")}</span>
+        {breakdown && (
+          <div className="border-t pt-4 mt-4 space-y-2">
+            <div className="flex justify-between text-sm text-gray-600">
+              <span>Tarifa por noche</span>
+              <span>{formatCop(breakdown.nightlyRate)}</span>
             </div>
-          )}
-          <div className="flex justify-between font-bold text-lg border-t pt-2">
-            <span>Total</span>
-            <span>
-              ${total.toLocaleString("es-CO")}
-              <span className="text-sm font-normal text-gray-500"> COP</span>
-            </span>
+            {breakdown.extraGuests > 0 && (
+              <div className="flex justify-between text-sm text-gray-600">
+                <span>
+                  Recargo {breakdown.extraGuests}{" "}
+                  {breakdown.extraGuests === 1 ? "huésped adicional" : "huéspedes adicionales"}
+                </span>
+                <span>+{formatCop(breakdown.surchargePerNight)}/noche</span>
+              </div>
+            )}
+            <div className="flex justify-between font-bold text-lg border-t pt-2">
+              <span>{breakdown.isLongStay ? "Pago mensual" : "Total"}</span>
+              <span>
+                {formatCop(breakdown.displayAmount)}
+                <span className="text-sm font-normal text-gray-500">
+                  {breakdown.isLongStay ? " COP/mes" : " COP"}
+                </span>
+              </span>
+            </div>
+            {breakdown.isLongStay && (
+              <p className="text-xs text-gray-500">
+                Estadía de {breakdown.nights} noches facturada como pago mensual.
+              </p>
+            )}
           </div>
-        </div>
+        )}
 
         <Button
           className="w-full bg-teal-600 hover:bg-teal-700 text-white py-6 text-lg"
-          onClick={handleBookingReservation}
-          disabled={!checkIn}
+          onClick={handleReserve}
+          disabled={!canReserve}
         >
           Reservar ahora
         </Button>

@@ -1,25 +1,34 @@
 "use client"
 
+import { useMemo, useState } from "react"
+import { useRouter } from "next/navigation"
+import { startOfToday } from "date-fns"
+import { motion } from "framer-motion"
+import type { DateRange } from "react-day-picker"
+
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import MonthSelect from "@/components/ui/month-select"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { addMonths } from "date-fns"
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { motion } from "framer-motion"
+import DateRangePicker from "@/components/ui/date-range-picker"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from "@/components/ui/select"
 import { habitaciones } from "@/content"
 
 export default function SearchBar() {
   const router = useRouter()
-  const [checkIn, setCheckIn] = useState<Date | undefined>(new Date())
-  const [checkOut, setCheckOut] = useState<Date | undefined>()
+  const today = useMemo(() => startOfToday(), [])
+
+  const [range, setRange] = useState<DateRange | undefined>()
   const [guests, setGuests] = useState<string>("1")
 
   const handleSearch = () => {
     const params = new URLSearchParams()
-    if (checkIn) params.set("checkIn", checkIn.toISOString())
-    if (checkOut) params.set("checkOut", checkOut.toISOString())
+    if (range?.from) params.set("checkIn", range.from.toISOString())
+    if (range?.to) params.set("checkOut", range.to.toISOString())
     params.set("guests", guests)
     router.push(`/habitaciones?${params.toString()}`)
   }
@@ -48,31 +57,23 @@ export default function SearchBar() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-4 gap-4"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4"
           >
             <div>
-              <Label htmlFor="check-in">Mes de llegada</Label>
-              <MonthSelect
-                value={checkIn}
-                onChange={setCheckIn}
-                placeholder="Selecciona un mes"
-                className="w-full mt-1"
-              />
-            </div>
-            <div>
-              <Label htmlFor="check-out">Mes de salida</Label>
-              <MonthSelect
-                value={checkOut}
-                onChange={setCheckOut}
-                placeholder="Selecciona un mes"
-                minDate={checkIn ? addMonths(checkIn, 1) : undefined}
-                className="w-full mt-1"
+              <Label>Fechas (check-in / check-out)</Label>
+              <DateRangePicker
+                value={range}
+                onChange={setRange}
+                disabledBefore={today}
+                placeholder="Selecciona check-in y check-out"
+                className="mt-1"
+                numberOfMonths={2}
               />
             </div>
             <div>
               <Label htmlFor="guests">Huéspedes</Label>
               <Select value={guests} onValueChange={setGuests}>
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full mt-1">
                   <SelectValue placeholder="Selecciona el número de huéspedes" />
                 </SelectTrigger>
                 <SelectContent>
@@ -90,7 +91,12 @@ export default function SearchBar() {
                 whileTap={{ scale: 0.98 }}
                 className="w-full"
               >
-                <Button onClick={handleSearch} className="w-full bg-teal-600 hover:bg-teal-700 transition-all duration-300">Buscar disponibilidad</Button>
+                <Button
+                  onClick={handleSearch}
+                  className="w-full bg-teal-600 hover:bg-teal-700 transition-all duration-300"
+                >
+                  Buscar disponibilidad
+                </Button>
               </motion.div>
             </div>
           </motion.div>

@@ -15,7 +15,7 @@ export default function HabitacionesList() {
               key={room.slug}
               title={room.title}
               image={room.image}
-              price={room.price}
+              monthlyFromPrice={room.monthlyFromPrice}
               features={room.features}
               slug={room.slug}
             />

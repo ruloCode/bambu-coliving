@@ -23,23 +23,23 @@ export const featuredRoomsContent = {
   description: "Descubre nuestras habitaciones diseñadas para ofrecerte confort, privacidad y todo lo que necesitas para vivir, trabajar y disfrutar en Bogotá.",
   rooms: [
     {
-      title: "Nogal - 17.7m²",
+      title: "Nogal - 19m²",
       image: "/images/bambu_fotos/H7-4763.jpg",
-      price: "1.500.000",
+      monthlyFromPrice: 1496000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
       slug: "nogal"
     },
     {
-      title: "Samán - 15.1m²",
+      title: "Samán - 16m²",
       image: "/images/bambu_fotos/H4-4805.jpg",
-      price: "1.300.000",
+      monthlyFromPrice: 1304000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
       slug: "saman"
     },
     {
-      title: "Palma de Cera - 16.8m²",
+      title: "Palma de Cera - 19m²",
       image: "/images/bambu_fotos/H8-4775.jpg",
-      price: "1.400.000",
+      monthlyFromPrice: 1440000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
       slug: "palma-de-cera"
     }
@@ -126,8 +126,8 @@ const habitacionesHeader = {
 
 const habitacionesFilters = {
   title: "Filtra tu búsqueda",
-  checkInLabel: "Fecha de llegada",
-  checkInPlaceholder: "Selecciona una fecha",
+  datesLabel: "Fechas (check-in / check-out)",
+  datesPlaceholder: "Selecciona check-in y check-out",
   guestsLabel: "Huéspedes",
   guestsPlaceholder: "Selecciona el número de huéspedes",
   guestsOptions: [
@@ -145,89 +145,89 @@ const habitacionesList = {
   description: "Encuentra el espacio perfecto para tu estilo de vida",
   rooms: [
     {
-      title: "Gualanday - 11.4m²",
+      title: "Gualanday - 12m²",
       image: "/images/bambu_fotos/H1-4720.jpg",
-      price: "1.000.000",
+      monthlyFromPrice: 952000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XS"],
       slug: "gualanday",
       category: "privada"
     },
     {
-      title: "Ceiba - 13.4m²",
+      title: "Ceiba - 14m²",
       image: "/images/bambu_fotos/H2-4952.jpg",
-      price: "1.200.000",
+      monthlyFromPrice: 1152000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
       slug: "ceiba",
       category: "privada"
     },
     {
-      title: "Ocobo - 8.6m²",
+      title: "Ocobo - 9m²",
       image: "/images/bambu_fotos/H3-4817.jpg",
-      price: "900.000",
+      monthlyFromPrice: 752000,
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
       slug: "ocobo",
       category: "privada"
     },
     {
-      title: "Samán - 15.1m²",
+      title: "Samán - 16m²",
       image: "/images/bambu_fotos/H4-4805.jpg",
-      price: "1.300.000",
+      monthlyFromPrice: 1304000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
       slug: "saman",
       category: "suite"
     },
     {
-      title: "Cedro - 15.7m²",
+      title: "Cedro - 17m²",
       image: "/images/bambu_fotos/H5-4730.jpg",
-      price: "1.400.000",
+      monthlyFromPrice: 1352000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
       slug: "cedro",
       category: "suite"
     },
     {
-      title: "Caracolí - 13.4m²",
+      title: "Caracolí - 14m²",
       image: "/images/bambu_fotos/H6-4747.jpg",
-      price: "1.100.000",
+      monthlyFromPrice: 1136000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
       slug: "caracoli",
       category: "privada"
     },
     {
-      title: "Nogal - 17.7m²",
+      title: "Nogal - 19m²",
       image: "/images/bambu_fotos/H7-4763.jpg",
-      price: "1.500.000",
+      monthlyFromPrice: 1496000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
       slug: "nogal",
       category: "suite"
     },
     {
-      title: "Palma de Cera - 16.8m²",
+      title: "Palma de Cera - 19m²",
       image: "/images/bambu_fotos/H8-4775.jpg",
-      price: "1.400.000",
+      monthlyFromPrice: 1440000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
       slug: "palma-de-cera",
       category: "suite"
     },
     {
-      title: "Sauce - 16.7m²",
+      title: "Sauce - 18m²",
       image: "/images/bambu_fotos/H9-4663.jpg",
-      price: "1.350.000",
+      monthlyFromPrice: 1416000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
       slug: "sauce",
       category: "suite"
     },
     {
-      title: "Balso - 12m²",
+      title: "Balso - 13m²",
       image: "/images/bambu_fotos/H10-4687.jpg",
-      price: "1.000.000",
+      monthlyFromPrice: 1024000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
       slug: "balso",
       category: "privada"
     },
     {
-      title: "Chicalá - 14.7m²",
+      title: "Chicalá - 16m²",
       image: "/images/bambu_fotos/H11-4705.jpg",
-      price: "1.200.000",
+      monthlyFromPrice: 1256000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado amplio", "Closet L"],
       slug: "chicala",
       category: "suite"
@@ -241,30 +241,28 @@ const habitacionesDetails = {
     description: "Todas nuestras habitaciones incluyen:",
     list: [
       "WiFi de alta velocidad",
-      "Aseo 1 vez al mes",
+      "Aseo cada 2 semanas",
       "Servicios públicos incluidos (agua, luz, gas)",
       "Acceso a espacios comunes",
-      "Seguridad 24/7",
-      "Recepción y conserjería"
+      "Seguridad 24/7"
     ]
   },
   policies: {
     title: "Políticas de estadía",
     checkIn: "Check-in: 3:00 PM",
-    checkOut: "Check-out: 11:00 AM", 
-    minimumStay: "Estancia mínima: 1 mes",
+    checkOut: "Check-out: 11:00 AM",
     cancellation: "Política de cancelación flexible"
   },
   location: {
     title: "Ubicación privilegiada",
     description: "Nos encontramos en el corazón de Bogotá, cerca de:",
     landmarks: [
-      "Zona Rosa (5 min)",
+      "Zona Centro (5 min)",
       "Chapinero (10 min)",
       "TransMilenio (2 min)", 
-      "Centros comerciales (5 min)",
+      "Centros comerciales (15 min)",
       "Restaurantes y cafés (caminando)",
-      "Parques y espacios verdes (3 min)"
+      "Parques y espacios verdes (caminando)"
     ]
   }
 }
@@ -281,7 +279,7 @@ export const habitaciones = {
 export interface RoomData {
   title: string
   image: string
-  price: string
+  monthlyFromPrice: number
   features: string[]
   slug: string
   category?: string
@@ -319,23 +317,75 @@ export interface RoomFeature {
   iconName: string
 }
 
+export type StayTier =
+  | "361+"
+  | "180-360"
+  | "90-179"
+  | "30-89"
+  | "15-29"
+  | "7-14"
+  | "3-6"
+  | "1-2"
+
+export type NightlyRates = Record<StayTier, number>
+
+export interface StayTierDefinition {
+  tier: StayTier
+  minNights: number
+  label: string
+  shortLabel: string
+}
+
+// Ordered from longest stay (cheapest per night) to shortest (most expensive).
+// `minNights` is the minimum total stay in nights for the tier to apply.
+export const STAY_TIERS: StayTierDefinition[] = [
+  { tier: "361+", minNights: 361, label: "361 días o más", shortLabel: "361+ noches" },
+  { tier: "180-360", minNights: 180, label: "180 a 360 días", shortLabel: "180-360 noches" },
+  { tier: "90-179", minNights: 90, label: "90 a 179 días", shortLabel: "90-179 noches" },
+  { tier: "30-89", minNights: 30, label: "30 a 89 días", shortLabel: "30-89 noches" },
+  { tier: "15-29", minNights: 15, label: "15 a 29 días", shortLabel: "15-29 noches" },
+  { tier: "7-14", minNights: 7, label: "7 a 14 días", shortLabel: "7-14 noches" },
+  { tier: "3-6", minNights: 3, label: "3 a 6 días", shortLabel: "3-6 noches" },
+  { tier: "1-2", minNights: 1, label: "1 a 2 días", shortLabel: "1-2 noches" }
+]
+
+// Stays of this many nights or more are billed as monthly payments instead of
+// a lump-sum total (matches the long-stay residential model).
+export const LONG_STAY_THRESHOLD_NIGHTS = 90
+
+// Number of nights used to convert a per-night rate to a monthly equivalent.
+export const MONTHLY_BILLING_NIGHTS = 30
+
+// Flat per-night surcharge per additional guest, varying by stay tier.
+export const EXTRA_GUEST_NIGHT_RATES: Record<StayTier, number> = {
+  "361+": 13000,
+  "180-360": 15000,
+  "90-179": 18000,
+  "30-89": 21000,
+  "15-29": 24000,
+  "7-14": 27000,
+  "3-6": 30000,
+  "1-2": 35000
+}
+
+export function getExtraGuestRate(tier: StayTier): number {
+  return EXTRA_GUEST_NIGHT_RATES[tier]
+}
+
 export interface DetailedRoom {
   title: string
   description: string
-  price: string
-  monthlyPrice: string
   features: RoomFeature[]
   images: string[]
   size: string
   maxGuests: number
+  nightlyRates: NightlyRates
 }
 
 export const roomDetails: Record<string, DetailedRoom> = {
   "gualanday": {
     title: "Gualanday",
     description: "De flores violetas y místicas; aporta un aire de magia y serenidad al entorno. Habitación acogedora, perfecta para quienes buscan un espacio íntimo y relajante para descansar y trabajar.",
-    price: "1.000.000",
-    monthlyPrice: "1.000.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -347,14 +397,22 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H1-4720.jpg",
       "/images/bambu_fotos/H1-4726.jpg"
     ],
-    size: "11.4m²",
-    maxGuests: 1
+    size: "12m²",
+    maxGuests: 1,
+    nightlyRates: {
+      "361+": 31733,
+      "180-360": 36267,
+      "90-179": 38533,
+      "30-89": 40800,
+      "15-29": 86124,
+      "7-14": 109924,
+      "3-6": 123790,
+      "1-2": 136000
+    }
   },
   "ceiba": {
     title: "Ceiba",
     description: "La gigante protectora de la selva; representa la sabiduría ancestral y la conexión espiritual. Habitación con detalles únicos y amplio espacio, ideal para profesionales y nómadas digitales.",
-    price: "1.200.000",
-    monthlyPrice: "1.200.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -366,14 +424,22 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H2-4952.jpg",
       "/images/bambu_fotos/H2-4959.jpg"
     ],
-    size: "13.4m²",
-    maxGuests: 1
+    size: "14m²",
+    maxGuests: 1,
+    nightlyRates: {
+      "361+": 38400,
+      "180-360": 43866,
+      "90-179": 46629,
+      "30-89": 49371,
+      "15-29": 104229,
+      "7-14": 133029,
+      "3-6": 149760,
+      "1-2": 164571
+    }
   },
   "ocobo": {
     title: "Ocobo",
     description: "La delicadeza rosada de la montaña; evoca la belleza sutil y el renacer de la primavera. Espacio compacto pero luminoso, perfecto para estadías económicas.",
-    price: "900.000",
-    monthlyPrice: "900.000",
     features: [
       { name: "Cama semidoble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -386,14 +452,22 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H3-4820.jpg",
       "/images/bambu_fotos/H3-4824.jpg"
     ],
-    size: "8.6m²",
-    maxGuests: 2
+    size: "9m²",
+    maxGuests: 2,
+    nightlyRates: {
+      "361+": 25067,
+      "180-360": 28648,
+      "90-179": 30438,
+      "30-89": 32229,
+      "15-29": 68038,
+      "7-14": 86838,
+      "3-6": 97760,
+      "1-2": 107429
+    }
   },
   "saman": {
     title: "Samán",
     description: "El árbol de la hospitalidad; su copa inmensa es el refugio perfecto para el descanso. Suite espaciosa con closet XL y cama doble, diseñada para quienes valoran el confort.",
-    price: "1.300.000",
-    monthlyPrice: "1.300.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -406,14 +480,22 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H4-4811.jpg",
       "/images/bambu_fotos/H4-4815.jpg"
     ],
-    size: "15.1m²",
-    maxGuests: 2
+    size: "16m²",
+    maxGuests: 2,
+    nightlyRates: {
+      "361+": 43467,
+      "180-360": 49676,
+      "90-179": 52781,
+      "30-89": 55886,
+      "15-29": 117981,
+      "7-14": 150581,
+      "3-6": 169524,
+      "1-2": 186286
+    }
   },
   "cedro": {
     title: "Cedro",
     description: "El aroma de la tradición; una madera preciosa que evoca lujo rústico y durabilidad. Una de nuestras suites más amplias, con ambiente perfecto para estadías largas.",
-    price: "1.400.000",
-    monthlyPrice: "1.400.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -426,14 +508,22 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H5-4733.jpg",
       "/images/bambu_fotos/H5-4744.jpg"
     ],
-    size: "15.7m²",
-    maxGuests: 2
+    size: "17m²",
+    maxGuests: 2,
+    nightlyRates: {
+      "361+": 45067,
+      "180-360": 51505,
+      "90-179": 54724,
+      "30-89": 57943,
+      "15-29": 122324,
+      "7-14": 156124,
+      "3-6": 175760,
+      "1-2": 193143
+    }
   },
   "caracoli": {
     title: "Caracolí",
     description: "El titán de los ríos; madera robusta que cuenta historias de agua y tierra caliente. Ubicación privilegiada con vista y tranquilidad, espacio cómodo para profesionales.",
-    price: "1.100.000",
-    monthlyPrice: "1.100.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -445,14 +535,22 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H6-4747.jpg",
       "/images/bambu_fotos/H6-4751.jpg"
     ],
-    size: "13.4m²",
-    maxGuests: 1
+    size: "14m²",
+    maxGuests: 1,
+    nightlyRates: {
+      "361+": 37867,
+      "180-360": 43276,
+      "90-179": 45981,
+      "30-89": 48686,
+      "15-29": 102781,
+      "7-14": 131181,
+      "3-6": 147650,
+      "1-2": 162286
+    }
   },
   "nogal": {
     title: "Nogal",
     description: "El señor de la capital; representa la nobleza de la madera y la resistencia bogotana. Nuestra habitación más grande y premium, suite ejecutiva con todo el espacio que necesitas.",
-    price: "1.500.000",
-    monthlyPrice: "1.500.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -465,14 +563,22 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H7-4770.jpg",
       "/images/bambu_fotos/H7-4771.jpg"
     ],
-    size: "17.7m²",
-    maxGuests: 2
+    size: "19m²",
+    maxGuests: 2,
+    nightlyRates: {
+      "361+": 49867,
+      "180-360": 56990,
+      "90-179": 60552,
+      "30-89": 64114,
+      "15-29": 135352,
+      "7-14": 172752,
+      "3-6": 194480,
+      "1-2": 213714
+    }
   },
   "palma-de-cera": {
     title: "Palma de Cera",
     description: "Nuestro símbolo nacional; representa la elegancia que toca el cielo de los Andes. Suite amplia con carácter especial, closet XL y espacio generoso para comodidad premium.",
-    price: "1.400.000",
-    monthlyPrice: "1.400.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -486,14 +592,22 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H8-4789.jpg",
       "/images/bambu_fotos/H8-4790.jpg"
     ],
-    size: "16.8m²",
-    maxGuests: 2
+    size: "19m²",
+    maxGuests: 2,
+    nightlyRates: {
+      "361+": 48000,
+      "180-360": 54857,
+      "90-179": 58286,
+      "30-89": 61714,
+      "15-29": 130286,
+      "7-14": 166286,
+      "3-6": 187240,
+      "1-2": 205714
+    }
   },
   "sauce": {
     title: "Sauce",
     description: "La danza del viento; sus ramas colgantes inspiran paz, fluidez y una calma profunda. Suite en primer piso con fácil acceso, espacio amplio ideal para estadías prolongadas.",
-    price: "1.350.000",
-    monthlyPrice: "1.350.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -506,14 +620,22 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H9-4666.jpg",
       "/images/bambu_fotos/H9-4675.jpg"
     ],
-    size: "16.7m²",
-    maxGuests: 2
+    size: "18m²",
+    maxGuests: 2,
+    nightlyRates: {
+      "361+": 47200,
+      "180-360": 53943,
+      "90-179": 57314,
+      "30-89": 60686,
+      "15-29": 128114,
+      "7-14": 163514,
+      "3-6": 184000,
+      "1-2": 202286
+    }
   },
   "balso": {
     title: "Balso",
     description: "La ligereza del bosque; una madera suave y blanca que simboliza la paz y la sencillez. Habitación con personalidad única y buen espacio, perfecta para profesionales.",
-    price: "1.000.000",
-    monthlyPrice: "1.000.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -525,14 +647,22 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H10-4687.jpg",
       "/images/bambu_fotos/H10-4693.jpg"
     ],
-    size: "12m²",
-    maxGuests: 1
+    size: "13m²",
+    maxGuests: 1,
+    nightlyRates: {
+      "361+": 34133,
+      "180-360": 39010,
+      "90-179": 41448,
+      "30-89": 43886,
+      "15-29": 92648,
+      "7-14": 118248,
+      "3-6": 133120,
+      "1-2": 146286
+    }
   },
   "chicala": {
     title: "Chicalá",
     description: "El destello del camino; arbusto de flores amarillas que celebra la resistencia y el brillo. Suite con baño amplio y espacioso, ideal para quienes valoran el confort.",
-    price: "1.200.000",
-    monthlyPrice: "1.200.000",
     features: [
       { name: "Cama doble", iconName: "Bed" },
       { name: "WiFi ilimitado", iconName: "Wifi" },
@@ -545,9 +675,43 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H11-4712.jpg",
       "/images/bambu_fotos/H11-4713.jpg"
     ],
-    size: "14.7m²",
-    maxGuests: 2
+    size: "16m²",
+    maxGuests: 2,
+    nightlyRates: {
+      "361+": 41867,
+      "180-360": 47848,
+      "90-179": 50838,
+      "30-89": 53829,
+      "15-29": 113638,
+      "7-14": 145038,
+      "3-6": 163200,
+      "1-2": 179429
+    }
   }
+}
+
+// Resolve the matching tier for a stay length in nights.
+// Returns the tier whose `minNights` is the largest value <= nights.
+// Falls back to the shortest tier ("1-2") for any value < 1.
+export function getTierForNights(nights: number): StayTier {
+  if (nights < 1) return "1-2"
+  for (const definition of STAY_TIERS) {
+    if (nights >= definition.minNights) return definition.tier
+  }
+  return "1-2"
+}
+
+export function getStayTierDefinition(tier: StayTier): StayTierDefinition {
+  const found = STAY_TIERS.find((definition) => definition.tier === tier)
+  if (!found) throw new Error(`Unknown stay tier: ${tier}`)
+  return found
+}
+
+export function getNightlyRate(slug: string, nights: number): number | null {
+  const room = roomDetails[slug]
+  if (!room) return null
+  const tier = getTierForNights(nights)
+  return room.nightlyRates[tier]
 }
 
 // ============= BLOG CONTENT =============
@@ -1117,7 +1281,7 @@ export const faqsContent = {
         },
         {
           question: "¿Cuál es la estancia mínima?",
-          answer: "La estancia mínima en Bambu Coliving es de 1 mes. Ofrecemos descuentos especiales para estancias de 2 y 3 meses."
+          answer: "La estancia mínima en Bambu Coliving es de 1 noche. Las tarifas se ajustan automáticamente según la duración total de tu estadía: a más noches, mejor tarifa por noche, con tramos especiales desde 3 noches y descuentos significativos a partir de 30 noches."
         },
         {
           question: "¿Qué métodos de pago aceptan?",

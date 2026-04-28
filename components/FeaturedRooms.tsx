@@ -41,7 +41,7 @@ export default function FeaturedRooms() {
               <RoomCard
                 title={room.title}
                 image={room.image}
-                price={room.price}
+                monthlyFromPrice={room.monthlyFromPrice}
                 features={room.features}
                 slug={room.slug}
               />

@@ -54,7 +54,7 @@ export default function RoomDetail({ params }: { params: Promise<{ slug: string 
               <p className="text-gray-600 mb-6">{room.description}</p>
               <RoomFeaturesSection features={featuresWithIcons} />
               <RoomDetailsSection size={room.size} maxGuests={room.maxGuests} />
-              <RoomPricesSection monthlyPrice={room.monthlyPrice} />
+              <RoomPricesSection nightlyRates={room.nightlyRates} />
             </div>
             <div>
               <RoomBookingSection
@@ -62,7 +62,7 @@ export default function RoomDetail({ params }: { params: Promise<{ slug: string 
                 roomTitle={room.title}
                 roomImage={room.images[0]}
                 roomSize={room.size}
-                monthlyPrice={room.monthlyPrice}
+                nightlyRates={room.nightlyRates}
                 maxGuests={room.maxGuests}
               />
             </div>

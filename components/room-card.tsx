@@ -6,12 +6,20 @@ import Link from "next/link"
 interface RoomCardProps {
   title: string
   image: string
-  price: string
+  monthlyFromPrice: number
   features: string[]
   slug: string
 }
 
-export default function RoomCard({ title, image, price, features, slug }: RoomCardProps) {
+const formatCop = (value: number) => `$${value.toLocaleString("es-CO")}`
+
+export default function RoomCard({
+  title,
+  image,
+  monthlyFromPrice,
+  features,
+  slug
+}: RoomCardProps) {
   return (
     <Link
       href={`/habitaciones/${slug}`}
@@ -29,10 +37,9 @@ export default function RoomCard({ title, image, price, features, slug }: RoomCa
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <div className="mb-4">
-          <div>
-            <span className="text-2xl font-bold text-teal-600">$ {price}</span>
-            <span className="text-sm text-gray-500"> / mes</span>
-          </div>
+          <span className="text-xs uppercase tracking-wide text-gray-500 mr-1">Desde</span>
+          <span className="text-2xl font-bold text-teal-600">{formatCop(monthlyFromPrice)}</span>
+          <span className="text-sm text-gray-500"> / mes</span>
         </div>
         <ul className="space-y-2 mb-6 flex-grow">
           {features.map((feature, index) => (
