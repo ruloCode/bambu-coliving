@@ -6,7 +6,6 @@ import { notFound } from "next/navigation"
 import RoomGallerySection from "@/components/habitaciones/slug/RoomGallerySection"
 import RoomFeaturesSection from "@/components/habitaciones/slug/RoomFeaturesSection"
 import RoomDetailsSection from "@/components/habitaciones/slug/RoomDetailsSection"
-import RoomPricesSection from "@/components/habitaciones/slug/RoomPricesSection"
 import RoomBookingSection from "@/components/habitaciones/slug/RoomBookingSection"
 import { roomDetails } from "@/content"
 
@@ -54,7 +53,6 @@ export default function RoomDetail({ params }: { params: Promise<{ slug: string 
               <p className="text-gray-600 mb-6">{room.description}</p>
               <RoomFeaturesSection features={featuresWithIcons} />
               <RoomDetailsSection size={room.size} maxGuests={room.maxGuests} />
-              <RoomPricesSection nightlyRates={room.nightlyRates} />
             </div>
             <div>
               <RoomBookingSection
