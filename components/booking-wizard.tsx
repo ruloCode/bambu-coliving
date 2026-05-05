@@ -6,12 +6,13 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { format } from "date-fns"
 import { es } from "date-fns/locale"
-import { ArrowLeft, Check } from "lucide-react"
+import { ArrowLeft, Check, MessageCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { PhoneInput } from "@/components/ui/phone-input"
 import {
   Select,
   SelectContent,
@@ -28,6 +29,11 @@ const steps = [
   { id: "guest", name: "Información" },
   { id: "confirmation", name: "Confirmación" }
 ]
+
+const BAMBU_WHATSAPP = "573007438588"
+
+const generateReservationNumber = () =>
+  `BM-${Math.floor(Math.random() * 10000).toString().padStart(4, "0")}`
 
 const formatCop = (value: number) => `$${value.toLocaleString("es-CO")}`
 
@@ -61,6 +67,7 @@ export default function BookingWizard() {
     }
   })
   const [specialRequests, setSpecialRequests] = useState("")
+  const [reservationNumber, setReservationNumber] = useState("")
 
   useEffect(() => {
     if (!bookingData.roomSlug) {
@@ -73,7 +80,46 @@ export default function BookingWizard() {
   }
 
   const handleConfirmBooking = () => {
+    setReservationNumber(generateReservationNumber())
     setCurrentStep(2)
+  }
+
+  const buildWhatsappMessage = () => {
+    const isLongStayMsg = bookingData.displayMode === "monthly"
+    const totalLine = isLongStayMsg
+      ? `*Pago mensual estimado:* ${formatCop(bookingData.displayAmount)} COP/mes`
+      : `*Total estimado:* ${formatCop(bookingData.displayAmount)} COP`
+
+    const lines = [
+      "Hola Bambu, quiero confirmar una reserva.",
+      "",
+      `*Reserva:* ${reservationNumber}`,
+      `*Habitación:* ${bookingData.roomTitle}`,
+      `*Llegada:* ${formatLongDate(bookingData.checkInDate)}`,
+      `*Salida:* ${formatLongDate(bookingData.checkOutDate)}`,
+      `*Noches:* ${bookingData.nights}`,
+      `*Huéspedes:* ${bookingData.guests}`,
+      `*Tarifa aplicada:* ${bookingData.tierLabel || "—"}`,
+      totalLine,
+      "",
+      "*Mis datos:*",
+      `Nombre: ${bookingData.guestInfo.firstName} ${bookingData.guestInfo.lastName}`,
+      `Correo: ${bookingData.guestInfo.email}`,
+      `Teléfono: ${bookingData.guestInfo.phone}`,
+      `Nacionalidad: ${bookingData.guestInfo.nationality}`
+    ]
+    if (bookingData.guestInfo.occupation) {
+      lines.push(`Ocupación: ${bookingData.guestInfo.occupation}`)
+    }
+    if (bookingData.specialRequests) {
+      lines.push("", `*Solicitudes especiales:* ${bookingData.specialRequests}`)
+    }
+    return lines.join("\n")
+  }
+
+  const handleSendWhatsapp = () => {
+    const url = `https://wa.me/${BAMBU_WHATSAPP}?text=${encodeURIComponent(buildWhatsappMessage())}`
+    window.open(url, "_blank", "noopener,noreferrer")
   }
 
   const nextStep = () => {
@@ -281,11 +327,11 @@ export default function BookingWizard() {
 
               <div>
                 <Label htmlFor="phone">Teléfono *</Label>
-                <Input
+                <PhoneInput
                   id="phone"
                   className="mt-1"
                   value={guestForm.phone}
-                  onChange={(e) => handleGuestFormChange("phone", e.target.value)}
+                  onChange={(value) => handleGuestFormChange("phone", value)}
                   required
                 />
               </div>
@@ -391,19 +437,17 @@ export default function BookingWizard() {
             <div className="bg-teal-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
               <Check className="h-10 w-10 text-teal-600" />
             </div>
-            <h2 className="text-2xl font-bold mb-2">¡Reserva enviada!</h2>
+            <h2 className="text-2xl font-bold mb-2">¡Casi listo!</h2>
             <p className="text-gray-600 mb-6">
-              Hemos recibido tu solicitud de reserva. Te contactaremos pronto para coordinar el
-              pago y confirmar los detalles.
+              Para confirmar tu reserva, envíanos los detalles por WhatsApp y empezamos el chat
+              para coordinar el pago.
             </p>
             <div className="bg-gray-50 p-6 rounded-lg text-left mb-6">
               <h3 className="font-bold mb-4">Detalles de la reserva</h3>
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span>Número de reserva:</span>
-                  <span className="font-medium">
-                    BM-{Math.floor(Math.random() * 10000).toString().padStart(4, "0")}
-                  </span>
+                  <span className="font-medium">{reservationNumber}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Habitación:</span>
@@ -433,22 +477,36 @@ export default function BookingWizard() {
                 </div>
               </div>
             </div>
-            <p className="text-sm text-gray-600 mb-6">
-              Si tienes alguna pregunta, contáctanos a{" "}
+            <div className="flex flex-col gap-3 max-w-sm mx-auto">
+              <Button
+                onClick={handleSendWhatsapp}
+                className="bg-[#25D366] hover:bg-[#1ebe57] text-white py-6 text-base"
+              >
+                <MessageCircle className="h-5 w-5 mr-2" />
+                Enviar a WhatsApp y empezar chat
+              </Button>
+              <Button
+                variant="ghost"
+                onClick={() => {
+                  clearBooking()
+                  router.push("/")
+                }}
+                className="text-gray-600"
+              >
+                Volver al inicio
+              </Button>
+            </div>
+            <p className="text-xs text-gray-500 mt-6">
+              Al tocar el botón se abre WhatsApp con tu información ya escrita; solo dale enviar
+              para que lleguemos al chat.
+            </p>
+            <p className="text-sm text-gray-600 mt-4">
+              ¿Prefieres correo? Escríbenos a{" "}
               <a href="mailto:info@bambucoliving.com" className="text-teal-600 hover:underline">
                 info@bambucoliving.com
-              </a>{" "}
-              o al +57 300 7438588.
+              </a>
+              .
             </p>
-            <Button
-              onClick={() => {
-                clearBooking()
-                router.push("/")
-              }}
-              className="bg-teal-600 hover:bg-teal-700"
-            >
-              Volver al inicio
-            </Button>
           </div>
         )}
       </div>

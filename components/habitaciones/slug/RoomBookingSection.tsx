@@ -1,10 +1,11 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { useRouter } from "next/navigation"
 import { differenceInCalendarDays, format, startOfToday } from "date-fns"
 import { es } from "date-fns/locale"
 import { Clock, Users } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 import type { DateRange } from "react-day-picker"
 
 import { Button } from "@/components/ui/button"
@@ -13,7 +14,6 @@ import { Label } from "@/components/ui/label"
 import {
   LONG_STAY_THRESHOLD_NIGHTS,
   MONTHLY_BILLING_NIGHTS,
-  getExtraGuestRate,
   getStayTierDefinition,
   getTierForNights,
   type NightlyRates
@@ -29,6 +29,8 @@ interface RoomBookingSectionProps {
   nightlyRates: NightlyRates
   maxGuests: number
 }
+
+const HARD_GUEST_LIMIT = 2
 
 const formatCop = (value: number) => `$${value.toLocaleString("es-CO")}`
 
@@ -52,8 +54,12 @@ export default function RoomBookingSection({
 
   const [range, setRange] = useState<DateRange | undefined>()
   const [guests, setGuests] = useState(1)
+  const [shake, setShake] = useState(0)
+  const [showLimitMsg, setShowLimitMsg] = useState(false)
 
   const { selectRoom, setDates, setGuests: setStoreGuests } = useBookingStore()
+
+  const guestCap = Math.min(HARD_GUEST_LIMIT, maxGuests || HARD_GUEST_LIMIT)
 
   const monthlyFromPrice = nightlyRates["361+"] * MONTHLY_BILLING_NIGHTS
 
@@ -64,31 +70,42 @@ export default function RoomBookingSection({
     const tier = getTierForNights(nights)
     const definition = getStayTierDefinition(tier)
     const nightlyRate = nightlyRates[tier]
-    const extraGuestRate = getExtraGuestRate(tier)
-    const extraGuests = Math.max(0, guests - 1)
-    const surchargePerNight = extraGuestRate * extraGuests
     const subtotal = nightlyRate * nights
-    const surchargeAmount = surchargePerNight * nights
-    const total = subtotal + surchargeAmount
-    const monthlyEquivalent = (nightlyRate + surchargePerNight) * MONTHLY_BILLING_NIGHTS
+    const total = subtotal
+    const monthlyEquivalent = nightlyRate * MONTHLY_BILLING_NIGHTS
     const isLongStay = nights >= LONG_STAY_THRESHOLD_NIGHTS
     return {
       nights,
       tierLabel: definition.label,
       nightlyRate,
-      extraGuestRate,
-      extraGuests,
-      surchargePerNight,
       subtotal,
-      surchargeAmount,
       total,
       monthlyEquivalent,
       isLongStay,
       displayAmount: isLongStay ? monthlyEquivalent : total
     }
-  }, [range, guests, nightlyRates])
+  }, [range, nightlyRates])
 
   const canReserve = Boolean(range?.from && range?.to && breakdown)
+
+  useEffect(() => {
+    if (!showLimitMsg) return
+    const t = setTimeout(() => setShowLimitMsg(false), 2500)
+    return () => clearTimeout(t)
+  }, [showLimitMsg])
+
+  const handleAddGuest = () => {
+    if (guests >= guestCap) {
+      setShake((n) => n + 1)
+      setShowLimitMsg(true)
+      return
+    }
+    setGuests(guests + 1)
+  }
+
+  const handleRemoveGuest = () => {
+    setGuests(Math.max(1, guests - 1))
+  }
 
   const handleReserve = () => {
     if (!canReserve || !range?.from || !range?.to) return
@@ -138,7 +155,7 @@ export default function RoomBookingSection({
           )}
           {breakdown && (
             <p className="text-xs text-teal-600 mt-2 font-medium">
-              {formatRangeLabel(range)} · {breakdown.nights} {breakdown.nights === 1 ? "noche" : "noches"} · Tarifa {breakdown.tierLabel}
+              {formatRangeLabel(range)} · {breakdown.nights} {breakdown.nights === 1 ? "noche" : "noches"}
             </p>
           )}
         </div>
@@ -162,12 +179,17 @@ export default function RoomBookingSection({
 
         <div>
           <Label>Huéspedes</Label>
-          <div className="flex items-center gap-2 mt-1">
+          <motion.div
+            key={shake}
+            animate={shake > 0 ? { x: [0, -8, 8, -6, 6, -3, 3, 0] } : {}}
+            transition={{ duration: 0.4 }}
+            className="flex items-center gap-2 mt-1"
+          >
             <Button
               variant="outline"
               size="icon"
               type="button"
-              onClick={() => setGuests(Math.max(1, guests - 1))}
+              onClick={handleRemoveGuest}
               disabled={guests <= 1}
             >
               -
@@ -180,35 +202,28 @@ export default function RoomBookingSection({
               variant="outline"
               size="icon"
               type="button"
-              onClick={() => setGuests(Math.min(maxGuests, guests + 1))}
-              disabled={guests >= maxGuests}
+              onClick={handleAddGuest}
             >
               +
             </Button>
-          </div>
-          {guests > 1 && breakdown && (
-            <p className="text-xs text-gray-500 mt-1">
-              +{formatCop(breakdown.extraGuestRate)}/noche por cada huésped adicional en este tier.
-            </p>
-          )}
+          </motion.div>
+          <AnimatePresence>
+            {showLimitMsg && (
+              <motion.p
+                initial={{ opacity: 0, y: -4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                className="text-xs text-red-600 mt-2 font-medium text-center"
+              >
+                Máximo 2 personas por habitación
+              </motion.p>
+            )}
+          </AnimatePresence>
         </div>
 
         {breakdown && (
           <div className="border-t pt-4 mt-4 space-y-2">
-            <div className="flex justify-between text-sm text-gray-600">
-              <span>Tarifa por noche</span>
-              <span>{formatCop(breakdown.nightlyRate)}</span>
-            </div>
-            {breakdown.extraGuests > 0 && (
-              <div className="flex justify-between text-sm text-gray-600">
-                <span>
-                  Recargo {breakdown.extraGuests}{" "}
-                  {breakdown.extraGuests === 1 ? "huésped adicional" : "huéspedes adicionales"}
-                </span>
-                <span>+{formatCop(breakdown.surchargePerNight)}/noche</span>
-              </div>
-            )}
-            <div className="flex justify-between font-bold text-lg border-t pt-2">
+            <div className="flex justify-between font-bold text-lg">
               <span>{breakdown.isLongStay ? "Pago mensual" : "Total"}</span>
               <span>
                 {formatCop(breakdown.displayAmount)}

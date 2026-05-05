@@ -398,7 +398,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H1-4726.jpg"
     ],
     size: "12m²",
-    maxGuests: 1,
+    maxGuests: 2,
     nightlyRates: {
       "361+": 31733,
       "180-360": 36267,
@@ -425,7 +425,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H2-4959.jpg"
     ],
     size: "14m²",
-    maxGuests: 1,
+    maxGuests: 2,
     nightlyRates: {
       "361+": 38400,
       "180-360": 43866,
@@ -536,7 +536,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H6-4751.jpg"
     ],
     size: "14m²",
-    maxGuests: 1,
+    maxGuests: 2,
     nightlyRates: {
       "361+": 37867,
       "180-360": 43276,
@@ -648,7 +648,7 @@ export const roomDetails: Record<string, DetailedRoom> = {
       "/images/bambu_fotos/H10-4693.jpg"
     ],
     size: "13m²",
-    maxGuests: 1,
+    maxGuests: 2,
     nightlyRates: {
       "361+": 34133,
       "180-360": 39010,
