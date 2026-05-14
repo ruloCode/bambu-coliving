@@ -7,10 +7,6 @@ export default function RoomDetailsSection({ maxGuests }: { size?: string; maxGu
           <h3 className="font-semibold">Capacidad</h3>
           <p>Hasta {maxGuests} personas</p>
         </div>
-        <div>
-          <h3 className="font-semibold">Disponibilidad</h3>
-          <p>A partir del 1 de julio, 2025</p>
-        </div>
       </div>
     </div>
   )
