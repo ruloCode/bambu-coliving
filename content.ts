@@ -108,7 +108,7 @@ export const testimonialsContent = {
 // CTA Section Content
 export const ctaContent = {
   title: "¿Listo para unirte a nuestra comunidad?",
-  description: "Abrimos el 1 de julio de 2025. Reserva ahora y sé parte de los primeros en experimentar Bambu Coliving.",
+  description: "Reserva ahora y sé parte de la comunidad Bambu Coliving.",
   cta: {
     text: "Reserva tu espacio",
     href: "/habitaciones"
@@ -720,7 +720,6 @@ export interface BlogPost {
   id: number
   title: string
   excerpt: string
-  date: string
   author: string
   image: string
   slug: string
@@ -743,7 +742,6 @@ export const blogContent = {
       id: 1,
       title: "5 razones para elegir coliving en tu próxima aventura",
       excerpt: "Descubre por qué el coliving se ha convertido en la opción preferida para nómadas digitales y profesionales en todo el mundo.",
-      date: "15 de abril, 2025",
       author: "María Rodríguez",
       image: "/images/Creativos1.jpg",
       slug: "5-razones-para-elegir-coliving"
@@ -752,7 +750,6 @@ export const blogContent = {
       id: 2,
       title: "Guía para nómadas digitales en Bogotá",
       excerpt: "Todo lo que necesitas saber para trabajar remotamente desde la vibrante capital colombiana.",
-      date: "2 de mayo, 2025",
       author: "Carlos Gómez",
       image: "/images/Creativos1.jpg",
       slug: "guia-nomadas-digitales-bogota"
@@ -761,7 +758,6 @@ export const blogContent = {
       id: 3,
       title: "Cómo construir una comunidad en espacios compartidos",
       excerpt: "Estrategias y consejos para fomentar conexiones significativas en entornos de coliving.",
-      date: "20 de mayo, 2025",
       author: "Laura Martínez",
       image: "/images/Creativos1.jpg",
       slug: "construir-comunidad-espacios-compartidos"
@@ -770,7 +766,6 @@ export const blogContent = {
       id: 4,
       title: "Los mejores cafés para trabajar cerca de Bambu Coliving",
       excerpt: "Una selección de cafeterías con buen WiFi, enchufes y ambiente agradable para tus días de trabajo fuera de casa.",
-      date: "5 de junio, 2025",
       author: "Andrés Pérez",
       image: "/images/Creativos1.jpg",
       slug: "mejores-cafes-para-trabajar"
@@ -779,7 +774,6 @@ export const blogContent = {
       id: 5,
       title: "Eventos imperdibles en Bogotá durante el verano 2025",
       excerpt: "Festivales, exposiciones y actividades culturales para disfrutar al máximo tu estancia en la ciudad.",
-      date: "12 de junio, 2025",
       author: "Sofía Vargas",
       image: "/images/Creativos1.jpg",
       slug: "eventos-bogota-verano-2025"
@@ -788,7 +782,6 @@ export const blogContent = {
       id: 6,
       title: "Equilibrio entre trabajo y vida personal en espacios de coliving",
       excerpt: "Consejos prácticos para mantener la productividad sin sacrificar tu bienestar en entornos compartidos.",
-      date: "25 de junio, 2025",
       author: "Daniel Moreno",
       image: "/images/Creativos1.jpg",
       slug: "equilibrio-trabajo-vida-personal"
@@ -818,7 +811,6 @@ export const blogPostsContent: Record<string, BlogPostContent> = {
     id: 1,
     title: "Slowmads en Bogotá: El Auge del Coliving para una inmersión cultural real.",
     excerpt: "El mundo de los viajes está en constante evolución. La figura del nómada digital, siempre conectado y en rápido movimiento, está dando paso a una nueva ola de viajeros...",
-    date: "1 de julio, 2025",
     author: "Fausto Abner",
     image: "/images/blog_slowmad.jpg",
     slug: "slowmads-en-bogota",
@@ -859,7 +851,6 @@ export const blogPostsContent: Record<string, BlogPostContent> = {
     id: 2,
     title: "Guía para nómadas digitales en Bogotá",
     excerpt: "El coliving se consolida en Bogotá como una solución de vivienda cada vez más popular, atrayendo a una diversa gama de residentes.",
-    date: "8 de julio, 2025",
     author: "Fausto Abner",
     image: "/images/Creativos1.jpg",
     slug: "el-auge-del-coliving",
@@ -894,7 +885,6 @@ export const blogPostsContent: Record<string, BlogPostContent> = {
     id: 3,
     title: "Coliving vs Residencia Estudiantil: La evolución del alojamiento en Bogotá para la nueva generación",
     excerpt: "En la vibrante Bogotá, la búsqueda del alojamiento ideal es una preocupación constante para estudiantes universitarios y jóvenes profesionales que inician su camino laboral.",
-    date: "15 de julio, 2025",
     author: "Fausto Abner",
     image: "/images/Creativos1.jpg",
     slug: "coliving-vs-residencia",
@@ -949,7 +939,6 @@ export const blogPostsContent: Record<string, BlogPostContent> = {
     id: 4,
     title: "Los mejores cafés para trabajar cerca de Bambu Coliving",
     excerpt: "Una selección de cafeterías con buen WiFi, enchufes y ambiente agradable para tus días de trabajo fuera de casa.",
-    date: "22 de julio, 2025",
     author: "Fausto Abner",
     image: "/images/Creativos1.jpg",
     slug: "mas-alla-de-las-paredes",

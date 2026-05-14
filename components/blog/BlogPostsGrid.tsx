@@ -1,4 +1,3 @@
-import { CalendarIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -7,7 +6,6 @@ interface BlogPost {
   id: number
   title: string
   excerpt: string
-  date: string
   author: string
   image: string
   slug: string
@@ -27,10 +25,6 @@ const BlogPostsGrid = ({ posts }: Props) => (
               <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
             </div>
             <div className="p-6">
-              <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                <CalendarIcon className="h-4 w-4" />
-                <span>{post.date}</span>
-              </div>
               <h2 className="text-xl font-bold mb-2">{post.title}</h2>
               <p className="text-gray-600 mb-4">{post.excerpt}</p>
               <div className="flex items-center justify-between">

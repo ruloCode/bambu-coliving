@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { blogPostsContent } from "@/content"
-import { CalendarDays, Clock, Tag } from "lucide-react"
+import { Tag } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
@@ -35,11 +35,6 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           <div className="text-center text-white px-4 max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
             <div className="flex items-center justify-center gap-4 text-sm">
-              <span className="flex items-center gap-2">
-                <CalendarDays className="h-4 w-4" />
-                {post.date}
-              </span>
-              <span>•</span>
               <span>{post.author}</span>
             </div>
           </div>
