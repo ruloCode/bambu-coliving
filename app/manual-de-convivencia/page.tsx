@@ -126,7 +126,7 @@ export default function ManualConvivencia() {
         Se prohíbe estrictamente cualquier acto de discriminación o acoso por motivos de raza, etnia, nacionalidad, género, identidad de género, orientación sexual, religión, edad o discapacidad. Una infracción a esta norma es considerada una falta muy grave.
         </li>
         <li><span className="font-bold">4.5. Política sobre Mascotas: </span>
-        En Bambu Coliving amamos las mascotas. Pero No se permite el ingreso o la tenencia de ningún tipo de animal, con la única excepción de los animales de servicio debidamente certificados según la legislación colombiana vigente.
+        No se permite el ingreso o la tenencia de ningún tipo de animal en Bambu Coliving, con la única excepción de los animales de servicio debidamente certificados según la legislación colombiana vigente.
         </li>
       </ul>
 

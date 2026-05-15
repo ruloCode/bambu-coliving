@@ -1,6 +1,6 @@
 "use client"
 
-import { Wifi, Tv, Bath, UtensilsCrossed, PawPrint, MonitorSmartphone, Warehouse, Sun, Users, Lock, Hotel, Sofa, Bed } from "lucide-react"
+import { Wifi, Tv, Bath, UtensilsCrossed, MonitorSmartphone, Warehouse, Sun, Users, Lock, Hotel, Sofa, Bed } from "lucide-react"
 import { createElement, use } from "react"
 import { notFound } from "next/navigation"
 import RoomGallerySection from "@/components/habitaciones/slug/RoomGallerySection"
@@ -14,7 +14,6 @@ const iconMap = {
   Tv,
   Bath,
   UtensilsCrossed,
-  PawPrint,
   MonitorSmartphone,
   Warehouse,
   Sun,

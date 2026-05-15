@@ -1295,7 +1295,7 @@ export const faqsContent = {
         },
         {
           question: "¿Se permiten mascotas?",
-          answer: "Sí, Bambu Coliving es pet-friendly. Aceptamos mascotas pequeñas y medianas con un depósito adicional. Por favor, infórmanos sobre tu mascota al momento de hacer la reserva."
+          answer: "Por el momento no permitimos mascotas en Bambu Coliving, con la única excepción de animales de servicio debidamente certificados según la legislación colombiana vigente."
         },
         {
           question: "¿Hay servicio de limpieza para las habitaciones?",
