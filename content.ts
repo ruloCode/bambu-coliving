@@ -25,21 +25,21 @@ export const featuredRoomsContent = {
     {
       title: "Nogal - 19m²",
       image: "/images/bambu_fotos/H7-4763.jpg",
-      monthlyFromPrice: 1496000,
+      monthlyFromPrice: 1646000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
       slug: "nogal"
     },
     {
       title: "Samán - 16m²",
       image: "/images/bambu_fotos/H4-4805.jpg",
-      monthlyFromPrice: 1304000,
+      monthlyFromPrice: 1434000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
       slug: "saman"
     },
     {
       title: "Palma de Cera - 19m²",
       image: "/images/bambu_fotos/H8-4775.jpg",
-      monthlyFromPrice: 1440000,
+      monthlyFromPrice: 1584000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
       slug: "palma-de-cera"
     }
@@ -73,7 +73,7 @@ export const benefitsContent = {
       icon: "Coffee",
       iconColor: "rose",
       title: "Espacios Vibrantes",
-      description: "Coworking, cocina y áreas de descanso a tu disposición.",
+      description: "Cocina compartida y áreas de descanso a tu disposición.",
       href: "/espacios-compartidos"
     }
   ]
@@ -147,7 +147,7 @@ const habitacionesList = {
     {
       title: "Gualanday - 12m²",
       image: "/images/bambu_fotos/H1-4720.jpg",
-      monthlyFromPrice: 952000,
+      monthlyFromPrice: 1047000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XS"],
       slug: "gualanday",
       category: "privada"
@@ -155,7 +155,7 @@ const habitacionesList = {
     {
       title: "Ceiba - 14m²",
       image: "/images/bambu_fotos/H2-4952.jpg",
-      monthlyFromPrice: 1152000,
+      monthlyFromPrice: 1267000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
       slug: "ceiba",
       category: "privada"
@@ -163,7 +163,7 @@ const habitacionesList = {
     {
       title: "Ocobo - 9m²",
       image: "/images/bambu_fotos/H3-4817.jpg",
-      monthlyFromPrice: 752000,
+      monthlyFromPrice: 827000,
       features: ["Cama semidoble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
       slug: "ocobo",
       category: "privada"
@@ -171,7 +171,7 @@ const habitacionesList = {
     {
       title: "Samán - 16m²",
       image: "/images/bambu_fotos/H4-4805.jpg",
-      monthlyFromPrice: 1304000,
+      monthlyFromPrice: 1434000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
       slug: "saman",
       category: "suite"
@@ -179,7 +179,7 @@ const habitacionesList = {
     {
       title: "Cedro - 17m²",
       image: "/images/bambu_fotos/H5-4730.jpg",
-      monthlyFromPrice: 1352000,
+      monthlyFromPrice: 1487000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
       slug: "cedro",
       category: "suite"
@@ -187,7 +187,7 @@ const habitacionesList = {
     {
       title: "Caracolí - 14m²",
       image: "/images/bambu_fotos/H6-4747.jpg",
-      monthlyFromPrice: 1136000,
+      monthlyFromPrice: 1250000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
       slug: "caracoli",
       category: "privada"
@@ -195,7 +195,7 @@ const habitacionesList = {
     {
       title: "Nogal - 19m²",
       image: "/images/bambu_fotos/H7-4763.jpg",
-      monthlyFromPrice: 1496000,
+      monthlyFromPrice: 1646000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
       slug: "nogal",
       category: "suite"
@@ -203,7 +203,7 @@ const habitacionesList = {
     {
       title: "Palma de Cera - 19m²",
       image: "/images/bambu_fotos/H8-4775.jpg",
-      monthlyFromPrice: 1440000,
+      monthlyFromPrice: 1584000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet XL"],
       slug: "palma-de-cera",
       category: "suite"
@@ -211,7 +211,7 @@ const habitacionesList = {
     {
       title: "Sauce - 18m²",
       image: "/images/bambu_fotos/H9-4663.jpg",
-      monthlyFromPrice: 1416000,
+      monthlyFromPrice: 1558000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet L"],
       slug: "sauce",
       category: "suite"
@@ -219,7 +219,7 @@ const habitacionesList = {
     {
       title: "Balso - 13m²",
       image: "/images/bambu_fotos/H10-4687.jpg",
-      monthlyFromPrice: 1024000,
+      monthlyFromPrice: 1126000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado", "Closet S"],
       slug: "balso",
       category: "privada"
@@ -227,7 +227,7 @@ const habitacionesList = {
     {
       title: "Chicalá - 16m²",
       image: "/images/bambu_fotos/H11-4705.jpg",
-      monthlyFromPrice: 1256000,
+      monthlyFromPrice: 1382000,
       features: ["Cama doble", "WiFi ilimitado", "Escritorio", "Baño privado amplio", "Closet L"],
       slug: "chicala",
       category: "suite"
@@ -358,14 +358,14 @@ export const MONTHLY_BILLING_NIGHTS = 30
 
 // Flat per-night surcharge per additional guest, varying by stay tier.
 export const EXTRA_GUEST_NIGHT_RATES: Record<StayTier, number> = {
-  "361+": 13000,
-  "180-360": 15000,
-  "90-179": 18000,
-  "30-89": 21000,
-  "15-29": 24000,
-  "7-14": 27000,
-  "3-6": 30000,
-  "1-2": 35000
+  "361+": 14000,
+  "180-360": 17000,
+  "90-179": 20000,
+  "30-89": 23000,
+  "15-29": 26000,
+  "7-14": 30000,
+  "3-6": 33000,
+  "1-2": 39000
 }
 
 export function getExtraGuestRate(tier: StayTier): number {
@@ -400,14 +400,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "12m²",
     maxGuests: 2,
     nightlyRates: {
-      "361+": 31733,
-      "180-360": 36267,
-      "90-179": 38533,
-      "30-89": 40800,
-      "15-29": 86124,
-      "7-14": 109924,
-      "3-6": 123790,
-      "1-2": 136000
+      "361+": 34906,
+      "180-360": 39894,
+      "90-179": 42386,
+      "30-89": 44880,
+      "15-29": 94736,
+      "7-14": 120916,
+      "3-6": 136169,
+      "1-2": 149600
     }
   },
   "ceiba": {
@@ -427,14 +427,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "14m²",
     maxGuests: 2,
     nightlyRates: {
-      "361+": 38400,
-      "180-360": 43866,
-      "90-179": 46629,
-      "30-89": 49371,
-      "15-29": 104229,
-      "7-14": 133029,
-      "3-6": 149760,
-      "1-2": 164571
+      "361+": 42240,
+      "180-360": 48253,
+      "90-179": 51292,
+      "30-89": 54308,
+      "15-29": 114652,
+      "7-14": 146332,
+      "3-6": 164736,
+      "1-2": 181028
     }
   },
   "ocobo": {
@@ -455,14 +455,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "9m²",
     maxGuests: 2,
     nightlyRates: {
-      "361+": 25067,
-      "180-360": 28648,
-      "90-179": 30438,
-      "30-89": 32229,
-      "15-29": 68038,
-      "7-14": 86838,
-      "3-6": 97760,
-      "1-2": 107429
+      "361+": 27574,
+      "180-360": 31513,
+      "90-179": 33482,
+      "30-89": 35452,
+      "15-29": 74842,
+      "7-14": 95522,
+      "3-6": 107536,
+      "1-2": 118172
     }
   },
   "saman": {
@@ -483,14 +483,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "16m²",
     maxGuests: 2,
     nightlyRates: {
-      "361+": 43467,
-      "180-360": 49676,
-      "90-179": 52781,
-      "30-89": 55886,
-      "15-29": 117981,
-      "7-14": 150581,
-      "3-6": 169524,
-      "1-2": 186286
+      "361+": 47814,
+      "180-360": 54644,
+      "90-179": 58059,
+      "30-89": 61475,
+      "15-29": 129779,
+      "7-14": 165639,
+      "3-6": 186476,
+      "1-2": 204915
     }
   },
   "cedro": {
@@ -511,14 +511,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "17m²",
     maxGuests: 2,
     nightlyRates: {
-      "361+": 45067,
-      "180-360": 51505,
-      "90-179": 54724,
-      "30-89": 57943,
-      "15-29": 122324,
-      "7-14": 156124,
-      "3-6": 175760,
-      "1-2": 193143
+      "361+": 49574,
+      "180-360": 56656,
+      "90-179": 60196,
+      "30-89": 63737,
+      "15-29": 134556,
+      "7-14": 171736,
+      "3-6": 193336,
+      "1-2": 212457
     }
   },
   "caracoli": {
@@ -538,14 +538,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "14m²",
     maxGuests: 2,
     nightlyRates: {
-      "361+": 37867,
-      "180-360": 43276,
-      "90-179": 45981,
-      "30-89": 48686,
-      "15-29": 102781,
-      "7-14": 131181,
-      "3-6": 147650,
-      "1-2": 162286
+      "361+": 41654,
+      "180-360": 47604,
+      "90-179": 50579,
+      "30-89": 53555,
+      "15-29": 113059,
+      "7-14": 144299,
+      "3-6": 162415,
+      "1-2": 178515
     }
   },
   "nogal": {
@@ -566,14 +566,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "19m²",
     maxGuests: 2,
     nightlyRates: {
-      "361+": 49867,
-      "180-360": 56990,
-      "90-179": 60552,
-      "30-89": 64114,
-      "15-29": 135352,
-      "7-14": 172752,
-      "3-6": 194480,
-      "1-2": 213714
+      "361+": 54854,
+      "180-360": 62689,
+      "90-179": 66607,
+      "30-89": 70525,
+      "15-29": 148887,
+      "7-14": 190027,
+      "3-6": 213928,
+      "1-2": 235085
     }
   },
   "palma-de-cera": {
@@ -595,14 +595,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "19m²",
     maxGuests: 2,
     nightlyRates: {
-      "361+": 48000,
-      "180-360": 54857,
-      "90-179": 58286,
-      "30-89": 61714,
-      "15-29": 130286,
-      "7-14": 166286,
-      "3-6": 187240,
-      "1-2": 205714
+      "361+": 52800,
+      "180-360": 60343,
+      "90-179": 64115,
+      "30-89": 67885,
+      "15-29": 143315,
+      "7-14": 182915,
+      "3-6": 205964,
+      "1-2": 226285
     }
   },
   "sauce": {
@@ -623,14 +623,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "18m²",
     maxGuests: 2,
     nightlyRates: {
-      "361+": 47200,
-      "180-360": 53943,
-      "90-179": 57314,
-      "30-89": 60686,
-      "15-29": 128114,
-      "7-14": 163514,
-      "3-6": 184000,
-      "1-2": 202286
+      "361+": 51920,
+      "180-360": 59337,
+      "90-179": 63045,
+      "30-89": 66755,
+      "15-29": 140925,
+      "7-14": 179865,
+      "3-6": 202400,
+      "1-2": 222515
     }
   },
   "balso": {
@@ -650,14 +650,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "13m²",
     maxGuests: 2,
     nightlyRates: {
-      "361+": 34133,
-      "180-360": 39010,
-      "90-179": 41448,
-      "30-89": 43886,
-      "15-29": 92648,
-      "7-14": 118248,
-      "3-6": 133120,
-      "1-2": 146286
+      "361+": 37546,
+      "180-360": 42911,
+      "90-179": 45593,
+      "30-89": 48275,
+      "15-29": 101913,
+      "7-14": 130073,
+      "3-6": 146432,
+      "1-2": 160915
     }
   },
   "chicala": {
@@ -678,14 +678,14 @@ export const roomDetails: Record<string, DetailedRoom> = {
     size: "16m²",
     maxGuests: 2,
     nightlyRates: {
-      "361+": 41867,
-      "180-360": 47848,
-      "90-179": 50838,
-      "30-89": 53829,
-      "15-29": 113638,
-      "7-14": 145038,
-      "3-6": 163200,
-      "1-2": 179429
+      "361+": 46054,
+      "180-360": 52633,
+      "90-179": 55922,
+      "30-89": 59212,
+      "15-29": 125002,
+      "7-14": 159542,
+      "3-6": 179520,
+      "1-2": 197372
     }
   }
 }
@@ -1008,33 +1008,6 @@ export const sharedSpacesContent = {
     title: "Espacios Compartidos",
     description: "Descubre las áreas comunes diseñadas para fomentar la comunidad, productividad y bienestar."
   },
-  coworking: {
-    title: "Espacio de Coworking",
-    description: "Un espacio diseñado para impulsar tu productividad y creatividad. Perfecto para trabajar, estudiar o colaborar con otros miembros de la comunidad.",
-    features: [
-      {
-        title: "Internet de Alta Velocidad",
-        description: "Conexión fibra óptica de 300Mbps para todas tus necesidades digitales.",
-        icon: "Wifi"
-      },
-      {
-        title: "Espacios Versátiles",
-        description: "Áreas para trabajo individual, salas de reuniones y espacios colaborativos.",
-        icon: "LayoutGrid"
-      },
-      {
-        title: "Equipamiento Completo",
-        description: "Escritorios ergonómicos, sillas cómodas y múltiples conexiones eléctricas.",
-        icon: "Monitor"
-      },
-      {
-        title: "Ambiente Profesional",
-        description: "Iluminación natural, aire acondicionado y ambiente tranquilo para concentrarte.",
-        icon: "Sun"
-      }
-    ],
-    images: ["/images/Creativos1.jpg", "/images/Creativos2.jpg", "/images/Creativos3.jpg"]
-  },
   kitchen: {
     title: "Cocina Compartida",
     description: "Una cocina totalmente equipada donde podrás preparar tus comidas favoritas y compartir momentos con otros residentes.",
@@ -1060,7 +1033,11 @@ export const sharedSpacesContent = {
         icon: "Coffee"
       }
     ],
-    images: ["/images/cocina1.png", "/images/cocina2.png", "/images/cocina3.png"]
+    images: [
+      "/images/espacios_compartidos/cocina-1.png",
+      "/images/espacios_compartidos/cocina-2.png",
+      "/images/espacios_compartidos/cocina-3.png"
+    ]
   },
   lounge: {
     title: "Sala de Estar",
@@ -1087,7 +1064,11 @@ export const sharedSpacesContent = {
         icon: "Users"
       }
     ],
-    images: ["/images/living_1.png", "/images/living_2.png", "/images/living_3.png"]
+    images: [
+      "/images/espacios_compartidos/sala-1.png",
+      "/images/espacios_compartidos/sala-2.png",
+      "/images/espacios_compartidos/sala-3.png"
+    ]
   }
 }
 

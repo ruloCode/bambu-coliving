@@ -1,4 +1,3 @@
-import CoworkingSection from "@/components/espacios-compartidos/CoworkingSection"
 import KitchenSection from "@/components/espacios-compartidos/KitchenSection"
 import LoungeSection from "@/components/espacios-compartidos/LoungeSection"
 import { sharedSpacesContent } from "@/content"
@@ -16,7 +15,6 @@ export default function SharedSpaces() {
         </div>
       </section>
 
-      <CoworkingSection content={sharedSpacesContent.coworking} />
       <KitchenSection content={sharedSpacesContent.kitchen} />
       <LoungeSection content={sharedSpacesContent.lounge} />
     </div>
