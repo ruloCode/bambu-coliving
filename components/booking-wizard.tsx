@@ -30,7 +30,7 @@ const steps = [
   { id: "confirmation", name: "Confirmación" }
 ]
 
-const BAMBU_WHATSAPP = "573504956021"
+const BAMBU_WHATSAPP = "573007438588"
 
 const generateReservationNumber = () =>
   `BM-${Math.floor(Math.random() * 10000).toString().padStart(4, "0")}`

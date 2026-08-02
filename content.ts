@@ -12,7 +12,7 @@ export const heroContent = {
   },
   cta: {
     text: "Reserva Ahora",
-    href: "https://wa.me/573504956021?text=Hola,%20estoy%20interesado%20en%20reservar%20una%20habitación%20en%20Bambu%20Coliving",
+    href: "https://wa.me/573007438588?text=Hola,%20estoy%20interesado%20en%20reservar%20una%20habitación%20en%20Bambu%20Coliving",
     isExternal: true
   }
 }
@@ -1387,7 +1387,7 @@ export const aboutUsContent = {
         type: "phone",
         icon: "Phone",
         label: "WhatsApp",
-        value: "+57 350 4956021"
+        value: "+57 300 7438588"
       },
       {
         type: "email",
